@@ -1,9 +1,3 @@
-﻿  eremeev_kinpo.cpp
-  error.cpp
-  exprNode.cpp
-  exprNode.h
-  Создание кода...
-D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.cpp(14,1): warning C4172: возвращение адреса локальной или временной переменной : ex
-D:\GITHUB\KiNPO\eremeev_kinpo\eremeev_kinpo.cpp(6,1): warning C4172: возвращение адреса локальной или временной переменной : ex
-eremeev_kinpo\Debug\exprNode.obj : warning LNK4042: объект указан более одного раза; лишние не учитываются
+﻿  exprNode.cpp
+D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.cpp(19,1): warning C4172: возвращение адреса локальной или временной переменной : ex
   eremeev_kinpo.vcxproj -> D:\GITHUB\KiNPO\eremeev_kinpo\Debug\eremeev_kinpo.exe

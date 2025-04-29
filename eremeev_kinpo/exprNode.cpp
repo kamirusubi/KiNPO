@@ -1,7 +1,12 @@
 #include "ExprNode.h"
 
 void ExprNode::swapOperands() {
-    int a = 1;
+    //—охранить указатель на первый операнд в tmp
+    ExprNode* tmp = this->firstOperand;
+    //ѕоместить в поле дл€ первого операнда указатель на второй операнд
+    this->firstOperand = this->secondOperand;
+    //ѕоместить в поле дл€ второго операнда tmp
+    this->secondOperand = tmp;
 }
 
 void ExprNode::addUnaryOperatorBefore(ExprNodeType op) {
