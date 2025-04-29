@@ -1,4 +1,2 @@
 ﻿  TestFunction.cpp
-D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.cpp(14,1): warning C4172: возвращение адреса локальной или временной переменной : ex
-     Создается библиотека D:\GITHUB\KiNPO\eremeev_kinpo\Debug\TestFunction.lib и объект D:\GITHUB\KiNPO\eremeev_kinpo\Debug\TestFunction.exp
   TestFunction.vcxproj -> D:\GITHUB\KiNPO\eremeev_kinpo\Debug\TestFunction.dll

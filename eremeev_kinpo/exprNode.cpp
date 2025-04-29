@@ -10,17 +10,65 @@ void ExprNode::swapOperands() {
 }
 
 void ExprNode::addUnaryOperatorBefore(ExprNodeType op) {
-    int a = 1;
+    // —оздаем указатель на новый узел newNode
+    ExprNode* newNode = this->copyNode(); //  опируем текущий узел
 
+    // ѕомещаем newNode в первый операнд текущего узла
+    firstOperand = newNode;
+
+    // ќбнул€ем значение второго операнда текущего узла
+    secondOperand = nullptr; // »ли = NULL; (но nullptr лучше дл€ C++)
+
+    // »змен€ем тип операции на operator
+    type = op;
+    value = ""; // ќчищаем value, если узел теперь оператор
 }
 
 ExprNode* ExprNode::copyNode() const {
-    ExprNode ex;
-    return &ex;
+    ExprNode* newNode = new ExprNode(); // —оздаем новый узел в куче
+
+    newNode->type = type; // ѕрисваиваем тип операции
+
+    // ≈сли текущий узел - операнд
+    if (type == ExprNodeType::Operand) {
+        newNode->value = value; // ѕрисваиваем значение операнда 
+    }
+    //»наче если текущий узел имеет первый операнд
+    else if (firstOperand) {
+        //ѕрисвоить в первый операнд newNode значение первого операнда текущего узла
+        newNode->firstOperand = firstOperand;
+        //≈сли текущий узел имеет второй операнд
+        if (secondOperand) {
+            //ѕрисвоить в второй операнд newNode значение второго операнда текущегоузла
+            newNode->secondOperand = secondOperand;
+        }
+    }
+
+    return newNode; // ¬озвращаем указатель на скопированный узел
 }
 
 std::string ExprNode::getRpmOfTree() const {
-    return "";
+    std::string result = ""; // —трока дл€ хранени€ обратной польской записи
+
+    // ≈сли текущий узел - операнд
+    if (type == ExprNodeType::Operand) {
+        // «аписываем значение пол€ value
+        result += value; 
+    }
+    // »наче если текущий узел имеет первый операнд
+    else if (firstOperand) {
+            // «аписываем обратную польскую запись первого операнда
+            result += firstOperand->getRpmOfTree() + " ";
+        // ≈сли текущий узел имеет второй операнд
+        if (secondOperand) {
+            // «аписываем обратную польскую запись второго операнда
+            result += secondOperand->getRpmOfTree() + " ";
+        }
+        // ƒобавл€ем к строке математическую запись оператора из словар€ stringToSymbol
+        result += stringToSymbol.at(type);
+    }
+    // ¬озвращаем строку с обратной польской записью
+    return result; 
 }
 
 // »нициализаци€ статических членов класса

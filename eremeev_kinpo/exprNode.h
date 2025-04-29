@@ -9,10 +9,10 @@ enum class ExprNodeType { Plus, Minus, Division, Multiplication, DivRemainder, U
 class ExprNode {
 public:
     ExprNodeType type; //тип узла выражения
-    std::string value; // значение узла, если узел - операнд
-    ExprNode* firstOperand; // первый операнд
-    ExprNode* secondOperand; // второй операнд
-    
+    std::string value = ""; // значение узла, если узел - операнд
+    ExprNode* firstOperand = nullptr; // первый операнд
+    ExprNode* secondOperand = nullptr; // второй операнд
+
 
     //статический словарь для получения словесной записи оператора по его символу
     static const std::map<std::string, ExprNodeType> symbolToString;

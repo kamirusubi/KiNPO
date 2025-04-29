@@ -16,7 +16,7 @@ public:
         type(_type), strWithError(_strWithError), position(_position) {}
 
     bool operator<(const Error& other) const;
-
+    bool operator==(const Error& other) const;
     /*!
     * \Возвращает описание ошибки
     * \this – ошибка

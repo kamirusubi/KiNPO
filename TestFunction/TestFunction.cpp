@@ -50,8 +50,7 @@ namespace TestFunctions
             std::set<Error>* errors = new std::set<Error>();
 			ExprNode* tree = stringToExprTree(rpnString, errors);
 
-
-			ExprNode expTree(ExprNodeType::Greater, &ExprNode("5"), &ExprNode("x"));
+			ExprNode expTree(ExprNodeType::Greater, new ExprNode("5"), new ExprNode("x"));
 
 			std::set <Error> expErrors;
 			Assert::IsTrue(compareExprTrees(&expTree, tree), L"");
@@ -64,8 +63,8 @@ namespace TestFunctions
 			ExprNode* tree = stringToExprTree(rpnString, errors);
 
 
-			ExprNode expFirstOperand(ExprNodeType::Plus, &ExprNode("5"), &ExprNode("x"));
-			ExprNode expTree(ExprNodeType::GreaterEqual, &expFirstOperand, &ExprNode("7"));
+			ExprNode expFirstOperand(ExprNodeType::Plus, new ExprNode("5"), new ExprNode("x"));
+			ExprNode expTree(ExprNodeType::GreaterEqual, &expFirstOperand, new ExprNode("7"));
 
 			std::set <Error> expErrors;
 
@@ -78,8 +77,8 @@ namespace TestFunctions
             std::set<Error>* errors = new std::set<Error>();
 			ExprNode* tree = stringToExprTree(rpnString, errors);
 
-			ExprNode expFirstOperand(ExprNodeType::UnaryMinus, &ExprNode("x"));
-			ExprNode expTree(ExprNodeType::GreaterEqual, &expFirstOperand, &ExprNode("x"));
+			ExprNode expFirstOperand(ExprNodeType::UnaryMinus, new ExprNode("5"));
+			ExprNode expTree(ExprNodeType::LessEqual, &expFirstOperand, new ExprNode("x"));
 
 			std::set <Error> expErrors;
 
@@ -93,8 +92,8 @@ namespace TestFunctions
 			ExprNode* tree = stringToExprTree(rpnString, errors);
 
 
-			ExprNode expFirstOperand(ExprNodeType::Minus, &ExprNode("5"), &ExprNode("x"));
-			ExprNode expSecondOperand(ExprNodeType::Multiplication, &ExprNode("7"), &ExprNode("x"));
+			ExprNode expFirstOperand(ExprNodeType::Minus, new ExprNode("5"), new ExprNode("x"));
+			ExprNode expSecondOperand(ExprNodeType::Multiplication, new ExprNode("7"), new ExprNode("x"));
 
 			ExprNode expTree(ExprNodeType::Division, &expFirstOperand, &expSecondOperand);
 
@@ -111,8 +110,8 @@ namespace TestFunctions
 						
 
 
-			ExprNode expFirstOperand(ExprNodeType::DivRemainder, &ExprNode("5"), &ExprNode("x"));
-			ExprNode expSecondOperand(ExprNodeType::Not, &ExprNode("7"));
+			ExprNode expFirstOperand(ExprNodeType::DivRemainder, new ExprNode("5"), new ExprNode("x"));
+			ExprNode expSecondOperand(ExprNodeType::Not, new ExprNode("7"));
 
 			ExprNode expTree(ExprNodeType::Less, &expFirstOperand, &expSecondOperand);
 
@@ -128,7 +127,7 @@ namespace TestFunctions
 			ExprNode* tree = stringToExprTree(rpnString, errors);
 
 
-			ExprNode expTree(ExprNodeType::Plus, &ExprNode("_123"), &ExprNode("1"));
+			ExprNode expTree(ExprNodeType::Plus, new ExprNode("_123"), new ExprNode("1"));
 
 
 			std::set <Error> expErrors;
@@ -143,7 +142,7 @@ namespace TestFunctions
 			ExprNode* tree = stringToExprTree(rpnString, errors);
 
 
-			ExprNode expTree(ExprNodeType::Plus, &ExprNode("0127"), &ExprNode("1"));
+			ExprNode expTree(ExprNodeType::Plus, new ExprNode("0127"), new ExprNode("1"));
 
 
 			std::set <Error> expErrors;
@@ -157,7 +156,7 @@ namespace TestFunctions
             std::set<Error>* errors = new std::set<Error>();
 			ExprNode* tree = stringToExprTree(rpnString, errors);
 
-			ExprNode expTree(ExprNodeType::Plus, &ExprNode("0x12AB"), &ExprNode("1"));
+			ExprNode expTree(ExprNodeType::Plus, new ExprNode("0x12AB"), new ExprNode("1"));
 
 			std::set <Error> expErrors;
 
@@ -195,12 +194,11 @@ namespace TestFunctions
 			Assert::IsTrue(compareExprTrees(expTree, tree), L"");
 			Assert::AreEqual((size_t)expErrors.size(), errors->size(), L"");
 		}
-		TEST_METHOD(Test11_EdundantOperand)
+		TEST_METHOD(Test11_RedundantOperand)
 		{
 			std::string rpnString = "5 x 6 >";
             std::set<Error>* errors = new std::set<Error>();
 			ExprNode* tree = stringToExprTree(rpnString, errors);
-
 
 
 			ExprNode* expTree = nullptr;
@@ -211,6 +209,7 @@ namespace TestFunctions
 
 			Assert::IsTrue(compareExprTrees(expTree, tree), L"");
 			Assert::AreEqual((size_t)expErrors.size(), errors->size(), L"");
+			Assert::IsTrue(expErrors == *errors, L"");
 		}
 		TEST_METHOD(Test12_UnknownSymbol)
 		{
@@ -228,6 +227,8 @@ namespace TestFunctions
 
 			Assert::IsTrue(compareExprTrees(expTree, tree), L"");
 			Assert::AreEqual((size_t)expErrors.size(), errors->size(), L"");
+			Assert::IsTrue(expErrors == *errors, L"");
+
 		}
 		TEST_METHOD(Test13_UnknownSymbolCombination)
 		{
@@ -245,6 +246,8 @@ namespace TestFunctions
 
 			Assert::IsTrue(compareExprTrees(expTree, tree), L"");
 			Assert::AreEqual((size_t)expErrors.size(), errors->size(), L"");
+			Assert::IsTrue(expErrors == *errors, L"");
+
 		}
 	};
 
@@ -413,7 +416,7 @@ namespace TestFunctions
 			ExprNode* tree = stringToExprTree("5 x + 7 <", errors);
 			tree->swapOperands();
 
-			ExprNode *expTree = stringToExprTree("7 x 5 + <", errors);
+			ExprNode *expTree = stringToExprTree("7 5 x + <", errors);
 			Assert::IsTrue(compareExprTrees(expTree, tree), L"");
 		}
 	};

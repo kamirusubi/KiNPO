@@ -3,6 +3,8 @@
 #include "error.h"
 #include <string>
 #include <set>
+#include <sstream>
+#include <stack>
 
 /*!
 * \Создает дерево разбора выражения строки в обратной польской записи

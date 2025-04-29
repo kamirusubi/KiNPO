@@ -76,3 +76,12 @@ bool Error::operator<(const Error& other) const {
 
     return false;
 }
+
+bool Error::operator==(const Error& other) const {
+    return type == other.type &&
+        errorInputFilePath == other.errorInputFilePath &&
+        errorOutputFilePath == other.errorOutputFilePath &&
+        strWithError == other.strWithError &&
+        position == other.position;
+
+}
