@@ -2,16 +2,6 @@
 #include "exprNode.h"
 #include "error.h"
 
-int main()
-{
-    ExprNode ex;
-    ex.type = ExprNodeType::Plus;
-
-    return 0;
-}
-
-
-
 ExprNode* stringToExprTree(std::string rpnString, std::set <Error>* errors) {
     ExprNode ex;
     return &ex;
@@ -30,4 +20,13 @@ bool checkRootOperator(ExprNodeType op) {
 
 void transformInequalityToLessOperator(ExprNode* node) {
 
+}
+
+int main()
+{
+    ExprNode ex("5");
+    ex.addUnaryOperatorBefore(ExprNodeType::Not);
+    std::cout << ex.getRpmOfTree();
+
+    return 0;
 }

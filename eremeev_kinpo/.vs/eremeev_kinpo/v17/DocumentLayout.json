@@ -6,24 +6,24 @@
       "AbsoluteMoniker": "D:0:0:{2CC2418D-360E-4EB2-B969-45F1BD128A9E}|..\\TestFunction\\TestFunction.vcxproj|D:\\GITHUB\\KiNPO\\TestFunction\\TestFunction.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{90D02595-3FEC-4580-A1B3-C50741F3529F}|eremeev_kinpo.vcxproj|D:\\GITHUB\\KiNPO\\eremeev_kinpo\\header.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{90D02595-3FEC-4580-A1B3-C50741F3529F}|eremeev_kinpo.vcxproj|solutionrelative:header.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{90D02595-3FEC-4580-A1B3-C50741F3529F}|eremeev_kinpo.vcxproj|D:\\GITHUB\\KiNPO\\eremeev_kinpo\\exprNode.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{90D02595-3FEC-4580-A1B3-C50741F3529F}|eremeev_kinpo.vcxproj|solutionrelative:exprNode.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{90D02595-3FEC-4580-A1B3-C50741F3529F}|eremeev_kinpo.vcxproj|D:\\GITHUB\\KiNPO\\eremeev_kinpo\\error.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{90D02595-3FEC-4580-A1B3-C50741F3529F}|eremeev_kinpo.vcxproj|solutionrelative:error.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{90D02595-3FEC-4580-A1B3-C50741F3529F}|eremeev_kinpo.vcxproj|D:\\GITHUB\\KiNPO\\eremeev_kinpo\\error.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{90D02595-3FEC-4580-A1B3-C50741F3529F}|eremeev_kinpo.vcxproj|solutionrelative:error.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{90D02595-3FEC-4580-A1B3-C50741F3529F}|eremeev_kinpo.vcxproj|D:\\GITHUB\\KiNPO\\eremeev_kinpo\\error.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{90D02595-3FEC-4580-A1B3-C50741F3529F}|eremeev_kinpo.vcxproj|solutionrelative:error.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{90D02595-3FEC-4580-A1B3-C50741F3529F}|eremeev_kinpo.vcxproj|D:\\GITHUB\\KiNPO\\eremeev_kinpo\\eremeev_kinpo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{90D02595-3FEC-4580-A1B3-C50741F3529F}|eremeev_kinpo.vcxproj|solutionrelative:eremeev_kinpo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{90D02595-3FEC-4580-A1B3-C50741F3529F}|eremeev_kinpo.vcxproj|D:\\GITHUB\\KiNPO\\eremeev_kinpo\\exprNode.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{90D02595-3FEC-4580-A1B3-C50741F3529F}|eremeev_kinpo.vcxproj|solutionrelative:exprNode.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90D02595-3FEC-4580-A1B3-C50741F3529F}|eremeev_kinpo.vcxproj|D:\\GITHUB\\KiNPO\\eremeev_kinpo\\exprNode.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{90D02595-3FEC-4580-A1B3-C50741F3529F}|eremeev_kinpo.vcxproj|solutionrelative:exprNode.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -33,7 +33,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -41,67 +41,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "exprNode.h",
-              "DocumentMoniker": "D:\\GITHUB\\KiNPO\\eremeev_kinpo\\exprNode.h",
-              "RelativeDocumentMoniker": "exprNode.h",
-              "ToolTip": "D:\\GITHUB\\KiNPO\\eremeev_kinpo\\exprNode.h",
-              "RelativeToolTip": "exprNode.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-29T08:25:47.956Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "exprNode.cpp",
-              "DocumentMoniker": "D:\\GITHUB\\KiNPO\\eremeev_kinpo\\exprNode.cpp",
-              "RelativeDocumentMoniker": "exprNode.cpp",
-              "ToolTip": "D:\\GITHUB\\KiNPO\\eremeev_kinpo\\exprNode.cpp",
-              "RelativeToolTip": "exprNode.cpp",
-              "ViewState": "AQIAACQAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-29T08:25:18.87Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "error.cpp",
-              "DocumentMoniker": "D:\\GITHUB\\KiNPO\\eremeev_kinpo\\error.cpp",
-              "RelativeDocumentMoniker": "error.cpp",
-              "ToolTip": "D:\\GITHUB\\KiNPO\\eremeev_kinpo\\error.cpp",
-              "RelativeToolTip": "error.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAALAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-29T08:18:57.626Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "error.h",
-              "DocumentMoniker": "D:\\GITHUB\\KiNPO\\eremeev_kinpo\\error.h",
-              "RelativeDocumentMoniker": "error.h",
-              "ToolTip": "D:\\GITHUB\\KiNPO\\eremeev_kinpo\\error.h",
-              "RelativeToolTip": "error.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAABGAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-29T08:15:08.809Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "header.h",
-              "DocumentMoniker": "D:\\GITHUB\\KiNPO\\eremeev_kinpo\\header.h",
-              "RelativeDocumentMoniker": "header.h",
-              "ToolTip": "D:\\GITHUB\\KiNPO\\eremeev_kinpo\\header.h",
-              "RelativeToolTip": "header.h",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABUAAAA2AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-29T07:59:57.649Z",
+              "Title": "eremeev_kinpo.cpp",
+              "DocumentMoniker": "D:\\GITHUB\\KiNPO\\eremeev_kinpo\\eremeev_kinpo.cpp",
+              "RelativeDocumentMoniker": "eremeev_kinpo.cpp",
+              "ToolTip": "D:\\GITHUB\\KiNPO\\eremeev_kinpo\\eremeev_kinpo.cpp",
+              "RelativeToolTip": "eremeev_kinpo.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-29T09:16:53.082Z",
               "EditorCaption": ""
             },
             {
@@ -112,9 +60,61 @@
               "RelativeDocumentMoniker": "..\\TestFunction\\TestFunction.cpp",
               "ToolTip": "D:\\GITHUB\\KiNPO\\TestFunction\\TestFunction.cpp",
               "RelativeToolTip": "..\\TestFunction\\TestFunction.cpp",
-              "ViewState": "AQIAAMcAAAAAAAAAAAAAAMABAAA4AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAA+AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-29T07:39:54.366Z",
+              "WhenOpened": "2025-04-29T09:06:24.1Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "exprNode.h",
+              "DocumentMoniker": "D:\\GITHUB\\KiNPO\\eremeev_kinpo\\exprNode.h",
+              "RelativeDocumentMoniker": "exprNode.h",
+              "ToolTip": "D:\\GITHUB\\KiNPO\\eremeev_kinpo\\exprNode.h",
+              "RelativeToolTip": "exprNode.h",
+              "ViewState": "AQIAACcAAAAAAAAAAAAAAD8AAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-29T08:25:47.956Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "exprNode.cpp",
+              "DocumentMoniker": "D:\\GITHUB\\KiNPO\\eremeev_kinpo\\exprNode.cpp",
+              "RelativeDocumentMoniker": "exprNode.cpp",
+              "ToolTip": "D:\\GITHUB\\KiNPO\\eremeev_kinpo\\exprNode.cpp",
+              "RelativeToolTip": "exprNode.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-29T08:25:18.87Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "error.h",
+              "DocumentMoniker": "D:\\GITHUB\\KiNPO\\eremeev_kinpo\\error.h",
+              "RelativeDocumentMoniker": "error.h",
+              "ToolTip": "D:\\GITHUB\\KiNPO\\eremeev_kinpo\\error.h",
+              "RelativeToolTip": "error.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-29T08:15:08.809Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "error.cpp",
+              "DocumentMoniker": "D:\\GITHUB\\KiNPO\\eremeev_kinpo\\error.cpp",
+              "RelativeDocumentMoniker": "error.cpp",
+              "ToolTip": "D:\\GITHUB\\KiNPO\\eremeev_kinpo\\error.cpp",
+              "RelativeToolTip": "error.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACEAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-29T09:06:03.841Z",
               "EditorCaption": ""
             }
           ]

@@ -1,10 +1,11 @@
 #include "ExprNode.h"
 
 void ExprNode::swapOperands() {
-
+    int a = 1;
 }
 
 void ExprNode::addUnaryOperatorBefore(ExprNodeType op) {
+    int a = 1;
 
 }
 

@@ -1,7 +1,8 @@
 #pragma once
-
 #include "exprNode.h"
 #include "error.h"
+#include <string>
+#include <set>
 
 /*!
 * \Создает дерево разбора выражения строки в обратной польской записи
@@ -31,4 +32,3 @@ bool checkRootOperator(ExprNodeType op);
 * \param[in/out] obj – указатель на узел, который должен быть преобразован
 */
 void transformInequalityToLessOperator(ExprNode* node);
-

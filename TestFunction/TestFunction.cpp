@@ -4,7 +4,6 @@
 #include "../eremeev_kinpo/exprNode.h"
 #include "../eremeev_kinpo/header.h"
 
-
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace TestFunctions
@@ -48,7 +47,7 @@ namespace TestFunctions
 		TEST_METHOD(Test1_OneOperation)
 		{
 			std::string rpnString = "5 x >";
-			std::set<Error>* errors;
+            std::set<Error>* errors = new std::set<Error>();
 			ExprNode* tree = stringToExprTree(rpnString, errors);
 
 
@@ -56,13 +55,13 @@ namespace TestFunctions
 
 			std::set <Error> expErrors;
 			Assert::IsTrue(compareExprTrees(&expTree, tree), L"");
-			Assert::AreEqual(expErrors.count(), errors.count(), L"");
+			Assert::AreEqual((size_t)expErrors.size(), errors->size(), L"");
 		}
 		TEST_METHOD(Test2_NestedOperation)
 		{
 			std::string rpnString = "5 x + 7 >=";
-			std::set<Error> errors;
-			ExprNode* tree = stringToExprTree(rpnString, &errors);
+            std::set<Error>* errors = new std::set<Error>();
+			ExprNode* tree = stringToExprTree(rpnString, errors);
 
 
 			ExprNode expFirstOperand(ExprNodeType::Plus, &ExprNode("5"), &ExprNode("x"));
@@ -71,13 +70,13 @@ namespace TestFunctions
 			std::set <Error> expErrors;
 
 			Assert::IsTrue(compareExprTrees(&expTree, tree), L"");
-			Assert::AreEqual(expErrors.count(), errors.count(), L"");
+			Assert::AreEqual((size_t)expErrors.size(), errors->size(), L"");
 		}
 		TEST_METHOD(Test3_UnaryOperation)
 		{
 			std::string rpnString = "5 ~ x <=";
-			std::set<Error> errors;
-			ExprNode* tree = stringToExprTree(rpnString, &errors);
+            std::set<Error>* errors = new std::set<Error>();
+			ExprNode* tree = stringToExprTree(rpnString, errors);
 
 			ExprNode expFirstOperand(ExprNodeType::UnaryMinus, &ExprNode("x"));
 			ExprNode expTree(ExprNodeType::GreaterEqual, &expFirstOperand, &ExprNode("x"));
@@ -85,13 +84,13 @@ namespace TestFunctions
 			std::set <Error> expErrors;
 
 			Assert::IsTrue(compareExprTrees(&expTree, tree), L"");
-			Assert::AreEqual(expErrors.count(), errors.count(), L"");
+			Assert::AreEqual((size_t)expErrors.size(), errors->size(), L"");
 		}
 		TEST_METHOD(Test4_MinusMultiplicationDivisionTest)
 		{
 			std::string rpnString = "5 x - 7 x * /";
-			std::set<Error> errors;
-			ExprNode* tree = stringToExprTree(rpnString, &errors);
+            std::set<Error>* errors = new std::set<Error>();
+			ExprNode* tree = stringToExprTree(rpnString, errors);
 
 
 			ExprNode expFirstOperand(ExprNodeType::Minus, &ExprNode("5"), &ExprNode("x"));
@@ -102,14 +101,14 @@ namespace TestFunctions
 			std::set <Error> expErrors;
 
 			Assert::IsTrue(compareExprTrees(&expTree, tree), L"");
-			Assert::AreEqual(expErrors.count(), errors.count(), L"");
+			Assert::AreEqual((size_t)expErrors.size(), errors->size(), L"");
 		}
 		TEST_METHOD(Test5_DivRemainderNotLessTest)
 		{
 			std::string rpnString = "5 x % 7 ! <";
-			std::set<Error> errors;
-			ExprNode* tree = stringToExprTree(rpnString, &errors);
-
+            std::set<Error>* errors = new std::set<Error>();
+			ExprNode* tree = stringToExprTree(rpnString, errors);
+						
 
 
 			ExprNode expFirstOperand(ExprNodeType::DivRemainder, &ExprNode("5"), &ExprNode("x"));
@@ -120,13 +119,13 @@ namespace TestFunctions
 			std::set <Error> expErrors;
 
 			Assert::IsTrue(compareExprTrees(&expTree, tree), L"");
-			Assert::AreEqual(expErrors.count(), errors.count(), L"");
+			Assert::AreEqual((size_t)expErrors.size(), errors->size(), L"");
 		}
 		TEST_METHOD(Test6__Variable)
 		{
 			std::string rpnString = "_123 1 +";
-			std::set<Error> errors;
-			ExprNode* tree = stringToExprTree(rpnString, &errors);
+            std::set<Error>* errors = new std::set<Error>();
+			ExprNode* tree = stringToExprTree(rpnString, errors);
 
 
 			ExprNode expTree(ExprNodeType::Plus, &ExprNode("_123"), &ExprNode("1"));
@@ -135,13 +134,13 @@ namespace TestFunctions
 			std::set <Error> expErrors;
 
 			Assert::IsTrue(compareExprTrees(&expTree, tree), L"");
-			Assert::AreEqual(expErrors.count(), errors.count(), L"");
+			Assert::AreEqual((size_t)expErrors.size(), errors->size(), L"");
 		}
 		TEST_METHOD(Test7_Integer_8)
 		{
 			std::string rpnString = "0127 1 +";
-			std::set<Error> errors;
-			ExprNode* tree = stringToExprTree(rpnString, &errors);
+            std::set<Error>* errors = new std::set<Error>();
+			ExprNode* tree = stringToExprTree(rpnString, errors);
 
 
 			ExprNode expTree(ExprNodeType::Plus, &ExprNode("0127"), &ExprNode("1"));
@@ -150,26 +149,26 @@ namespace TestFunctions
 			std::set <Error> expErrors;
 
 			Assert::IsTrue(compareExprTrees(&expTree, tree), L"");
-			Assert::AreEqual(expErrors.count(), errors.count(), L"");
+			Assert::AreEqual((size_t)expErrors.size(), errors->size(), L"");
 		}
 		TEST_METHOD(Test8_Integer_16)
 		{
 			std::string rpnString = "0x12AB 1 +";
-			std::set<Error> errors;
-			ExprNode* tree = stringToExprTree(rpnString, &errors);
+            std::set<Error>* errors = new std::set<Error>();
+			ExprNode* tree = stringToExprTree(rpnString, errors);
 
 			ExprNode expTree(ExprNodeType::Plus, &ExprNode("0x12AB"), &ExprNode("1"));
 
 			std::set <Error> expErrors;
 
 			Assert::IsTrue(compareExprTrees(&expTree, tree), L"");
-			Assert::AreEqual(expErrors.count(), errors.count(), L"");
+			Assert::AreEqual((size_t)expErrors.size(), errors->size(), L"");
 		}
 		TEST_METHOD(Test9_OnlyValue)
 		{
 			std::string rpnString = "5";
-			std::set<Error> errors;
-			ExprNode* tree = stringToExprTree(rpnString, &errors);
+            std::set<Error>* errors = new std::set<Error>();
+			ExprNode* tree = stringToExprTree(rpnString, errors);
 
 
 			ExprNode expTree("5");
@@ -177,13 +176,13 @@ namespace TestFunctions
 			std::set <Error> expErrors;
 
 			Assert::IsTrue(compareExprTrees(&expTree, tree), L"");
-			Assert::AreEqual(expErrors.count(), errors.count(), L"");
+			Assert::AreEqual((size_t)expErrors.size(), errors->size(), L"");
 		}
 		TEST_METHOD(Test10_MissingOperand)
 		{
 			std::string rpnString = "5 x + >";
-			std::set<Error> errors;
-			ExprNode* tree = stringToExprTree(rpnString, &errors);
+            std::set<Error>* errors = new std::set<Error>();
+			ExprNode* tree = stringToExprTree(rpnString, errors);
 
 
 
@@ -194,13 +193,13 @@ namespace TestFunctions
 			expErrors.insert(expError);
 
 			Assert::IsTrue(compareExprTrees(expTree, tree), L"");
-			Assert::AreEqual(expErrors.count(), errors.count(), L"");
+			Assert::AreEqual((size_t)expErrors.size(), errors->size(), L"");
 		}
 		TEST_METHOD(Test11_EdundantOperand)
 		{
 			std::string rpnString = "5 x 6 >";
-			std::set<Error> errors;
-			ExprNode* tree = stringToExprTree(rpnString, &errors);
+            std::set<Error>* errors = new std::set<Error>();
+			ExprNode* tree = stringToExprTree(rpnString, errors);
 
 
 
@@ -211,13 +210,13 @@ namespace TestFunctions
 			expErrors.insert(expError);
 
 			Assert::IsTrue(compareExprTrees(expTree, tree), L"");
-			Assert::AreEqual(expErrors.count(), errors.count(), L"");
+			Assert::AreEqual((size_t)expErrors.size(), errors->size(), L"");
 		}
 		TEST_METHOD(Test12_UnknownSymbol)
 		{
 			std::string rpnString = "5 ( >";
-			std::set<Error> errors;
-			ExprNode* tree = stringToExprTree(rpnString, &errors);
+            std::set<Error>* errors = new std::set<Error>();
+			ExprNode* tree = stringToExprTree(rpnString, errors);
 
 
 
@@ -228,13 +227,13 @@ namespace TestFunctions
 			expErrors.insert(expError);
 
 			Assert::IsTrue(compareExprTrees(expTree, tree), L"");
-			Assert::AreEqual(expErrors.count(), errors.count(), L"");
+			Assert::AreEqual((size_t)expErrors.size(), errors->size(), L"");
 		}
 		TEST_METHOD(Test13_UnknownSymbolCombination)
 		{
 			std::string rpnString = "_12*4/";
-			std::set<Error> errors;
-			ExprNode* tree = stringToExprTree(rpnString, &errors);
+            std::set<Error>* errors = new std::set<Error>();
+			ExprNode* tree = stringToExprTree(rpnString, errors);
 
 
 
@@ -245,7 +244,7 @@ namespace TestFunctions
 			expErrors.insert(expError);
 
 			Assert::IsTrue(compareExprTrees(expTree, tree), L"");
-			Assert::AreEqual(expErrors.count(), errors.count(), L"");
+			Assert::AreEqual((size_t)expErrors.size(), errors->size(), L"");
 		}
 	};
 
@@ -362,36 +361,36 @@ namespace TestFunctions
 	public:
 		TEST_METHOD(Test1_CurrentIsLess) {
 
-			std::set<Error> errors;
-			ExprNode* tree = stringToExprTree("5 x <", &errors);
+            std::set<Error>* errors = new std::set<Error>();
+			ExprNode* tree = stringToExprTree("5 x <", errors);
 			transformInequalityToLessOperator(tree);
 
-			ExprNode* expTree = stringToExprTree("5 x <", &errors);
+			ExprNode* expTree = stringToExprTree("5 x <", errors);
 
 			Assert::IsTrue(compareExprTrees(expTree, tree), L"");
 		}
 		TEST_METHOD(Test2_CurrentIsLessEqual) {
-			std::set<Error> errors;
-			ExprNode* tree = stringToExprTree("5 x <=", &errors);
+            std::set<Error>* errors = new std::set<Error>();
+			ExprNode* tree = stringToExprTree("5 x <=", errors);
 			transformInequalityToLessOperator(tree);
 
-			ExprNode* expTree = stringToExprTree("x 5 < !", &errors);
+			ExprNode* expTree = stringToExprTree("x 5 < !", errors);
 			Assert::IsTrue(compareExprTrees(expTree, tree), L"");
 		}
 		TEST_METHOD(Test3_CurrentIsGreater) {
-			std::set<Error> errors;
-			ExprNode* tree = stringToExprTree("5 x + x + 7 >", &errors);
+            std::set<Error>* errors = new std::set<Error>();
+			ExprNode* tree = stringToExprTree("5 x + x + 7 >", errors);
 			transformInequalityToLessOperator(tree);
 
-			ExprNode* expTree = stringToExprTree("7 5 x + x + <", &errors);
+			ExprNode* expTree = stringToExprTree("7 5 x + x + <", errors);
 			Assert::IsTrue(compareExprTrees(expTree, tree), L"");
 		}
 		TEST_METHOD(Test4_CurrentIsGreaterEqual) {
-			std::set<Error> errors;
-			ExprNode* tree = stringToExprTree("5 x >=", &errors);
+            std::set<Error>* errors = new std::set<Error>();
+			ExprNode* tree = stringToExprTree("5 x >=", errors);
 			transformInequalityToLessOperator(tree);
 
-			ExprNode* expTree = stringToExprTree("5 x < !", &errors);
+			ExprNode* expTree = stringToExprTree("5 x < !", errors);
 			Assert::IsTrue(compareExprTrees(expTree, tree), L"");
 		}
 	};
@@ -399,22 +398,22 @@ namespace TestFunctions
 	TEST_CLASS(TestSwapOperands)
 	{
 	public:
-		TEST_METHOD(Test2_OperandsAreNodes) {
+		TEST_METHOD(Test1_OperandsAreNotNodes) {
 
-			std::set<Error> errors;
-			ExprNode* tree = stringToExprTree("5 x <", &errors);
+            std::set<Error>* errors = new std::set<Error>();
+			ExprNode* tree = stringToExprTree("5 x <", errors);
 			tree->swapOperands();
 
-			ExprNode* expTree = stringToExprTree("x 5 <", &errors);
+			ExprNode* expTree = stringToExprTree("x 5 <", errors);
 			Assert::IsTrue(compareExprTrees(expTree, tree), L"");
 		}
 		TEST_METHOD(Test2_OperandsAreNodes) {
 
-			std::set<Error> errors;
-			ExprNode* tree = stringToExprTree("5 x + 7 <", &errors);
+            std::set<Error>* errors = new std::set<Error>();
+			ExprNode* tree = stringToExprTree("5 x + 7 <", errors);
 			tree->swapOperands();
 
-			ExprNode *expTree = stringToExprTree("7 x 5 + <", &errors);
+			ExprNode *expTree = stringToExprTree("7 x 5 + <", errors);
 			Assert::IsTrue(compareExprTrees(expTree, tree), L"");
 		}
 	};
@@ -423,29 +422,29 @@ namespace TestFunctions
 	{
 	public:
 		TEST_METHOD(Test1_CurrentIsValue) {
-			std::set<Error> errors;
-			ExprNode* tree = stringToExprTree("5", &errors);
+            std::set<Error>* errors = new std::set<Error>();
+			ExprNode* tree = stringToExprTree("5", errors);
 			tree->addUnaryOperatorBefore(ExprNodeType::Not);
 
-			ExprNode* expTree = stringToExprTree("5 !", &errors);
+			ExprNode* expTree = stringToExprTree("5 !", errors);
 			Assert::IsTrue(compareExprTrees(expTree, tree), L"");
 		}
 
 		TEST_METHOD(Test2_CurrentIsOperation) {
-			std::set<Error> errors;
-			ExprNode* tree = stringToExprTree("5 x <", &errors);
+            std::set<Error>* errors = new std::set<Error>();
+			ExprNode* tree = stringToExprTree("5 x <", errors);
 			tree->addUnaryOperatorBefore(ExprNodeType::Not);
 
-			ExprNode* expTree = stringToExprTree("5 x < !", &errors);
+			ExprNode* expTree = stringToExprTree("5 x < !", errors);
 			Assert::IsTrue(compareExprTrees(expTree, tree), L"");
 		}
 
 		TEST_METHOD(Test3_CurrentIsIntermediate) {
-			std::set<Error> errors;
-			ExprNode* tree = stringToExprTree("5 x <", &errors);
+            std::set<Error>* errors = new std::set<Error>();
+			ExprNode* tree = stringToExprTree("5 x <", errors);
 			tree->secondOperand->addUnaryOperatorBefore(ExprNodeType::Not);
 
-			ExprNode* expTree = stringToExprTree("5 x ! <", &errors);
+			ExprNode* expTree = stringToExprTree("5 x ! <", errors);
 			Assert::IsTrue(compareExprTrees(expTree, tree), L"");
 		}
 	};
@@ -453,8 +452,8 @@ namespace TestFunctions
 	{
 	public:
 		TEST_METHOD(Test1_RootHasNoChildren) {
-			std::set<Error> errors;
-			ExprNode* tree = stringToExprTree("x 5 >", &errors);
+            std::set<Error>* errors = new std::set<Error>();
+			ExprNode* tree = stringToExprTree("x 5 >", errors);
 			std::string str = tree->getRpmOfTree();
 
 			std::string expString = "x 5 >";
@@ -463,8 +462,8 @@ namespace TestFunctions
 
 		TEST_METHOD(Test2_RootHasChildren) {
 
-			std::set<Error> errors;
-			ExprNode* tree = stringToExprTree("x 5 + 7 <=", &errors);
+            std::set<Error>* errors = new std::set<Error>();
+			ExprNode* tree = stringToExprTree("x 5 + 7 <=", errors);
 			std::string str = tree->getRpmOfTree();
 
 			std::string expString = "x 5 + 7 <=";
@@ -472,8 +471,8 @@ namespace TestFunctions
 		}
 
 		TEST_METHOD(Test3_RootIsValue) {
-			std::set<Error> errors;
-			ExprNode* tree = stringToExprTree("5", &errors);
+            std::set<Error>* errors = new std::set<Error>();
+			ExprNode* tree = stringToExprTree("5", errors);
 			std::string str = tree->getRpmOfTree();
 
 			std::string expString = "5";
@@ -481,8 +480,8 @@ namespace TestFunctions
 		}
 
 		TEST_METHOD(Test4_TreeContainsUnaryOperations) {
-			std::set<Error> errors;
-			ExprNode* tree = stringToExprTree("x ~ 5 >=", &errors);
+            std::set<Error>* errors = new std::set<Error>();
+			ExprNode* tree = stringToExprTree("x ~ 5 >=", errors);
 			std::string str = tree->getRpmOfTree();
 
 			std::string expString = "x ~ 5 >=";
@@ -490,8 +489,8 @@ namespace TestFunctions
 		}
 
 		TEST_METHOD(Test5_CheckMinusMultiplicationDivision) {
-			std::set<Error> errors;
-			ExprNode* tree = stringToExprTree("5 x - 7 x * /", &errors);
+            std::set<Error>* errors = new std::set<Error>();
+			ExprNode* tree = stringToExprTree("5 x - 7 x * /", errors);
 			std::string str = tree->getRpmOfTree();
 
 			std::string expString = "5 x - 7 x * /";
@@ -499,8 +498,8 @@ namespace TestFunctions
 		}
 
 		TEST_METHOD(Test6_CheckRemainderNotLess) {
-			std::set<Error> errors;
-			ExprNode* tree = stringToExprTree("5 x % 7 ! <", &errors);
+            std::set<Error>* errors = new std::set<Error>();
+			ExprNode* tree = stringToExprTree("5 x % 7 ! <", errors);
 			std::string str = tree->getRpmOfTree();
 
 			std::string expString = "5 x % 7 ! <";
@@ -508,8 +507,8 @@ namespace TestFunctions
 		}
 
 		TEST_METHOD(Test7_StringContainsUnderscoreVariables) {
-			std::set<Error> errors;
-			ExprNode* tree = stringToExprTree("_123 1 +", &errors);
+            std::set<Error>* errors = new std::set<Error>();
+			ExprNode* tree = stringToExprTree("_123 1 +", errors);
 			std::string str = tree->getRpmOfTree();
 
 			std::string expString = "_123 1 +";
@@ -517,8 +516,8 @@ namespace TestFunctions
 		}
 
 		TEST_METHOD(Test8_StringContainsOctalNumbers) {
-			std::set<Error> errors;
-			ExprNode* tree = stringToExprTree("0127 1 +", &errors);
+            std::set<Error>* errors = new std::set<Error>();
+			ExprNode* tree = stringToExprTree("0127 1 +", errors);
 			std::string str = tree->getRpmOfTree();
 
 			std::string expString = "0127 1 +";
@@ -526,8 +525,8 @@ namespace TestFunctions
 		}
 
 		TEST_METHOD(Test9_StringContainsHexadecimalNumbers) {
-			std::set<Error> errors;
-			ExprNode* tree = stringToExprTree("0x12AB 1 +", &errors);
+            std::set<Error>* errors = new std::set<Error>();
+			ExprNode* tree = stringToExprTree("0x12AB 1 +", errors);
 			std::string str = tree->getRpmOfTree();
 
 			std::string expString = "0x12AB 1 +";
