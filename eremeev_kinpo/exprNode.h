@@ -23,6 +23,21 @@ public:
     //статический словарь с символами
     static const std::set<std::string> operatorsSymbols;
 
+    // онструктор по умолчанию
+    ExprNode(){}
+
+    // онструктор дл€ узла операнда
+    ExprNode(std::string _value) :
+        type(ExprNodeType::Operand), value(_value){}
+
+    // онструктор дл€ узла унарной операции
+    ExprNode(ExprNodeType _type, ExprNode* _firstOperand) :
+        type(_type), firstOperand(_firstOperand) {}
+
+    // онструктор дл€ узла бинарной операции
+    ExprNode(ExprNodeType _type, ExprNode* _firstOperand, ExprNode* _secondOperand) :
+        type(_type), firstOperand(_firstOperand), secondOperand(_secondOperand) {}
+
     /*!
     * \ћен€ет местами операнды узла дерева разбора выражени€
     * \this Ц узел, операнды которого помен€ютс€ местами
