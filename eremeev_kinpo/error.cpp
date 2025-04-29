@@ -1,5 +1,4 @@
 #include "error.h"
-#include <string>
 
 std::string Error::generateErrorMessage() const {
     std::string message = "";

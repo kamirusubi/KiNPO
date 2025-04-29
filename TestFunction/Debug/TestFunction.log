@@ -1,10 +1,4 @@
-﻿  pch.cpp
-  TestFunction.cpp
+﻿  TestFunction.cpp
+D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.cpp(14,1): warning C4172: возвращение адреса локальной или временной переменной : ex
      Создается библиотека D:\GITHUB\KiNPO\eremeev_kinpo\Debug\TestFunction.lib и объект D:\GITHUB\KiNPO\eremeev_kinpo\Debug\TestFunction.exp
-eremeev_kinpo.obj : error LNK2019: ссылка на неразрешенный внешний символ "public: void __thiscall ExprNode::addUnaryOperatorBefore(enum ExprNodeType)" (?addUnaryOperatorBefore@ExprNode@@QAEXW4ExprNodeType@@@Z) в функции _main.
-TestFunction.obj : error LNK2001: неразрешенный внешний символ "public: void __thiscall ExprNode::addUnaryOperatorBefore(enum ExprNodeType)" (?addUnaryOperatorBefore@ExprNode@@QAEXW4ExprNodeType@@@Z).
-eremeev_kinpo.obj : error LNK2019: ссылка на неразрешенный внешний символ "public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall ExprNode::getRpmOfTree(void)const " (?getRpmOfTree@ExprNode@@QBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ) в функции _main.
-TestFunction.obj : error LNK2001: неразрешенный внешний символ "public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall ExprNode::getRpmOfTree(void)const " (?getRpmOfTree@ExprNode@@QBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ).
-TestFunction.obj : error LNK2019: ссылка на неразрешенный внешний символ "public: bool __thiscall Error::operator<(class Error const &)const " (??MError@@QBE_NABV0@@Z) в функции "public: bool __thiscall std::less<class Error>::operator()(class Error const &,class Error const &)const " (??R?$less@VError@@@std@@QBE_NABVError@@0@Z).
-TestFunction.obj : error LNK2019: ссылка на неразрешенный внешний символ "public: void __thiscall ExprNode::swapOperands(void)" (?swapOperands@ExprNode@@QAEXXZ) в функции "public: void __thiscall TestFunctions::TestSwapOperands::Test1_OperandsAreNotNodes(void)" (?Test1_OperandsAreNotNodes@TestSwapOperands@TestFunctions@@QAEXXZ).
-D:\GITHUB\KiNPO\eremeev_kinpo\Debug\TestFunction.dll : fatal error LNK1120: неразрешенных внешних элементов: 4
+  TestFunction.vcxproj -> D:\GITHUB\KiNPO\eremeev_kinpo\Debug\TestFunction.dll

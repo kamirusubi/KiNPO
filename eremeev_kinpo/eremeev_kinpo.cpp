@@ -1,6 +1,5 @@
 ﻿#include <iostream>
-#include "exprNode.h"
-#include "error.h"
+#include "header.h"
 
 ExprNode* stringToExprTree(std::string rpnString, std::set <Error>* errors) {
     ExprNode ex;

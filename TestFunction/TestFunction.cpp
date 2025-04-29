@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "CppUnitTest.h"
-#include "../eremeev_kinpo/error.h"
-#include "../eremeev_kinpo/exprNode.h"
+#include "../eremeev_kinpo/error.cpp"
+#include "../eremeev_kinpo/exprNode.cpp"
 #include "../eremeev_kinpo/header.h"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
