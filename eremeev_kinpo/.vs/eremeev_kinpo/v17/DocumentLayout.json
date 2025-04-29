@@ -1,7 +1,11 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\GITHUB\\KiNPO\\eremeev_kinpo\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2CC2418D-360E-4EB2-B969-45F1BD128A9E}|..\\TestFunction\\TestFunction.vcxproj|D:\\GITHUB\\KiNPO\\TestFunction\\TestFunction.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +13,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TestFunction.cpp",
+              "DocumentMoniker": "D:\\GITHUB\\KiNPO\\TestFunction\\TestFunction.cpp",
+              "RelativeDocumentMoniker": "..\\TestFunction\\TestFunction.cpp",
+              "ToolTip": "D:\\GITHUB\\KiNPO\\TestFunction\\TestFunction.cpp",
+              "RelativeToolTip": "..\\TestFunction\\TestFunction.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-29T07:39:54.366Z",
+              "EditorCaption": ""
             }
           ]
         }
