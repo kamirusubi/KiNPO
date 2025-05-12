@@ -4,31 +4,31 @@ std::string Error::generateErrorMessage() const {
     std::string message = "";
     switch (type) {
     case ErrorType::inFileNotExist:
-        message = "Input file does not exist: ";
+        message = "Input file does not exist: " + errorInputFilePath;
         break;
     case ErrorType::outFileCreateFail:
-        message = "Failed to create output file: ";
+        message = "Failed to create output file: " + errorOutputFilePath;
         break;
     case ErrorType::emptyFile:
         message = "File is empty: ";
         break;
     case ErrorType::moreThenOneLineInFile:
-        message = "File contains more than one line: ";
+        message = "File contains more than one line: " + strWithError;
         break;
     case ErrorType::invalidRootOperator:
-        message = "Invalid root operator: ";
+        message = "Invalid root operator \"" + strWithError + "\"";
         break;
     case ErrorType::unknownSymbol:
-        message = "Unknown symbol: ";
+        message = "Unknown symbol \"" + strWithError + "\" on position " + std::to_string(position);
         break;
     case ErrorType::missingOperand:
-        message = "Missing operand: ";
+        message = "Missing operand \"" + strWithError + "\" on position " + std::to_string(position);
         break;
     case ErrorType::redundantOperand:
-        message = "Redundant operand: ";
+        message = "Redundant operand \"" + strWithError + "\" on position " + std::to_string(position);
         break;
     default:
-        message = "Unknown error: ";
+        message = "";
     }
     return message;
 }
