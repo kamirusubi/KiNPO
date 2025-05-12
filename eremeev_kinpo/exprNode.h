@@ -61,5 +61,5 @@ public:
     * \Создает строку с обратной польской
     * \return – строка с обратной польской записью
     */
-    std::string getRpmOfTree() const;
+    std::string getRpnOfTree() const;
 };

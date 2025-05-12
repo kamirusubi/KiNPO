@@ -47,7 +47,7 @@ ExprNode* ExprNode::copyNode() const {
     return newNode; // ¬озвращаем указатель на скопированный узел
 }
 
-std::string ExprNode::getRpmOfTree() const {
+std::string ExprNode::getRpnOfTree() const {
     std::string result = ""; // —трока дл€ хранени€ обратной польской записи
 
     // ≈сли текущий узел - операнд
@@ -58,11 +58,11 @@ std::string ExprNode::getRpmOfTree() const {
     // »наче если текущий узел имеет первый операнд
     else if (firstOperand) {
             // «аписываем обратную польскую запись первого операнда
-            result += firstOperand->getRpmOfTree() + " ";
+            result += firstOperand->getRpnOfTree() + " ";
         // ≈сли текущий узел имеет второй операнд
         if (secondOperand) {
             // «аписываем обратную польскую запись второго операнда
-            result += secondOperand->getRpmOfTree() + " ";
+            result += secondOperand->getRpnOfTree() + " ";
         }
         // ƒобавл€ем к строке математическую запись оператора из словар€ stringToSymbol
         result += stringToSymbol.at(type);

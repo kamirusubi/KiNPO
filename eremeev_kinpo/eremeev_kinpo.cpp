@@ -190,7 +190,7 @@ int main()
     std::set<Error>* errors = new std::set<Error>();
     ExprNode* tree = stringToExprTree(rpnString, errors);
     tree->swapOperands();
-    rpnString = tree->getRpmOfTree();
+    rpnString = tree->getRpnOfTree();
     std::cout << rpnString;
 
     return 0;
