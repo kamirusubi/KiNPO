@@ -3,7 +3,10 @@
   "WorkspaceRootPath": "D:\\GITHUB\\KiNPO\\eremeev_kinpo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2CC2418D-360E-4EB2-B969-45F1BD128A9E}|..\\TestFunction\\TestFunction.vcxproj|D:\\GITHUB\\KiNPO\\TestFunction\\TestGetRpnOfExprTree.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{2CC2418D-360E-4EB2-B969-45F1BD128A9E}|..\\TestFunction\\TestFunction.vcxproj|D:\\GITHUB\\KiNPO\\TestFunction\\TestAddUnaryOperatorBefore.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CC2418D-360E-4EB2-B969-45F1BD128A9E}|..\\TestFunction\\TestFunction.vcxproj|D:\\GITHUB\\KiNPO\\TestFunction\\compareTrees.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,14 +25,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "TestGetRpnOfExprTree.cpp",
-              "DocumentMoniker": "D:\\GITHUB\\KiNPO\\TestFunction\\TestGetRpnOfExprTree.cpp",
-              "RelativeDocumentMoniker": "..\\TestFunction\\TestGetRpnOfExprTree.cpp",
-              "ToolTip": "D:\\GITHUB\\KiNPO\\TestFunction\\TestGetRpnOfExprTree.cpp",
-              "RelativeToolTip": "..\\TestFunction\\TestGetRpnOfExprTree.cpp",
-              "ViewState": "AQIAAEUAAAAAAAAAAAAAABsAAAAqAAAA",
+              "Title": "TestAddUnaryOperatorBefore.cpp",
+              "DocumentMoniker": "D:\\GITHUB\\KiNPO\\TestFunction\\TestAddUnaryOperatorBefore.cpp",
+              "RelativeDocumentMoniker": "..\\TestFunction\\TestAddUnaryOperatorBefore.cpp",
+              "ToolTip": "D:\\GITHUB\\KiNPO\\TestFunction\\TestAddUnaryOperatorBefore.cpp",
+              "RelativeToolTip": "..\\TestFunction\\TestAddUnaryOperatorBefore.cpp",
+              "ViewState": "AQIAABkAAAAAAAAAAAASwBwAAAA2AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-12T11:21:18.744Z",
+              "WhenOpened": "2025-05-12T12:46:48.242Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "compareTrees.cpp",
+              "DocumentMoniker": "D:\\GITHUB\\KiNPO\\TestFunction\\compareTrees.cpp",
+              "RelativeDocumentMoniker": "..\\TestFunction\\compareTrees.cpp",
+              "ToolTip": "D:\\GITHUB\\KiNPO\\TestFunction\\compareTrees.cpp",
+              "RelativeToolTip": "..\\TestFunction\\compareTrees.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-12T12:17:40.69Z",
               "EditorCaption": ""
             }
           ]

@@ -1,37 +1,54 @@
 #include "pch.h"
 #include "compareTrees.h"
-	bool compareExprTrees(const ExprNode* expTree, const ExprNode* tree) {
-		bool flag = true;
-		// Если оба узла nullptr, деревья одинаковы (базовый случай)
-		if (expTree == nullptr && tree == nullptr) {
-			return true;
-		}
+#include <sstream>
+#include <locale>
+#include <codecvt>
 
-		// Если один из узлов nullptr, а другой нет, деревья разные
-		if ((expTree == nullptr && tree != nullptr) || (expTree != nullptr && tree == nullptr)) {
-			flag = false && flag;
-		}
+// Функция для преобразования std::string в std::wstring
+std::wstring s2ws(const std::string& s) {
+    std::wstring_convert<std::codecvt_utf8<wchar_t>> converter;
+    return converter.from_bytes(s);
+}
 
-		// Сравнение типов узлов
-		if (expTree->type != tree->type) {
-			flag = false && flag;
-		}
+bool compareExprTrees(const ExprNode* expected, const ExprNode* actual, const std::wstring& path, std::set<std::wstring>* errors) {
+    bool flag = true;
+    std::wstring error = L"On path \"" + path + L"\" expected: "; // Преобразование path к std::wstring
 
-		// Сравнение значений (только для операндов)
-		if (expTree->type == ExprNodeType::Operand && expTree->value != tree->value) {
-			flag = false && flag;
-		}
+    if (expected == nullptr && actual == nullptr) {
+        return true;
+    }
 
-		// Рекурсивное сравнение операндов
-		if (!compareExprTrees(expTree->firstOperand, tree->firstOperand)) {
-			flag = false && flag;
-		}
-		if (!compareExprTrees(expTree->secondOperand, tree->secondOperand)) {
-			flag = false && flag;
-		}
+    if (expected == nullptr && actual != nullptr) {
+        error += L"nullptr; actual " + s2ws(actual->getRpnOfTree());
+        errors->insert(error);
+        return false;
+    }
 
-		// Если все проверки пройдены, деревья одинаковы
-		return flag;
-	}
+    if (expected != nullptr && actual == nullptr) {
+        error += s2ws(expected->getRpnOfTree()) + L"; actual: nullptr"; // Преобразование здесь
+        errors->insert(error);
+        return false;
+    }
 
-	
+    if (expected->type != actual->type) {
+        error += s2ws(ExprNode::stringToSymbol.at(expected->type)) + L"; actual: " + s2ws(ExprNode::stringToSymbol.at(actual->type)); // Преобразование здесь
+        errors->insert(error);
+        return false;
+    }
+
+    if (expected->type == ExprNodeType::Operand && expected->value != actual->value) {
+        error += s2ws(expected->value) + L"; actual: " + s2ws(actual->value); // Преобразование здесь
+        errors->insert(error);
+        return false;
+    }
+
+    if (expected->firstOperand != nullptr || actual->firstOperand != nullptr) {
+        flag = compareExprTrees(expected->firstOperand, actual->firstOperand, path + s2ws(ExprNode::stringToSymbol.at(expected->type)) + L" -> ", errors) && flag;
+    }
+
+    if (expected->secondOperand != nullptr || actual->secondOperand != nullptr) {
+        flag = compareExprTrees(expected->secondOperand, actual->secondOperand, path + s2ws(ExprNode::stringToSymbol.at(expected->type)) + L" -> ", errors) && flag;
+    }
+
+    return flag;
+}
