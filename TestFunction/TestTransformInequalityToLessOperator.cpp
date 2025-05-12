@@ -20,13 +20,13 @@ namespace TestFunctions
 
 			ExprNode* expTree = stringToExprTree("5 x <", errors);
 
-			std::set<std::wstring> _errors;
-			bool areEqual = compareExprTrees(tree, expTree, L"", &_errors);
+			std::set<std::wstring> compareTreesErrors;
+			bool areEqual = compareExprTrees(tree, expTree, L"", &compareTreesErrors);
 			// Собираем все ошибки в одну строку для Assert
 			std::wstringstream wss;
-			if (!_errors.empty()) {
+			if (!compareTreesErrors.empty()) {
 				wss << L"Test 1 Failed: trees are not equal. Errors:\n";
-				for (std::wstring error : _errors) {
+				for (std::wstring error : compareTreesErrors) {
 					wss << error;
 				}
 			}
@@ -39,13 +39,13 @@ namespace TestFunctions
 
 			ExprNode* expTree = stringToExprTree("x 5 < !", errors);
 
-			std::set<std::wstring> _errors;
-			bool areEqual = compareExprTrees(tree, expTree, L"", &_errors);
+			std::set<std::wstring> compareTreesErrors;
+			bool areEqual = compareExprTrees(tree, expTree, L"", &compareTreesErrors);
 			// Собираем все ошибки в одну строку для Assert
 			std::wstringstream wss;
-			if (!_errors.empty()) {
+			if (!compareTreesErrors.empty()) {
 				wss << L"Test 2 Failed: trees are not equal. Errors:\n";
-				for (std::wstring error : _errors) {
+				for (std::wstring error : compareTreesErrors) {
 					wss << error;
 				}
 			}
@@ -58,13 +58,13 @@ namespace TestFunctions
 
 			ExprNode* expTree = stringToExprTree("7 5 x + x + <", errors);
 
-			std::set<std::wstring> _errors;
-			bool areEqual = compareExprTrees(tree, expTree, L"", &_errors);
+			std::set<std::wstring> compareTreesErrors;
+			bool areEqual = compareExprTrees(tree, expTree, L"", &compareTreesErrors);
 			// Собираем все ошибки в одну строку для Assert
 			std::wstringstream wss;
-			if (!_errors.empty()) {
+			if (!compareTreesErrors.empty()) {
 				wss << L"Test 3 Failed: trees are not equal. Errors:\n";
-				for (std::wstring error : _errors) {
+				for (std::wstring error : compareTreesErrors) {
 					wss << error;
 				}
 			}
@@ -77,13 +77,13 @@ namespace TestFunctions
 
 			ExprNode* expTree = stringToExprTree("5 x < !", errors);
 
-			std::set<std::wstring> _errors;
-			bool areEqual = compareExprTrees(tree, expTree, L"", &_errors);
+			std::set<std::wstring> compareTreesErrors;
+			bool areEqual = compareExprTrees(tree, expTree, L"", &compareTreesErrors);
 			// Собираем все ошибки в одну строку для Assert
 			std::wstringstream wss;
-			if (!_errors.empty()) {
+			if (!compareTreesErrors.empty()) {
 				wss << L"Test 4 Failed: trees are not equal. Errors:\n";
-				for (std::wstring error : _errors) {
+				for (std::wstring error : compareTreesErrors) {
 					wss << error;
 				}
 			}

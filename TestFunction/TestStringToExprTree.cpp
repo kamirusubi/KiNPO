@@ -2,6 +2,7 @@
 #include "CppUnitTest.h"
 #include "../eremeev_kinpo/header.h"
 #include "compareTrees.h"
+#include "compareErrors.h"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
@@ -20,20 +21,29 @@ namespace TestFunctions
 			ExprNode expTree(ExprNodeType::Greater, new ExprNode("5"), new ExprNode("x"));
 			std::set <Error> expErrors;
 
-
-			std::set<std::wstring> _errors;
-			bool areEqual = compareExprTrees(tree, &expTree, L"", &_errors);
+			std::set<std::wstring> compareTreesErrors;
+			bool areEqualTrees = compareExprTrees(tree, &expTree, L"", &compareTreesErrors);
 			// Собираем все ошибки в одну строку для Assert
 			std::wstringstream wss;
-			if (!_errors.empty()) {
+			if (!compareTreesErrors.empty()) {
 				wss << L"Test 1 Failed: trees are not equal. Errors:\n";
-				for (std::wstring error : _errors) {
+				for (std::wstring error : compareTreesErrors) {
 					wss << error;
 				}
 			}
-			Assert::IsTrue(areEqual, wss.str().c_str());
+			Assert::IsTrue(areEqualTrees, wss.str().c_str());
 
-			Assert::IsTrue(expErrors == *errors, L"Test 1 Failed: the error container should be empty");
+
+			std::set<Error> diffErrors = compareErrorSets(expErrors, *errors);
+			wss.clear();
+			if (!diffErrors.empty()) {
+				wss << L"Test 1 Failed: the error container should be empty. Errors:\n";
+				for (Error error : diffErrors) {
+					wss << error.generateErrorMessage().c_str();
+				}
+			}
+			Assert::IsTrue(diffErrors.empty(), wss.str().c_str());
+
 		}
 		TEST_METHOD(Test2_NestedOperation) // Строка содержит вложенные операции
 		{
@@ -45,18 +55,27 @@ namespace TestFunctions
 			ExprNode expTree(ExprNodeType::GreaterEqual, &expFirstOperand, new ExprNode("7"));
 			std::set <Error> expErrors;
 
-			std::set<std::wstring> _errors;
-			bool areEqual = compareExprTrees(tree, &expTree, L"", &_errors);
+			std::set<std::wstring> compareTreesErrors;
+			bool areEqualTrees = compareExprTrees(tree, &expTree, L"", &compareTreesErrors);
 			// Собираем все ошибки в одну строку для Assert
 			std::wstringstream wss;
-			if (!_errors.empty()) {
+			if (!compareTreesErrors.empty()) {
 				wss << L"Test 2 Failed: trees are not equal. Errors:\n";
-				for (std::wstring error : _errors) {
+				for (std::wstring error : compareTreesErrors) {
 					wss << error;
 				}
 			}
-			Assert::IsTrue(areEqual, wss.str().c_str());
-			Assert::IsTrue(expErrors == *errors, L"Test 2 Failed: the error container should be empty");
+			Assert::IsTrue(areEqualTrees, wss.str().c_str());
+
+			std::set<Error> diffErrors = compareErrorSets(expErrors, *errors);
+			wss.clear();
+			if (!diffErrors.empty()) {
+				wss << L"Test 2 Failed: the error container should be empty. Errors:\n";
+				for (Error error : diffErrors) {
+					wss << error.generateErrorMessage().c_str();
+				}
+			}
+			Assert::IsTrue(diffErrors.empty(), wss.str().c_str());
 		}
 		TEST_METHOD(Test3_UnaryOperation)//Строка содержит унарные операции
 		{
@@ -68,18 +87,27 @@ namespace TestFunctions
 			ExprNode expTree(ExprNodeType::LessEqual, &expFirstOperand, new ExprNode("x"));
 			std::set <Error> expErrors;
 
-			std::set<std::wstring> _errors;
-			bool areEqual = compareExprTrees(tree, &expTree, L"", &_errors);
+			std::set<std::wstring> compareTreesErrors;
+			bool areEqualTrees = compareExprTrees(tree, &expTree, L"", &compareTreesErrors);
 			// Собираем все ошибки в одну строку для Assert
 			std::wstringstream wss;
-			if (!_errors.empty()) {
+			if (!compareTreesErrors.empty()) {
 				wss << L"Test 3 Failed: trees are not equal. Errors:\n";
-				for (std::wstring error : _errors) {
+				for (std::wstring error : compareTreesErrors) {
 					wss << error;
 				}
 			}
-			Assert::IsTrue(areEqual, wss.str().c_str());
-			Assert::IsTrue(expErrors == *errors, L"Test 3 Failed: the error container should be empty");
+			Assert::IsTrue(areEqualTrees, wss.str().c_str());
+
+			std::set<Error> diffErrors = compareErrorSets(expErrors, *errors);
+			wss.clear();
+			if (!diffErrors.empty()) {
+				wss << L"Test 3 Failed: the error container should be empty. Errors:\n";
+				for (Error error : diffErrors) {
+					wss << error.generateErrorMessage().c_str();
+				}
+			}
+			Assert::IsTrue(diffErrors.empty(), wss.str().c_str());
 		}
 		TEST_METHOD(Test4_MinusMultiplicationDivisionTest) //Проверка операторов «-», «*», «/»
 		{
@@ -92,18 +120,27 @@ namespace TestFunctions
 			ExprNode expTree(ExprNodeType::Division, &expFirstOperand, &expSecondOperand);
 			std::set <Error> expErrors;
 
-			std::set<std::wstring> _errors;
-			bool areEqual = compareExprTrees(tree, &expTree, L"", &_errors);
+			std::set<std::wstring> compareTreesErrors;
+			bool areEqualTrees = compareExprTrees(tree, &expTree, L"", &compareTreesErrors);
 			// Собираем все ошибки в одну строку для Assert
 			std::wstringstream wss;
-			if (!_errors.empty()) {
+			if (!compareTreesErrors.empty()) {
 				wss << L"Test 4 Failed: trees are not equal. Errors:\n";
-				for (std::wstring error : _errors) {
+				for (std::wstring error : compareTreesErrors) {
 					wss << error;
 				}
 			}
-			Assert::IsTrue(areEqual, wss.str().c_str());
-			Assert::IsTrue(expErrors == *errors, L"Test 4 Failed: the error container should be empty");
+			Assert::IsTrue(areEqualTrees, wss.str().c_str());
+
+			std::set<Error> diffErrors = compareErrorSets(expErrors, *errors);
+			wss.clear();
+			if (!diffErrors.empty()) {
+				wss << L"Test 4 Failed: the error container should be empty. Errors:\n";
+				for (Error error : diffErrors) {
+					wss << error.generateErrorMessage().c_str();
+				}
+			}
+			Assert::IsTrue(diffErrors.empty(), wss.str().c_str());
 		}
 		TEST_METHOD(Test5_DivRemainderNotLessTest)// Проверка операторов «%», «!», «<»
 		{
@@ -116,18 +153,27 @@ namespace TestFunctions
 			ExprNode expTree(ExprNodeType::Less, &expFirstOperand, &expSecondOperand);
 			std::set <Error> expErrors;
 
-			std::set<std::wstring> _errors;
-			bool areEqual = compareExprTrees(tree, &expTree, L"", &_errors);
+			std::set<std::wstring> compareTreesErrors;
+			bool areEqualTrees = compareExprTrees(tree, &expTree, L"", &compareTreesErrors);
 			// Собираем все ошибки в одну строку для Assert
 			std::wstringstream wss;
-			if (!_errors.empty()) {
+			if (!compareTreesErrors.empty()) {
 				wss << L"Test 5 Failed: trees are not equal. Errors:\n";
-				for (std::wstring error : _errors) {
+				for (std::wstring error : compareTreesErrors) {
 					wss << error;
 				}
 			}
-			Assert::IsTrue(areEqual, wss.str().c_str());
-			Assert::IsTrue(expErrors == *errors, L"Test 5 Failed: the error container should be empty");
+			Assert::IsTrue(areEqualTrees, wss.str().c_str());
+
+			std::set<Error> diffErrors = compareErrorSets(expErrors, *errors);
+			wss.clear();
+			if (!diffErrors.empty()) {
+				wss << L"Test 5 Failed: the error container should be empty. Errors:\n";
+				for (Error error : diffErrors) {
+					wss << error.generateErrorMessage().c_str();
+				}
+			}
+			Assert::IsTrue(diffErrors.empty(), wss.str().c_str());
 		}
 		TEST_METHOD(Test6__Variable) // Строка содержит переменные на «_»
 		{
@@ -139,18 +185,27 @@ namespace TestFunctions
 			ExprNode expTree(ExprNodeType::Plus, new ExprNode("_123"), new ExprNode("1"));
 			std::set <Error> expErrors;
 
-			std::set<std::wstring> _errors;
-			bool areEqual = compareExprTrees(tree, &expTree, L"", &_errors);
+			std::set<std::wstring> compareTreesErrors;
+			bool areEqualTrees = compareExprTrees(tree, &expTree, L"", &compareTreesErrors);
 			// Собираем все ошибки в одну строку для Assert
 			std::wstringstream wss;
-			if (!_errors.empty()) {
+			if (!compareTreesErrors.empty()) {
 				wss << L"Test 6 Failed: trees are not equal. Errors:\n";
-				for (std::wstring error : _errors) {
+				for (std::wstring error : compareTreesErrors) {
 					wss << error;
 				}
 			}
-			Assert::IsTrue(areEqual, wss.str().c_str());
-			Assert::IsTrue(expErrors == *errors, L"Test 6 Failed: the error container should be empty");
+			Assert::IsTrue(areEqualTrees, wss.str().c_str());
+
+			std::set<Error> diffErrors = compareErrorSets(expErrors, *errors);
+			wss.clear();
+			if (!diffErrors.empty()) {
+				wss << L"Test 6 Failed: the error container should be empty. Errors:\n";
+				for (Error error : diffErrors) {
+					wss << error.generateErrorMessage().c_str();
+				}
+			}
+			Assert::IsTrue(diffErrors.empty(), wss.str().c_str());
 		}
 		TEST_METHOD(Test7_Integer_8) // Строка содержит восьмеричные числа
 		{
@@ -161,18 +216,27 @@ namespace TestFunctions
 			ExprNode expTree(ExprNodeType::Plus, new ExprNode("0127"), new ExprNode("1"));
 			std::set <Error> expErrors;
 
-			std::set<std::wstring> _errors;
-			bool areEqual = compareExprTrees(tree, &expTree, L"", &_errors);
+			std::set<std::wstring> compareTreesErrors;
+			bool areEqualTrees = compareExprTrees(tree, &expTree, L"", &compareTreesErrors);
 			// Собираем все ошибки в одну строку для Assert
 			std::wstringstream wss;
-			if (!_errors.empty()) {
+			if (!compareTreesErrors.empty()) {
 				wss << L"Test 7 Failed: trees are not equal. Errors:\n";
-				for (std::wstring error : _errors) {
+				for (std::wstring error : compareTreesErrors) {
 					wss << error;
 				}
 			}
-			Assert::IsTrue(areEqual, wss.str().c_str());
-			Assert::IsTrue(expErrors == *errors, L"Test 7 Failed: the error container should be empty");
+			Assert::IsTrue(areEqualTrees, wss.str().c_str());
+
+			std::set<Error> diffErrors = compareErrorSets(expErrors, *errors);
+			wss.clear();
+			if (!diffErrors.empty()) {
+				wss << L"Test 7 Failed: the error container should be empty. Errors:\n";
+				for (Error error : diffErrors) {
+					wss << error.generateErrorMessage().c_str();
+				}
+			}
+			Assert::IsTrue(diffErrors.empty(), wss.str().c_str());
 		}
 		TEST_METHOD(Test8_Integer_16) // Строка содержит шестнадцатеричные числа
 		{
@@ -184,18 +248,27 @@ namespace TestFunctions
 
 			std::set <Error> expErrors;
 
-			std::set<std::wstring> _errors;
-			bool areEqual = compareExprTrees(tree, &expTree, L"", &_errors);
+			std::set<std::wstring> compareTreesErrors;
+			bool areEqualTrees = compareExprTrees(tree, &expTree, L"", &compareTreesErrors);
 			// Собираем все ошибки в одну строку для Assert
 			std::wstringstream wss;
-			if (!_errors.empty()) {
+			if (!compareTreesErrors.empty()) {
 				wss << L"Test 8 Failed: trees are not equal. Errors:\n";
-				for (std::wstring error : _errors) {
+				for (std::wstring error : compareTreesErrors) {
 					wss << error;
 				}
 			}
-			Assert::IsTrue(areEqual, wss.str().c_str());
-			Assert::IsTrue(expErrors == *errors, L"Test 8 Failed: the error container should be empty");
+			Assert::IsTrue(areEqualTrees, wss.str().c_str());
+
+			std::set<Error> diffErrors = compareErrorSets(expErrors, *errors);
+			wss.clear();
+			if (!diffErrors.empty()) {
+				wss << L"Test 8 Failed: the error container should be empty. Errors:\n";
+				for (Error error : diffErrors) {
+					wss << error.generateErrorMessage().c_str();
+				}
+			}
+			Assert::IsTrue(diffErrors.empty(), wss.str().c_str());
 		}
 		TEST_METHOD(Test9_OnlyValue) // Строка содержит только значение
 		{
@@ -206,18 +279,27 @@ namespace TestFunctions
 			ExprNode expTree("5");
 			std::set <Error> expErrors;
 
-			std::set<std::wstring> _errors;
-			bool areEqual = compareExprTrees(tree, &expTree, L"", &_errors);
+			std::set<std::wstring> compareTreesErrors;
+			bool areEqualTrees = compareExprTrees(tree, &expTree, L"", &compareTreesErrors);
 			// Собираем все ошибки в одну строку для Assert
 			std::wstringstream wss;
-			if (!_errors.empty()) {
+			if (!compareTreesErrors.empty()) {
 				wss << L"Test 9 Failed: trees are not equal. Errors:\n";
-				for (std::wstring error : _errors) {
+				for (std::wstring error : compareTreesErrors) {
 					wss << error;
 				}
 			}
-			Assert::IsTrue(areEqual, wss.str().c_str());
-			Assert::IsTrue(expErrors == *errors, L"Test 9 Failed: the error container should be empty");
+			Assert::IsTrue(areEqualTrees, wss.str().c_str());
+
+			std::set<Error> diffErrors = compareErrorSets(expErrors, *errors);
+			wss.clear();
+			if (!diffErrors.empty()) {
+				wss << L"Test 9 Failed: the error container should be empty. Errors:\n";
+				for (Error error : diffErrors) {
+					wss << error.generateErrorMessage().c_str();
+				}
+			}
+			Assert::IsTrue(diffErrors.empty(), wss.str().c_str());
 		}
 		TEST_METHOD(Test10_MissingOperand) // В строке недостаточно операндов для операции
 		{
@@ -230,7 +312,22 @@ namespace TestFunctions
 			expErrors.insert(expError);
 
 			Assert::IsTrue(tree == nullptr, L"Test 10 Failed: the function should return nullptr");
-			Assert::IsTrue(expErrors == *errors, L"Test 10 Failed: the error container should have one error about an missing operand");
+
+
+			std::set<Error> diffErrors = compareErrorSets(expErrors, *errors);
+			std::wstringstream wss;
+			if (!diffErrors.empty()) {
+				wss << L"Test 10 Failed. \nExpexted errors:\n";
+				for (Error error : expErrors) {
+					wss << error.generateErrorMessage().c_str();
+				}
+				wss << L";\nActual errors:\n";
+				for (Error error : *errors) {
+					wss << error.generateErrorMessage().c_str();
+				}
+			}
+			Assert::IsTrue(diffErrors.empty(), wss.str().c_str());
+			
 		}
 		TEST_METHOD(Test11_RedundantOperand) // Строка содержит лишний операнд
 		{
@@ -243,7 +340,21 @@ namespace TestFunctions
 			expErrors.insert(expError);
 
 			Assert::IsTrue(tree == nullptr, L"Test 11 Failed: the function should return nullptr");
-			Assert::IsTrue(expErrors == *errors, L"Test 11 Failed: the error container should have one error about an redundant operand");
+
+			std::set<Error> diffErrors = compareErrorSets(expErrors, *errors);
+			std::wstringstream wss;
+			if (!diffErrors.empty()) {
+				wss << L"Test 11 Failed. \nExpexted errors:\n";
+				for (Error error : expErrors) {
+					wss << error.generateErrorMessage().c_str();
+				}
+				wss << L"; \nActual errors:\n";
+				for (Error error : *errors) {
+					wss << error.generateErrorMessage().c_str();
+				}
+			}
+			Assert::IsTrue(diffErrors.empty(), wss.str().c_str());
+
 		}
 		TEST_METHOD(Test12_UnknownSymbol) // Строка содержит неизвестный символ
 		{
@@ -256,7 +367,20 @@ namespace TestFunctions
 			expErrors.insert(expError);
 
 			Assert::IsTrue(tree == nullptr, L"Test 12 Failed: the function should return nullptr");
-			Assert::IsTrue(expErrors == *errors, L"Test 12 Failed: the error container should have one error about an unknown symbol");
+
+			std::set<Error> diffErrors = compareErrorSets(expErrors, *errors);
+			std::wstringstream wss;
+			if (!diffErrors.empty()) {
+				wss << L"Test 12 Failed. \nExpexted errors:\n";
+				for (Error error : expErrors) {
+					wss << error.generateErrorMessage().c_str();
+				}
+				wss << L"; \nActual errors:\n";
+				for (Error error : *errors) {
+					wss << error.generateErrorMessage().c_str();
+				}
+			}
+			Assert::IsTrue(diffErrors.empty(), wss.str().c_str());
 
 		}
 		TEST_METHOD(Test13_UnknownSymbolCombination) // Строка содержит комбинацию неизвестных символов
@@ -270,7 +394,20 @@ namespace TestFunctions
 			expErrors.insert(expError);
 
 			Assert::IsTrue(tree == nullptr, L"Test 13 Failed: the function should return nullptr");
-			Assert::IsTrue(expErrors == *errors, L"Test 13 Failed: the error container should have one error about an unknown symbol");
+
+			std::set<Error> diffErrors = compareErrorSets(expErrors, *errors);
+			std::wstringstream wss;
+			if (!diffErrors.empty()) {
+				wss << L"Test 13 Failed. \nExpexted errors:\n";
+				for (Error error : expErrors) {
+					wss << error.generateErrorMessage().c_str();
+				}
+				wss << L"; \nActual errors:\n";
+				for (Error error : *errors) {
+					wss << error.generateErrorMessage().c_str();
+				}
+			}
+			Assert::IsTrue(diffErrors.empty(), wss.str().c_str());
 		}
 	};
 }

@@ -180,10 +180,6 @@ void transformInequalityToLessOperator(ExprNode* node) {
 
 int main()
 {
-    //ExprNode ex("5");
-    //ex.addUnaryOperatorBefore(ExprNodeType::Not);
-    //std::cout << ex.getRpmOfTree();
-
 
     std::string rpnString = "5 x >";
     std::set<Error>* errors = new std::set<Error>();
