@@ -6,30 +6,31 @@ ExprNode* stringToExprTree(std::string rpnString, std::set <Error>* errors) {
     std::stringstream stream(rpnString); // Поток с выражением в обратной польской записи
     std::string token;
     int position = 0;
+    std::map <ExprNode*, int> tokenIndex;/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     while (stream >> token && errors->empty()) { // Пока в переменную token получается извлечь часть потока и нет ошибок
         position += 1;
         ExprNode* newNode = new ExprNode(); // Создать узел newNode
 
         // Если token – операнд
-        if (isOperand(token)) { 
+        if (isOperand(token)) {
             newNode->value = token; // Присвоить полю value newNode значение token
             newNode->type = ExprNodeType::Operand; // Присвоить полю type newNode значение Operand
         }
         // Если token – символ из словаря symbolToString
-        else if (ExprNode::symbolToString.count(token)) { 
+        else if (ExprNode::symbolToString.count(token)) {
             newNode->type = ExprNode::symbolToString.at(token); // Присвоить значению type newNode словесную запись оператора из словаря symbolToString
 
             int operandCountNeeded = ExprNode::operandCount.at(newNode->type); // Узнать необходимое количество операндов
 
             // Если в стеке нет нужного количества операндов
-            if (stack.size() < operandCountNeeded) { 
+            if (stack.size() < operandCountNeeded) {
                 errors->insert(Error(ErrorType::missingOperand, token, position)); // Добавить ошибку о недостатке операндов
             }
             // Если нет ошибок
             if (errors->empty()) {
                 // Если оператор бинарный
-                if (operandCountNeeded == 2) { 
+                if (operandCountNeeded == 2) {
                     newNode->secondOperand = stack.top(); // Присвоить второму операнду newNode значение верхнего узла из стека
                     stack.pop(); // Удалить из стека верхний узел
                 }
@@ -47,7 +48,8 @@ ExprNode* stringToExprTree(std::string rpnString, std::set <Error>* errors) {
         }
     }
 
-    //НЕПОНЯТНО КАК СЧИТАТЬ ПОЗИЦИЮ ДЛЯ ЛИШНИХ ОПЕРАНДОВ И ОПЕРАТОРОВ
+    //НЕПОНЯТНО КАК СЧИТАТЬ ПОЗИЦИЮ ДЛЯ ЛИШНИХ ОПЕРАНДОВ И ОПЕРАТОРОВ 
+    // std::map <ExprNode*, int> tokenIndex;
     if (stack.size() > 1) { // Если в стэке больше одного элемента
         //сохранить верхушку стека
         ExprNode* tree = stack.top();
@@ -64,7 +66,7 @@ ExprNode* stringToExprTree(std::string rpnString, std::set <Error>* errors) {
 
 
     // Если нет ошибок
-    if (errors->empty() && !stack.empty()) { 
+    if (errors->empty() && !stack.empty()) {
         ExprNode* root = stack.top(); // Вернуть верхушку стэка
         stack.pop();
         return root;
@@ -156,23 +158,23 @@ void transformInequalityToLessOperator(ExprNode* node) {
         node->type = ExprNodeType::Less; // Заменить корневую операцию на “Less”
 
         switch (originalOperator) {
-            case ExprNodeType::Greater:
-                // Поменять операнды местами
-                std::swap(node->firstOperand, node->secondOperand);
-                break;
-            case ExprNodeType::GreaterEqual:
-                // Добавить новую операцию “Not” перед корневой
-                node->addUnaryOperatorBefore(ExprNodeType::Not);
-                break;
-            case ExprNodeType::LessEqual:
-                // Поменять операнды местами
-                std::swap(node->firstOperand, node->secondOperand);
-                // Добавить операцию “Not” перед корневой
-                node->addUnaryOperatorBefore(ExprNodeType::Not);
-                break;
-            default:
-                // Не требуется никаких изменений для других операторов
-                break;
+        case ExprNodeType::Greater:
+            // Поменять операнды местами
+            std::swap(node->firstOperand, node->secondOperand);
+            break;
+        case ExprNodeType::GreaterEqual:
+            // Добавить новую операцию “Not” перед корневой
+            node->addUnaryOperatorBefore(ExprNodeType::Not);
+            break;
+        case ExprNodeType::LessEqual:
+            // Поменять операнды местами
+            std::swap(node->firstOperand, node->secondOperand);
+            // Добавить операцию “Not” перед корневой
+            node->addUnaryOperatorBefore(ExprNodeType::Not);
+            break;
+        default:
+            // Не требуется никаких изменений для других операторов
+            break;
         }
     }
 }
