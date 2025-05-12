@@ -6,11 +6,13 @@ ExprNode* stringToExprTree(std::string rpnString, std::set <Error>* errors) {
     std::stringstream stream(rpnString); // Поток с выражением в обратной польской записи
     std::string token;
     int position = 0;
-    std::map <ExprNode*, int> tokenIndex;/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    std::map <ExprNode*, int> tokenIndex;// словарь для позиций токенов в исходной строке
 
     while (stream >> token && errors->empty()) { // Пока в переменную token получается извлечь часть потока и нет ошибок
         position += 1;
         ExprNode* newNode = new ExprNode(); // Создать узел newNode
+        
+        tokenIndex[newNode] = position;
 
         // Если token – операнд
         if (isOperand(token)) {
@@ -37,7 +39,6 @@ ExprNode* stringToExprTree(std::string rpnString, std::set <Error>* errors) {
                 newNode->firstOperand = stack.top(); // Присвоить первому операнду newNode значение верхнего узла из стека
                 stack.pop(); // Удалить из стека верхний узел
             }
-
         }
         else {
             errors->insert(Error(ErrorType::unknownSymbol, token, position)); // Добавить ошибку о недопустимом символе
@@ -48,8 +49,6 @@ ExprNode* stringToExprTree(std::string rpnString, std::set <Error>* errors) {
         }
     }
 
-    //НЕПОНЯТНО КАК СЧИТАТЬ ПОЗИЦИЮ ДЛЯ ЛИШНИХ ОПЕРАНДОВ И ОПЕРАТОРОВ 
-    // std::map <ExprNode*, int> tokenIndex;
     if (stack.size() > 1) { // Если в стэке больше одного элемента
         //сохранить верхушку стека
         ExprNode* tree = stack.top();
@@ -58,9 +57,11 @@ ExprNode* stringToExprTree(std::string rpnString, std::set <Error>* errors) {
         //для всех неиспользованных операндов
         while (stack.size() > 0)
         {
-            ExprNode* tmp = stack.top();
+
+            ExprNode* redundantOperand = stack.top();
             stack.pop();
-            errors->insert(Error(ErrorType::redundantOperand, "", 0));
+
+            errors->insert(Error(ErrorType::redundantOperand, redundantOperand->getRpnOfTree(), tokenIndex[redundantOperand]));
         }
     }
 
@@ -133,8 +134,6 @@ bool isOperand(std::string str) {
     }
     return isOperandFlag;
 }
-
-
 
 
 bool checkRootOperator(ExprNodeType op) {

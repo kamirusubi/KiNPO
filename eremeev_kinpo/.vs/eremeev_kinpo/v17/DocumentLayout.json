@@ -3,19 +3,15 @@
   "WorkspaceRootPath": "D:\\GITHUB\\KiNPO\\eremeev_kinpo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2CC2418D-360E-4EB2-B969-45F1BD128A9E}|..\\TestFunction\\TestFunction.vcxproj|D:\\GITHUB\\KiNPO\\TestFunction\\TestTransformInequalityToLessOperator.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2CC2418D-360E-4EB2-B969-45F1BD128A9E}|..\\TestFunction\\TestFunction.vcxproj|D:\\GITHUB\\KiNPO\\TestFunction\\TestSwapOperands.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2CC2418D-360E-4EB2-B969-45F1BD128A9E}|..\\TestFunction\\TestFunction.vcxproj|D:\\GITHUB\\KiNPO\\TestFunction\\TestStringToExprTree.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2CC2418D-360E-4EB2-B969-45F1BD128A9E}|..\\TestFunction\\TestFunction.vcxproj|D:\\GITHUB\\KiNPO\\TestFunction\\TestGetRpnOfExprTree.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{90D02595-3FEC-4580-A1B3-C50741F3529F}|eremeev_kinpo.vcxproj|D:\\GITHUB\\KiNPO\\eremeev_kinpo\\eremeev_kinpo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{90D02595-3FEC-4580-A1B3-C50741F3529F}|eremeev_kinpo.vcxproj|solutionrelative:eremeev_kinpo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2CC2418D-360E-4EB2-B969-45F1BD128A9E}|..\\TestFunction\\TestFunction.vcxproj|D:\\GITHUB\\KiNPO\\TestFunction\\TestAddUnaryOperatorBefore.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{90D02595-3FEC-4580-A1B3-C50741F3529F}|eremeev_kinpo.vcxproj|D:\\GITHUB\\KiNPO\\eremeev_kinpo\\error.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{90D02595-3FEC-4580-A1B3-C50741F3529F}|eremeev_kinpo.vcxproj|solutionrelative:error.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -25,7 +21,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -33,39 +29,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "TestGetRpnOfExprTree.cpp",
-              "DocumentMoniker": "D:\\GITHUB\\KiNPO\\TestFunction\\TestGetRpnOfExprTree.cpp",
-              "RelativeDocumentMoniker": "..\\TestFunction\\TestGetRpnOfExprTree.cpp",
-              "ToolTip": "D:\\GITHUB\\KiNPO\\TestFunction\\TestGetRpnOfExprTree.cpp",
-              "RelativeToolTip": "..\\TestFunction\\TestGetRpnOfExprTree.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-12T14:15:29.553Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "TestAddUnaryOperatorBefore.cpp",
-              "DocumentMoniker": "D:\\GITHUB\\KiNPO\\TestFunction\\TestAddUnaryOperatorBefore.cpp",
-              "RelativeDocumentMoniker": "..\\TestFunction\\TestAddUnaryOperatorBefore.cpp",
-              "ToolTip": "D:\\GITHUB\\KiNPO\\TestFunction\\TestAddUnaryOperatorBefore.cpp",
-              "RelativeToolTip": "..\\TestFunction\\TestAddUnaryOperatorBefore.cpp",
-              "ViewState": "AQIAADwAAAAAAAAAAAAAAEEAAAAvAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-12T12:46:48.242Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "error.h",
+              "DocumentMoniker": "D:\\GITHUB\\KiNPO\\eremeev_kinpo\\error.h",
+              "RelativeDocumentMoniker": "error.h",
+              "ToolTip": "D:\\GITHUB\\KiNPO\\eremeev_kinpo\\error.h",
+              "RelativeToolTip": "error.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-05-12T14:41:25.804Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "TestStringToExprTree.cpp",
               "DocumentMoniker": "D:\\GITHUB\\KiNPO\\TestFunction\\TestStringToExprTree.cpp",
               "RelativeDocumentMoniker": "..\\TestFunction\\TestStringToExprTree.cpp",
               "ToolTip": "D:\\GITHUB\\KiNPO\\TestFunction\\TestStringToExprTree.cpp",
               "RelativeToolTip": "..\\TestFunction\\TestStringToExprTree.cpp",
-              "ViewState": "AQIAABMAAAAAAAAAAAAcwCIAAAAAAAAA",
+              "ViewState": "AQIAAN0AAAAAAAAAAAA+wOwAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-05-12T14:01:11.73Z",
               "EditorCaption": ""
@@ -73,27 +56,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "TestSwapOperands.cpp",
-              "DocumentMoniker": "D:\\GITHUB\\KiNPO\\TestFunction\\TestSwapOperands.cpp",
-              "RelativeDocumentMoniker": "..\\TestFunction\\TestSwapOperands.cpp",
-              "ToolTip": "D:\\GITHUB\\KiNPO\\TestFunction\\TestSwapOperands.cpp",
-              "RelativeToolTip": "..\\TestFunction\\TestSwapOperands.cpp",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAiwBQAAAAAAAAA",
+              "Title": "eremeev_kinpo.cpp",
+              "DocumentMoniker": "D:\\GITHUB\\KiNPO\\eremeev_kinpo\\eremeev_kinpo.cpp",
+              "RelativeDocumentMoniker": "eremeev_kinpo.cpp",
+              "ToolTip": "D:\\GITHUB\\KiNPO\\eremeev_kinpo\\eremeev_kinpo.cpp",
+              "RelativeToolTip": "eremeev_kinpo.cpp",
+              "ViewState": "AQIAADAAAAAAAAAAAAASwD8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-12T14:14:12.649Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "TestTransformInequalityToLessOperator.cpp",
-              "DocumentMoniker": "D:\\GITHUB\\KiNPO\\TestFunction\\TestTransformInequalityToLessOperator.cpp",
-              "RelativeDocumentMoniker": "..\\TestFunction\\TestTransformInequalityToLessOperator.cpp",
-              "ToolTip": "D:\\GITHUB\\KiNPO\\TestFunction\\TestTransformInequalityToLessOperator.cpp",
-              "RelativeToolTip": "..\\TestFunction\\TestTransformInequalityToLessOperator.cpp",
-              "ViewState": "AQIAABEAAAAAAAAAAAAAABEAAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-12T14:21:33.555Z",
+              "WhenOpened": "2025-05-12T14:26:24.352Z",
               "EditorCaption": ""
             }
           ]
