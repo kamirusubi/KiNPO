@@ -160,12 +160,11 @@ namespace TestFunctions
 			std::set<Error>* errors = new std::set<Error>();
 			ExprNode* tree = stringToExprTree(rpnString, errors);
 
-			ExprNode* expTree = nullptr;
 			Error expError(ErrorType::missingOperand, ">", 4);
 			std::set <Error> expErrors;
 			expErrors.insert(expError);
 
-			Assert::IsTrue(compareExprTrees(expTree, tree), L"Test 10 Failed: the function should return nullptr");
+			Assert::IsTrue(tree == nullptr, L"Test 10 Failed: the function should return nullptr");
 			Assert::IsTrue(expErrors == *errors, L"Test 10 Failed: the error container should have one error about an missing operand");
 		}
 		TEST_METHOD(Test11_RedundantOperand) // Строка содержит лишний операнд
@@ -174,12 +173,11 @@ namespace TestFunctions
 			std::set<Error>* errors = new std::set<Error>();
 			ExprNode* tree = stringToExprTree(rpnString, errors);
 
-			ExprNode* expTree = nullptr;
 			Error expError(ErrorType::redundantOperand, "5", 1);
 			std::set <Error> expErrors;
 			expErrors.insert(expError);
 
-			Assert::IsTrue(compareExprTrees(expTree, tree), L"Test 11 Failed: the function should return nullptr");
+			Assert::IsTrue(tree == nullptr, L"Test 11 Failed: the function should return nullptr");
 			Assert::IsTrue(expErrors == *errors, L"Test 11 Failed: the error container should have one error about an redundant operand");
 		}
 		TEST_METHOD(Test12_UnknownSymbol) // Строка содержит неизвестный символ
@@ -188,12 +186,11 @@ namespace TestFunctions
 			std::set<Error>* errors = new std::set<Error>();
 			ExprNode* tree = stringToExprTree(rpnString, errors);
 
-			ExprNode* expTree = nullptr;
 			Error expError(ErrorType::unknownSymbol, "(", 2);
 			std::set <Error> expErrors;
 			expErrors.insert(expError);
 
-			Assert::IsTrue(compareExprTrees(expTree, tree), L"Test 12 Failed: the function should return nullptr");
+			Assert::IsTrue(tree == nullptr, L"Test 12 Failed: the function should return nullptr");
 			Assert::IsTrue(expErrors == *errors, L"Test 12 Failed: the error container should have one error about an unknown symbol");
 
 		}
@@ -203,12 +200,11 @@ namespace TestFunctions
 			std::set<Error>* errors = new std::set<Error>();
 			ExprNode* tree = stringToExprTree(rpnString, errors);
 
-			ExprNode* expTree = nullptr;
 			Error expError(ErrorType::unknownSymbol, "_12*4/", 1);
 			std::set <Error> expErrors;
 			expErrors.insert(expError);
 
-			Assert::IsTrue(compareExprTrees(expTree, tree), L"Test 13 Failed: the function should return nullptr");
+			Assert::IsTrue(tree == nullptr, L"Test 13 Failed: the function should return nullptr");
 			Assert::IsTrue(expErrors == *errors, L"Test 13 Failed: the error container should have one error about an unknown symbol");
 		}
 	};
