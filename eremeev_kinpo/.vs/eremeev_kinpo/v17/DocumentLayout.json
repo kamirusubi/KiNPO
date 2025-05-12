@@ -3,10 +3,19 @@
   "WorkspaceRootPath": "D:\\GITHUB\\KiNPO\\eremeev_kinpo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2CC2418D-360E-4EB2-B969-45F1BD128A9E}|..\\TestFunction\\TestFunction.vcxproj|D:\\GITHUB\\KiNPO\\TestFunction\\TestAddUnaryOperatorBefore.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{2CC2418D-360E-4EB2-B969-45F1BD128A9E}|..\\TestFunction\\TestFunction.vcxproj|D:\\GITHUB\\KiNPO\\TestFunction\\TestTransformInequalityToLessOperator.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2CC2418D-360E-4EB2-B969-45F1BD128A9E}|..\\TestFunction\\TestFunction.vcxproj|D:\\GITHUB\\KiNPO\\TestFunction\\compareTrees.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{2CC2418D-360E-4EB2-B969-45F1BD128A9E}|..\\TestFunction\\TestFunction.vcxproj|D:\\GITHUB\\KiNPO\\TestFunction\\TestSwapOperands.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CC2418D-360E-4EB2-B969-45F1BD128A9E}|..\\TestFunction\\TestFunction.vcxproj|D:\\GITHUB\\KiNPO\\TestFunction\\TestStringToExprTree.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CC2418D-360E-4EB2-B969-45F1BD128A9E}|..\\TestFunction\\TestFunction.vcxproj|D:\\GITHUB\\KiNPO\\TestFunction\\TestGetRpnOfExprTree.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CC2418D-360E-4EB2-B969-45F1BD128A9E}|..\\TestFunction\\TestFunction.vcxproj|D:\\GITHUB\\KiNPO\\TestFunction\\TestAddUnaryOperatorBefore.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -16,7 +25,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -24,28 +33,67 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
+              "Title": "TestGetRpnOfExprTree.cpp",
+              "DocumentMoniker": "D:\\GITHUB\\KiNPO\\TestFunction\\TestGetRpnOfExprTree.cpp",
+              "RelativeDocumentMoniker": "..\\TestFunction\\TestGetRpnOfExprTree.cpp",
+              "ToolTip": "D:\\GITHUB\\KiNPO\\TestFunction\\TestGetRpnOfExprTree.cpp",
+              "RelativeToolTip": "..\\TestFunction\\TestGetRpnOfExprTree.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-12T14:15:29.553Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "TestAddUnaryOperatorBefore.cpp",
               "DocumentMoniker": "D:\\GITHUB\\KiNPO\\TestFunction\\TestAddUnaryOperatorBefore.cpp",
               "RelativeDocumentMoniker": "..\\TestFunction\\TestAddUnaryOperatorBefore.cpp",
               "ToolTip": "D:\\GITHUB\\KiNPO\\TestFunction\\TestAddUnaryOperatorBefore.cpp",
               "RelativeToolTip": "..\\TestFunction\\TestAddUnaryOperatorBefore.cpp",
-              "ViewState": "AQIAABkAAAAAAAAAAAASwBwAAAA2AAAA",
+              "ViewState": "AQIAADwAAAAAAAAAAAAAAEEAAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-05-12T12:46:48.242Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "compareTrees.cpp",
-              "DocumentMoniker": "D:\\GITHUB\\KiNPO\\TestFunction\\compareTrees.cpp",
-              "RelativeDocumentMoniker": "..\\TestFunction\\compareTrees.cpp",
-              "ToolTip": "D:\\GITHUB\\KiNPO\\TestFunction\\compareTrees.cpp",
-              "RelativeToolTip": "..\\TestFunction\\compareTrees.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAA0AAAA",
+              "DocumentIndex": 2,
+              "Title": "TestStringToExprTree.cpp",
+              "DocumentMoniker": "D:\\GITHUB\\KiNPO\\TestFunction\\TestStringToExprTree.cpp",
+              "RelativeDocumentMoniker": "..\\TestFunction\\TestStringToExprTree.cpp",
+              "ToolTip": "D:\\GITHUB\\KiNPO\\TestFunction\\TestStringToExprTree.cpp",
+              "RelativeToolTip": "..\\TestFunction\\TestStringToExprTree.cpp",
+              "ViewState": "AQIAABMAAAAAAAAAAAAcwCIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-12T12:17:40.69Z",
+              "WhenOpened": "2025-05-12T14:01:11.73Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TestSwapOperands.cpp",
+              "DocumentMoniker": "D:\\GITHUB\\KiNPO\\TestFunction\\TestSwapOperands.cpp",
+              "RelativeDocumentMoniker": "..\\TestFunction\\TestSwapOperands.cpp",
+              "ToolTip": "D:\\GITHUB\\KiNPO\\TestFunction\\TestSwapOperands.cpp",
+              "RelativeToolTip": "..\\TestFunction\\TestSwapOperands.cpp",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAiwBQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-12T14:14:12.649Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TestTransformInequalityToLessOperator.cpp",
+              "DocumentMoniker": "D:\\GITHUB\\KiNPO\\TestFunction\\TestTransformInequalityToLessOperator.cpp",
+              "RelativeDocumentMoniker": "..\\TestFunction\\TestTransformInequalityToLessOperator.cpp",
+              "ToolTip": "D:\\GITHUB\\KiNPO\\TestFunction\\TestTransformInequalityToLessOperator.cpp",
+              "RelativeToolTip": "..\\TestFunction\\TestTransformInequalityToLessOperator.cpp",
+              "ViewState": "AQIAABEAAAAAAAAAAAAAABEAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-12T14:21:33.555Z",
               "EditorCaption": ""
             }
           ]
