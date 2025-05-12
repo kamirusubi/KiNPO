@@ -1,2 +1,4 @@
-﻿  TestTransformInequalityToLessOperator.cpp
+﻿  TestGetRpnOfExprTree.cpp
+  TestStringToExprTree.cpp
+  Создание кода...
   TestFunction.vcxproj -> D:\GITHUB\KiNPO\eremeev_kinpo\Debug\TestFunction.dll
