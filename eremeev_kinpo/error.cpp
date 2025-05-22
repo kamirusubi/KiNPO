@@ -4,10 +4,10 @@ std::string Error::generateErrorMessage() const {
     std::string message = "";
     switch (type) {
     case ErrorType::inFileNotExist:
-        message = "Input file does not exist: " + errorInputFilePath;
+        message = "Input file does not exist on path " + errorInputFilePath;
         break;
     case ErrorType::outFileCreateFail:
-        message = "Failed to create output file: " + errorOutputFilePath;
+        message = "Failed to create output file on path " + errorOutputFilePath;
         break;
     case ErrorType::emptyFile:
         message = "File is empty: ";

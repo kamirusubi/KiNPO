@@ -34,3 +34,14 @@ bool checkRootOperator(ExprNodeType op);
 * \param[in/out] obj Ц указатель на узел, который должен быть преобразован
 */
 void transformInequalityToLessOperator(ExprNode* node);
+
+/*!
+* \¬озвращает строку, содержащую содердимое файла
+* \param[in] filename Ц путь до файла, откуда будут прочитаны данные
+* \param[out] errors Ц указатель на контейнер с ошибками
+* \return - строка с содержимым файла
+*/
+std::string* readFileToString(const std::string filename, std::set <Error>* errors)
+
+
+
