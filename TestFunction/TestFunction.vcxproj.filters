@@ -24,7 +24,7 @@
     <ClCompile Include="TestIsOperand.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="TestCheckTestRootOperation.cpp">
+    <ClCompile Include="TestCheckRootOperation.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="TestTransformInequalityToLessOperator.cpp">

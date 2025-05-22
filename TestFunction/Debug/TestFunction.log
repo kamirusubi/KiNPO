@@ -1,2 +1,14 @@
-﻿  TestStringToExprTree.cpp
+﻿  pch.cpp
+  compareErrors.cpp
+  compareTrees.cpp
+  TestAddUnaryOperatorBefore.cpp
+  TestCheckRootOperation.cpp
+  TestGetRpnOfExprTree.cpp
+  TestIsOperand.cpp
+  TestStringToExprTree.cpp
+  TestSwapOperands.cpp
+  TestTransformInequalityToLessOperator.cpp
+  Создание кода...
+  LINK : не найден или не выполнена сборка D:\GITHUB\KiNPO\eremeev_kinpo\Debug\TestFunction.dll при последней инкрементной компоновке; выполняется полная компоновка
+     Создается библиотека D:\GITHUB\KiNPO\eremeev_kinpo\Debug\TestFunction.lib и объект D:\GITHUB\KiNPO\eremeev_kinpo\Debug\TestFunction.exp
   TestFunction.vcxproj -> D:\GITHUB\KiNPO\eremeev_kinpo\Debug\TestFunction.dll

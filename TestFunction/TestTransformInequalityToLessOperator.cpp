@@ -14,11 +14,12 @@ namespace TestFunctions
 	public:
 		TEST_METHOD(Test1_CurrentIsLess) { // Текущая операция – «меньше»
 
-			std::set<Error>* errors = new std::set<Error>();
-			ExprNode* tree = stringToExprTree("5 x <", errors);
+			std::set<Error> errors =  std::set<Error>();
+			ExprNode* tree = stringToExprTree("5 x <", &errors);
+
 			transformInequalityToLessOperator(tree);
 
-			ExprNode* expTree = stringToExprTree("5 x <", errors);
+			ExprNode* expTree = stringToExprTree("5 x <", &errors);
 
 			std::set<std::wstring> compareTreesErrors;
 			bool areEqual = compareExprTrees(tree, expTree, L"", &compareTreesErrors);
@@ -33,11 +34,11 @@ namespace TestFunctions
 			Assert::IsTrue(areEqual, wss.str().c_str());
 		}
 		TEST_METHOD(Test2_CurrentIsLessEqual) { // Текущая операция – «меньше или равно»
-			std::set<Error>* errors = new std::set<Error>();
-			ExprNode* tree = stringToExprTree("5 x <=", errors);
+			std::set<Error> errors =  std::set<Error>();
+			ExprNode* tree = stringToExprTree("5 x <=", &errors);
 			transformInequalityToLessOperator(tree);
 
-			ExprNode* expTree = stringToExprTree("x 5 < !", errors);
+			ExprNode* expTree = stringToExprTree("x 5 < !", &errors);
 
 			std::set<std::wstring> compareTreesErrors;
 			bool areEqual = compareExprTrees(tree, expTree, L"", &compareTreesErrors);
@@ -52,11 +53,11 @@ namespace TestFunctions
 			Assert::IsTrue(areEqual, wss.str().c_str());
 		}
 		TEST_METHOD(Test3_CurrentIsGreater) { // Текущая операция – «больше»
-			std::set<Error>* errors = new std::set<Error>();
-			ExprNode* tree = stringToExprTree("5 x + x + 7 >", errors);
+			std::set<Error> errors =  std::set<Error>();
+			ExprNode* tree = stringToExprTree("5 x + x + 7 >", &errors);
 			transformInequalityToLessOperator(tree);
 
-			ExprNode* expTree = stringToExprTree("7 5 x + x + <", errors);
+			ExprNode* expTree = stringToExprTree("7 5 x + x + <", &errors);
 
 			std::set<std::wstring> compareTreesErrors;
 			bool areEqual = compareExprTrees(tree, expTree, L"", &compareTreesErrors);
@@ -71,11 +72,11 @@ namespace TestFunctions
 			Assert::IsTrue(areEqual, wss.str().c_str());
 		}
 		TEST_METHOD(Test4_CurrentIsGreaterEqual) { // Текущая операция – «больше или равно»
-			std::set<Error>* errors = new std::set<Error>();
-			ExprNode* tree = stringToExprTree("5 x >=", errors);
+			std::set<Error> errors =  std::set<Error>();
+			ExprNode* tree = stringToExprTree("5 x >=", &errors);
 			transformInequalityToLessOperator(tree);
 
-			ExprNode* expTree = stringToExprTree("5 x < !", errors);
+			ExprNode* expTree = stringToExprTree("5 x < !", &errors);
 
 			std::set<std::wstring> compareTreesErrors;
 			bool areEqual = compareExprTrees(tree, expTree, L"", &compareTreesErrors);

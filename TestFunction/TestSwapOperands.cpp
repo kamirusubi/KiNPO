@@ -12,11 +12,11 @@ namespace TestFunctions
 	public:
 		TEST_METHOD(Test1_OperandsAreNotNodes) { // ќперанды €вл€ютс€ значени€ми
 
-			std::set<Error>* errors = new std::set<Error>();
-			ExprNode* tree = stringToExprTree("5 x <", errors);
+			std::set<Error> errors = std::set<Error>();
+			ExprNode* tree = stringToExprTree("5 x <", &errors);
 			tree->swapOperands();
 
-			ExprNode* expTree = stringToExprTree("x 5 <", errors);
+			ExprNode* expTree = stringToExprTree("x 5 <", &errors);
 
 			std::set<std::wstring> compareTreesErrors;
 			bool areEqual = compareExprTrees(tree, expTree, L"", &compareTreesErrors);
@@ -32,11 +32,11 @@ namespace TestFunctions
 		}
 		TEST_METHOD(Test2_OperandsAreNodes) { // ќперанды содержат узлы
 
-			std::set<Error>* errors = new std::set<Error>();
-			ExprNode* tree = stringToExprTree("5 x + 7 <", errors);
+			std::set<Error> errors = std::set<Error>();
+			ExprNode* tree = stringToExprTree("5 x + 7 <", &errors);
 			tree->swapOperands();
 
-			ExprNode* expTree = stringToExprTree("7 5 x + <", errors);
+			ExprNode* expTree = stringToExprTree("7 5 x + <", &errors);
 
 			std::set<std::wstring> compareTreesErrors;
 			bool areEqual = compareExprTrees(tree, expTree, L"", &compareTreesErrors);

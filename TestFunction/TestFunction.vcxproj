@@ -168,7 +168,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="TestAddUnaryOperatorBefore.cpp" />
-    <ClCompile Include="TestCheckTestRootOperation.cpp" />
+    <ClCompile Include="TestCheckRootOperation.cpp" />
     <ClCompile Include="TestGetRpnOfExprTree.cpp" />
     <ClCompile Include="TestIsOperand.cpp" />
     <ClCompile Include="TestStringToExprTree.cpp" />

@@ -3,6 +3,9 @@
   "WorkspaceRootPath": "D:\\GITHUB\\KiNPO\\eremeev_kinpo\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{2CC2418D-360E-4EB2-B969-45F1BD128A9E}|..\\TestFunction\\TestFunction.vcxproj|D:\\GITHUB\\KiNPO\\TestFunction\\compareErrors.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2CC2418D-360E-4EB2-B969-45F1BD128A9E}|..\\TestFunction\\TestFunction.vcxproj|D:\\GITHUB\\KiNPO\\TestFunction\\TestStringToExprTree.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
@@ -22,14 +25,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "compareErrors.cpp",
+              "DocumentMoniker": "D:\\GITHUB\\KiNPO\\TestFunction\\compareErrors.cpp",
+              "RelativeDocumentMoniker": "..\\TestFunction\\compareErrors.cpp",
+              "ToolTip": "D:\\GITHUB\\KiNPO\\TestFunction\\compareErrors.cpp",
+              "RelativeToolTip": "..\\TestFunction\\compareErrors.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-22T14:19:57.542Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "TestStringToExprTree.cpp",
               "DocumentMoniker": "D:\\GITHUB\\KiNPO\\TestFunction\\TestStringToExprTree.cpp",
               "RelativeDocumentMoniker": "..\\TestFunction\\TestStringToExprTree.cpp",
               "ToolTip": "D:\\GITHUB\\KiNPO\\TestFunction\\TestStringToExprTree.cpp",
               "RelativeToolTip": "..\\TestFunction\\TestStringToExprTree.cpp",
-              "ViewState": "AQIAAGcBAAAAAAAAAAAYwIcBAAA3AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-12T15:43:54.598Z",
+              "WhenOpened": "2025-05-12T17:14:04.901Z",
               "EditorCaption": ""
             }
           ]

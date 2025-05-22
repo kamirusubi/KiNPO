@@ -10,9 +10,11 @@ std::wstring s2ws(const std::string& s) {
     return converter.from_bytes(s);
 }
 
+
+// Возвращает ошибку в формате "По пути ...->...->.... ожидалось:... получено: ..."
 bool compareExprTrees(const ExprNode* expected, const ExprNode* actual, const std::wstring& path, std::set<std::wstring>* errors) {
     bool flag = true;
-    std::wstring error = L"On path \"" + path + L"\" expected: "; // Преобразование path к std::wstring
+    std::wstring error = L"On path \"" + path + L"\" expected: ";
 
     if (expected == nullptr && actual == nullptr) {
         return true;

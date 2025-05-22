@@ -7,6 +7,4 @@
 #include <algorithm>
 #include <iterator>  
 
-std::set<Error> compareErrorSets(const std::set<Error>& expected, const std::set<Error>& actual);
-
-std::wstring errorsToWstring(const std::set<Error>& errors);
+bool compareErrorSets(const std::set<Error>& expected, const std::set<Error>& actual, std::set<Error>& missing, std::set<Error>& extra);
