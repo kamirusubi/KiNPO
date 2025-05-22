@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "D:\\GITHUB\\KiNPO\\eremeev_kinpo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{90D02595-3FEC-4580-A1B3-C50741F3529F}|eremeev_kinpo.vcxproj|D:\\GITHUB\\KiNPO\\eremeev_kinpo\\eremeev_kinpo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{90D02595-3FEC-4580-A1B3-C50741F3529F}|eremeev_kinpo.vcxproj|solutionrelative:eremeev_kinpo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{90D02595-3FEC-4580-A1B3-C50741F3529F}|eremeev_kinpo.vcxproj|D:\\GITHUB\\KiNPO\\eremeev_kinpo\\exprNode.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{90D02595-3FEC-4580-A1B3-C50741F3529F}|eremeev_kinpo.vcxproj|solutionrelative:exprNode.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{90D02595-3FEC-4580-A1B3-C50741F3529F}|eremeev_kinpo.vcxproj|D:\\GITHUB\\KiNPO\\eremeev_kinpo\\header.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{90D02595-3FEC-4580-A1B3-C50741F3529F}|eremeev_kinpo.vcxproj|solutionrelative:header.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{90D02595-3FEC-4580-A1B3-C50741F3529F}|eremeev_kinpo.vcxproj|D:\\GITHUB\\KiNPO\\eremeev_kinpo\\exprNode.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{90D02595-3FEC-4580-A1B3-C50741F3529F}|eremeev_kinpo.vcxproj|solutionrelative:exprNode.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90D02595-3FEC-4580-A1B3-C50741F3529F}|eremeev_kinpo.vcxproj|D:\\GITHUB\\KiNPO\\eremeev_kinpo\\eremeev_kinpo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{90D02595-3FEC-4580-A1B3-C50741F3529F}|eremeev_kinpo.vcxproj|solutionrelative:eremeev_kinpo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,27 +31,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "header.h",
-              "DocumentMoniker": "D:\\GITHUB\\KiNPO\\eremeev_kinpo\\header.h",
-              "RelativeDocumentMoniker": "header.h",
-              "ToolTip": "D:\\GITHUB\\KiNPO\\eremeev_kinpo\\header.h",
-              "RelativeToolTip": "header.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "Title": "exprNode.h",
+              "DocumentMoniker": "D:\\GITHUB\\KiNPO\\eremeev_kinpo\\exprNode.h",
+              "RelativeDocumentMoniker": "exprNode.h",
+              "ToolTip": "D:\\GITHUB\\KiNPO\\eremeev_kinpo\\exprNode.h",
+              "RelativeToolTip": "exprNode.h",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAlwEAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-22T14:23:15.153Z",
+              "WhenOpened": "2025-05-22T15:45:08.108Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "exprNode.cpp",
+              "DocumentMoniker": "D:\\GITHUB\\KiNPO\\eremeev_kinpo\\exprNode.cpp",
+              "RelativeDocumentMoniker": "exprNode.cpp",
+              "ToolTip": "D:\\GITHUB\\KiNPO\\eremeev_kinpo\\exprNode.cpp",
+              "RelativeToolTip": "exprNode.cpp",
+              "ViewState": "AQIAADkAAAAAAAAAAAAAAEkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-22T15:44:43.773Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "eremeev_kinpo.cpp",
               "DocumentMoniker": "D:\\GITHUB\\KiNPO\\eremeev_kinpo\\eremeev_kinpo.cpp",
               "RelativeDocumentMoniker": "eremeev_kinpo.cpp",
               "ToolTip": "D:\\GITHUB\\KiNPO\\eremeev_kinpo\\eremeev_kinpo.cpp",
               "RelativeToolTip": "eremeev_kinpo.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAdAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADkBAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-22T14:30:28.63Z",
+              "WhenOpened": "2025-05-22T15:09:19.783Z",
               "EditorCaption": ""
             }
           ]

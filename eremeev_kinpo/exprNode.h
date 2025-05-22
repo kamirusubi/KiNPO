@@ -62,4 +62,6 @@ public:
     * \return – строка с обратной польской записью
     */
     std::string getRpnOfTree() const;
+
+
 };

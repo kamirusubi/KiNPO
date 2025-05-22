@@ -71,6 +71,7 @@ std::string ExprNode::getRpnOfTree() const {
     return result; 
 }
 
+
 // Инициализация статических членов класса
 const std::map<std::string, ExprNodeType> ExprNode::symbolToString = {
     {"+", ExprNodeType::Plus},

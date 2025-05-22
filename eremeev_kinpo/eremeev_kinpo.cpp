@@ -1,12 +1,7 @@
 ﻿#include <iostream>
 #include "header.h"
 
-/*!
-* \Возвращает строку, содержащую содердимое файла
-* \param[in] filename – путь до файла, откуда будут прочитаны данные
-* \param[out] errors – указатель на контейнер с ошибками
-* \return - строка с содержимым файла
-*/
+
 std::string* readFileToString(const std::string filename, std::set <Error>* errors) {
     //Открыть файл
     std::ifstream inputFile(filename);
@@ -243,15 +238,79 @@ void transformInequalityToLessOperator(ExprNode* node) {
 }
 
 
-int main()
-{
+int main(int argc, char* argv[]) {
+    //Если получено больше трех параметров завершаем программу
+    if (argc < 3) {
+        std::cerr << "Usage: program <input_file> <output_file>" << std::endl;
+        return 1; 
+    }
 
-    std::string rpnString = "5 x >";
-    std::set<Error>* errors = new std::set<Error>();
-    ExprNode* tree = stringToExprTree(rpnString, errors);
-    tree->swapOperands();
-    rpnString = tree->getRpnOfTree();
-    std::cout << rpnString;
+    //Считать из параметров командной строки путь к входному файлу
+    std::string inputFilePath = argv[1];
 
-    return 0;
+    //Считать из параметров командной строки путь для выходных файлов
+    std::string outputFilePath = argv[2];
+
+    std::set<Error> errors;
+    ExprNode* exprTree = nullptr;
+
+    // Получить обратную польскую запись выражения из входного файла
+    std::string* rpnString = readFileToString(inputFilePath, &errors);
+
+    // Если удалось открыть входной файл и ошибок не было обнаружено
+    if (*rpnString != "" && errors.empty()) {
+
+        // Получить дерево разбора выражения
+        exprTree = stringToExprTree(*rpnString, &errors);
+
+        //Если дерево разбора выражения построено без ошибок
+        if (exprTree != nullptr && errors.empty()) {
+
+            //Добавить ошибку, если корневая операция недопустима
+            if (!checkRootOperator(exprTree->type)) {
+                Error error(ErrorType::invalidRootOperator, "", 0); 
+                errors.insert(error);
+            }
+        }
+    } 
+
+    // Создать выходной файл
+    std::ofstream outputFile;
+    outputFile.open(outputFilePath);
+
+    //Если удалось считать данные без ошибок и файл для выходных данных был создан
+    if (exprTree != nullptr && outputFile.is_open() && errors.empty()) {
+        //Преобразовать к операции меньше
+        transformInequalityToLessOperator(exprTree);
+
+        //Получить обратную польскую запись измененного дерева
+        std::string rpnResult = exprTree->getRpnOfTree();
+
+        //Вернуть в выходной файл измененное неравенство в обратной польской записи
+        outputFile << rpnResult << std::endl;
+    }
+
+    // Очистить память, выделенную под дерево и строку с rpn
+    delete rpnString;
+    if (exprTree != nullptr) {
+        delete exprTree;
+    }
+
+    //Если выходной файл был создан и есть ошибки
+    if (outputFile.is_open() && !errors.empty()) {
+        //Для каждой ошибки
+        for (const Error& error : errors) {
+            //Записать в выходной файл информацию об ошибке (generateErrorMessage)
+            outputFile << error.generateErrorMessage() << std::endl;
+        }
+    }
+    // Если выходной файл не удалось создать
+    else if (!outputFile.is_open()) {
+        //Вывести в консоль ошибку о неудаче создания выходного файла
+        std::cerr << "Error creating output file: " << outputFilePath << std::endl;
+        return 1;
+    }
+
+    outputFile.close();
+    return 0; 
 }
