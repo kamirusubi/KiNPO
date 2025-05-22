@@ -1,6 +1,68 @@
 ﻿#include <iostream>
 #include "header.h"
 
+/*!
+* \Возвращает строку, содержащую содердимое файла
+* \param[in] filename – путь до файла, откуда будут прочитаны данные
+* \param[out] errors – указатель на контейнер с ошибками
+* \return - строка с содержимым файла
+*/
+std::string* readFileToString(const std::string filename, std::set <Error>* errors) {
+    //Открыть файл
+    std::ifstream inputFile(filename);
+
+    //Если не удалось открыть файл
+    if (!inputFile.is_open()) {
+        // Добавить ошибку о неудаче открыть файл
+        Error error(ErrorType::inFileNotExist, filename, 0);
+        errors->insert(error);
+    }
+
+    //Иначе
+    else {
+        std::string line;
+        std::vector<std::string> non_empty_lines;
+
+        //Считать непустые строки файла
+        while (std::getline(inputFile, line)) {
+            if (!line.empty()) {
+                non_empty_lines.push_back(line);
+            }
+        }
+
+        //Закрыть файл
+        inputFile.close(); 
+
+        // Если в файле все строки пустые
+        if (non_empty_lines.empty()) {
+            // Добавить ошибку о пустом входном файле
+            Error error(ErrorType::emptyFile, filename, 0);
+            errors->insert(error);
+        }
+
+        // Если в файле больше одной непустой строки
+        if (non_empty_lines.size() > 1) {
+            // Для каждой лишней непустой строки
+            for (size_t i = 1; i < non_empty_lines.size(); ++i) { 
+                // Добавить ошибку о том, что в файле содержит лишнюю строку
+                Error error(ErrorType::moreThenOneLineInFile, filename, 0);
+                errors->insert(error);
+            }
+        }
+
+        // Если нет ошибок (только одна непустая строка)
+        if (errors->empty()) {
+            // Считать содержимое первой непустой строки
+            std::string* content = new std::string(non_empty_lines[0]);
+            return content;
+        }
+    }
+    
+    //Вернуть указатель на пустую строку
+    return new std::string("");
+}
+
+
 ExprNode* stringToExprTree(std::string rpnString, std::set <Error>* errors) {
     std::stack<ExprNode*> stack; // Стэк с содержимым класса ExprNode
     std::stringstream stream(rpnString); // Поток с выражением в обратной польской записи
@@ -81,6 +143,8 @@ ExprNode* stringToExprTree(std::string rpnString, std::set <Error>* errors) {
         return nullptr;
     }
 }
+
+
 bool isOperand(std::string str) {
     bool isOperandFlag = true;
 
@@ -177,6 +241,7 @@ void transformInequalityToLessOperator(ExprNode* node) {
         }
     }
 }
+
 
 int main()
 {

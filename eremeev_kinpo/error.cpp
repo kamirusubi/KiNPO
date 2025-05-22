@@ -13,7 +13,7 @@ std::string Error::generateErrorMessage() const {
         message = "File is empty: ";
         break;
     case ErrorType::moreThenOneLineInFile:
-        message = "File contains more than one line: " + strWithError;
+        message = "File contains extra line: " + strWithError;
         break;
     case ErrorType::invalidRootOperator:
         message = "Invalid root operator \"" + strWithError + "\"";

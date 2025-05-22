@@ -5,6 +5,10 @@
 #include <set>
 #include <sstream>
 #include <stack>
+#include <vector>
+#include <fstream>
+
+
 
 /*!
 * \—оздает дерево разбора выражени€ строки в обратной польской записи
@@ -41,7 +45,4 @@ void transformInequalityToLessOperator(ExprNode* node);
 * \param[out] errors Ц указатель на контейнер с ошибками
 * \return - строка с содержимым файла
 */
-std::string* readFileToString(const std::string filename, std::set <Error>* errors)
-
-
-
+std::string* readFileToString(const std::string filename, std::set <Error>* errors);

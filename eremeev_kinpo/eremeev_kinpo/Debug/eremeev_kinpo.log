@@ -1,11 +1,7 @@
 ﻿  eremeev_kinpo.cpp
-D:\GITHUB\KiNPO\eremeev_kinpo\eremeev_kinpo.cpp(29,30): warning C4018: <: несоответствие типов со знаком и без знака
-D:\GITHUB\KiNPO\eremeev_kinpo\eremeev_kinpo.cpp(96,31): warning C4018: <: несоответствие типов со знаком и без знака
-D:\GITHUB\KiNPO\eremeev_kinpo\eremeev_kinpo.cpp(105,31): warning C4018: <: несоответствие типов со знаком и без знака
-D:\GITHUB\KiNPO\eremeev_kinpo\eremeev_kinpo.cpp(118,27): warning C4018: <: несоответствие типов со знаком и без знака
-  error.cpp
-  exprNode.cpp
-  exprNode.h
-  Создание кода...
+D:\GITHUB\KiNPO\eremeev_kinpo\eremeev_kinpo.cpp(91,30): warning C4018: <: несоответствие типов со знаком и без знака
+D:\GITHUB\KiNPO\eremeev_kinpo\eremeev_kinpo.cpp(160,31): warning C4018: <: несоответствие типов со знаком и без знака
+D:\GITHUB\KiNPO\eremeev_kinpo\eremeev_kinpo.cpp(169,31): warning C4018: <: несоответствие типов со знаком и без знака
+D:\GITHUB\KiNPO\eremeev_kinpo\eremeev_kinpo.cpp(182,27): warning C4018: <: несоответствие типов со знаком и без знака
 eremeev_kinpo\Debug\exprNode.obj : warning LNK4042: объект указан более одного раза; лишние не учитываются
   eremeev_kinpo.vcxproj -> D:\GITHUB\KiNPO\eremeev_kinpo\Debug\eremeev_kinpo.exe
