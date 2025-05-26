@@ -4,28 +4,25 @@ std::string Error::generateErrorMessage() const {
     std::string message = "";
     switch (type) {
     case ErrorType::inFileNotExist:
-        message = "Input file does not exist on path " + errorInputFilePath;
-        break;
-    case ErrorType::outFileCreateFail:
-        message = "Failed to create output file on path " + errorOutputFilePath;
+        message = "По пути \"" + errorInputFilePath + "\" не удалось получить доступ к файлу с входными данными. Возможно, файл не существует.";
         break;
     case ErrorType::emptyFile:
-        message = "File is empty: ";
+        message = "Входной файл пуст.";
         break;
     case ErrorType::moreThenOneLineInFile:
-        message = "File contains extra line: " + strWithError;
+        message = "Файл со входными данными содержит лишнюю строку: " + strWithError;
         break;
     case ErrorType::invalidRootOperator:
-        message = "Invalid root operator \"" + strWithError + "\"";
+        message = "Недопустимая корневая операция \"" + strWithError + "\". Программа принимает на вход неравенство.";
         break;
     case ErrorType::unknownSymbol:
-        message = "Unknown symbol \"" + strWithError + "\" on position " + std::to_string(position);
+        message = "Сочетание символов \"" + strWithError + "\" на позиции " + std::to_string(position) + " не является операцией или операндом.";
         break;
     case ErrorType::missingOperand:
-        message = "Missing operand \"" + strWithError + "\" on position " + std::to_string(position);
+        message = "Синтаксическая ошибка на позиции " + std::to_string(position) + ": недостаточно операндов операции \"" + strWithError + "\"";
         break;
     case ErrorType::redundantOperand:
-        message = "Redundant operand \"" + strWithError + "\" on position " + std::to_string(position);
+        message = "Синтаксическая ошибка на позиции " + std::to_string(position) + ": лишний операнд \"" + strWithError + "\"";
         break;
     default:
         message = "";

@@ -2,14 +2,15 @@
 #include "header.h"
 
 
-std::string* readFileToString(const std::string filename, std::set <Error>* errors) {
+std::string* readFileToString(const std::string filePath, std::set <Error>* errors) {
     //Открыть файл
-    std::ifstream inputFile(filename);
+    std::ifstream inputFile(filePath);
 
     //Если не удалось открыть файл
     if (!inputFile.is_open()) {
         // Добавить ошибку о неудаче открыть файл
-        Error error(ErrorType::inFileNotExist, filename, 0);
+        Error error(ErrorType::inFileNotExist, "", 0);
+        error.errorInputFilePath = filePath;
         errors->insert(error);
     }
 
@@ -31,7 +32,7 @@ std::string* readFileToString(const std::string filename, std::set <Error>* erro
         // Если в файле все строки пустые
         if (non_empty_lines.empty()) {
             // Добавить ошибку о пустом входном файле
-            Error error(ErrorType::emptyFile, filename, 0);
+            Error error(ErrorType::emptyFile, "", 0);
             errors->insert(error);
         }
 
@@ -40,7 +41,7 @@ std::string* readFileToString(const std::string filename, std::set <Error>* erro
             // Для каждой лишней непустой строки
             for (size_t i = 1; i < non_empty_lines.size(); ++i) { 
                 // Добавить ошибку о том, что в файле содержит лишнюю строку
-                Error error(ErrorType::moreThenOneLineInFile, filename, 0);
+                Error error(ErrorType::moreThenOneLineInFile, non_empty_lines[i], 0);
                 errors->insert(error);
             }
         }
@@ -54,7 +55,7 @@ std::string* readFileToString(const std::string filename, std::set <Error>* erro
     }
     
     //Вернуть указатель на пустую строку
-    return new std::string("");
+    return nullptr;
 }
 
 
@@ -121,7 +122,6 @@ ExprNode* stringToExprTree(std::string rpnString, std::set <Error>* errors) {
             errors->insert(Error(ErrorType::redundantOperand, redundantOperand->getRpnOfTree(), tokenIndex[redundantOperand]));
         }
     }
-
 
     // Если нет ошибок
     if (errors->empty() && !stack.empty()) {
@@ -254,11 +254,12 @@ int main(int argc, char* argv[]) {
     std::set<Error> errors;
     ExprNode* exprTree = nullptr;
 
+    
     // Получить обратную польскую запись выражения из входного файла
     std::string* rpnString = readFileToString(inputFilePath, &errors);
 
     // Если удалось открыть входной файл и ошибок не было обнаружено
-    if (*rpnString != "" && errors.empty()) {
+    if (rpnString != nullptr && errors.empty()) {
 
         // Получить дерево разбора выражения
         exprTree = stringToExprTree(*rpnString, &errors);
@@ -268,7 +269,11 @@ int main(int argc, char* argv[]) {
 
             //Добавить ошибку, если корневая операция недопустима
             if (!checkRootOperator(exprTree->type)) {
-                Error error(ErrorType::invalidRootOperator, "", 0); 
+
+                Error error(ErrorType::invalidRootOperator, "", 0);
+
+                //Добавить в сообщение об ошибке значение узла, если узел - операнд, иначе - тип узла
+                error.strWithError = exprTree->type == ExprNodeType::Operand ? exprTree->value : ExprNode::stringToSymbol.at(exprTree->type);
                 errors.insert(error);
             }
         }
@@ -280,6 +285,7 @@ int main(int argc, char* argv[]) {
 
     //Если удалось считать данные без ошибок и файл для выходных данных был создан
     if (exprTree != nullptr && outputFile.is_open() && errors.empty()) {
+
         //Преобразовать к операции меньше
         transformInequalityToLessOperator(exprTree);
 
@@ -291,7 +297,9 @@ int main(int argc, char* argv[]) {
     }
 
     // Очистить память, выделенную под дерево и строку с rpn
-    delete rpnString;
+    if (rpnString != nullptr) {
+        delete rpnString;
+    }
     if (exprTree != nullptr) {
         delete exprTree;
     }
@@ -307,7 +315,7 @@ int main(int argc, char* argv[]) {
     // Если выходной файл не удалось создать
     else if (!outputFile.is_open()) {
         //Вывести в консоль ошибку о неудаче создания выходного файла
-        std::cerr << "Error creating output file: " << outputFilePath << std::endl;
+        std::cerr << "По пути \"" << outputFilePath << "\" не удалось создать файл для выходных данных. Возможно указанного расположения не существует или нет прав на запись." << std::endl;
         return 1;
     }
 

@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 
-enum ErrorType { inFileNotExist, outFileCreateFail, emptyFile, moreThenOneLineInFile, invalidRootOperator, unknownSymbol, missingOperand, redundantOperand };
+enum ErrorType { inFileNotExist, emptyFile, moreThenOneLineInFile, invalidRootOperator, unknownSymbol, missingOperand, redundantOperand };
 
 class Error {
 public:
