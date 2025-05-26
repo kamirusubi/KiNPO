@@ -1,111 +1,11 @@
 ﻿  eremeev_kinpo.cpp
-D:\GITHUB\KiNPO\eremeev_kinpo\eremeev_kinpo.cpp(77,20): error C2248: ExprNode::value: невозможно обратиться к private член, объявленному в классе "ExprNode"
-  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(12,17):
-   см. объявление "ExprNode::value"
-  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(9,7):
-   см. объявление "ExprNode"
-  
-D:\GITHUB\KiNPO\eremeev_kinpo\eremeev_kinpo.cpp(78,20): error C2248: ExprNode::type: невозможно обратиться к private член, объявленному в классе "ExprNode"
-  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(11,18):
-   см. объявление "ExprNode::type"
-  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(9,7):
-   см. объявление "ExprNode"
-  
-D:\GITHUB\KiNPO\eremeev_kinpo\eremeev_kinpo.cpp(82,20): error C2248: ExprNode::type: невозможно обратиться к private член, объявленному в классе "ExprNode"
-  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(11,18):
-   см. объявление "ExprNode::type"
-  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(9,7):
-   см. объявление "ExprNode"
-  
-D:\GITHUB\KiNPO\eremeev_kinpo\eremeev_kinpo.cpp(84,71): error C2248: ExprNode::type: невозможно обратиться к private член, объявленному в классе "ExprNode"
-  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(11,18):
-   см. объявление "ExprNode::type"
-  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(9,7):
-   см. объявление "ExprNode"
-  
 D:\GITHUB\KiNPO\eremeev_kinpo\eremeev_kinpo.cpp(87,30): warning C4018: <: несоответствие типов со знаком и без знака
-D:\GITHUB\KiNPO\eremeev_kinpo\eremeev_kinpo.cpp(94,28): error C2248: ExprNode::secondOperand: невозможно обратиться к private член, объявленному в классе "ExprNode"
-  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(14,15):
-   см. объявление "ExprNode::secondOperand"
-  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(9,7):
-   см. объявление "ExprNode"
-  
-D:\GITHUB\KiNPO\eremeev_kinpo\eremeev_kinpo.cpp(97,24): error C2248: ExprNode::firstOperand: невозможно обратиться к private член, объявленному в классе "ExprNode"
-  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(13,15):
-   см. объявление "ExprNode::firstOperand"
-  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(9,7):
-   см. объявление "ExprNode"
-  
 D:\GITHUB\KiNPO\eremeev_kinpo\eremeev_kinpo.cpp(155,31): warning C4018: <: несоответствие типов со знаком и без знака
 D:\GITHUB\KiNPO\eremeev_kinpo\eremeev_kinpo.cpp(164,31): warning C4018: <: несоответствие типов со знаком и без знака
 D:\GITHUB\KiNPO\eremeev_kinpo\eremeev_kinpo.cpp(177,27): warning C4018: <: несоответствие типов со знаком и без знака
-D:\GITHUB\KiNPO\eremeev_kinpo\eremeev_kinpo.cpp(213,13): error C2248: ExprNode::type: невозможно обратиться к private член, объявленному в классе "ExprNode"
-  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(11,18):
-   см. объявление "ExprNode::type"
-  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(9,7):
-   см. объявление "ExprNode"
-  
-D:\GITHUB\KiNPO\eremeev_kinpo\eremeev_kinpo.cpp(214,45): error C2248: ExprNode::type: невозможно обратиться к private член, объявленному в классе "ExprNode"
-  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(11,18):
-   см. объявление "ExprNode::type"
-  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(9,7):
-   см. объявление "ExprNode"
-  
-D:\GITHUB\KiNPO\eremeev_kinpo\eremeev_kinpo.cpp(216,13): error C2248: ExprNode::type: невозможно обратиться к private член, объявленному в классе "ExprNode"
-  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(11,18):
-   см. объявление "ExprNode::type"
-  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(9,7):
-   см. объявление "ExprNode"
-  
-D:\GITHUB\KiNPO\eremeev_kinpo\eremeev_kinpo.cpp(221,27): error C2248: ExprNode::firstOperand: невозможно обратиться к private член, объявленному в классе "ExprNode"
-  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(13,15):
-   см. объявление "ExprNode::firstOperand"
-  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(9,7):
-   см. объявление "ExprNode"
-  
-D:\GITHUB\KiNPO\eremeev_kinpo\eremeev_kinpo.cpp(221,47): error C2248: ExprNode::secondOperand: невозможно обратиться к private член, объявленному в классе "ExprNode"
-  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(14,15):
-   см. объявление "ExprNode::secondOperand"
-  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(9,7):
-   см. объявление "ExprNode"
-  
-D:\GITHUB\KiNPO\eremeev_kinpo\eremeev_kinpo.cpp(229,27): error C2248: ExprNode::firstOperand: невозможно обратиться к private член, объявленному в классе "ExprNode"
-  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(13,15):
-   см. объявление "ExprNode::firstOperand"
-  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(9,7):
-   см. объявление "ExprNode"
-  
-D:\GITHUB\KiNPO\eremeev_kinpo\eremeev_kinpo.cpp(229,47): error C2248: ExprNode::secondOperand: невозможно обратиться к private член, объявленному в классе "ExprNode"
-  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(14,15):
-   см. объявление "ExprNode::secondOperand"
-  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(9,7):
-   см. объявление "ExprNode"
-  
-D:\GITHUB\KiNPO\eremeev_kinpo\eremeev_kinpo.cpp(271,44): error C2248: ExprNode::type: невозможно обратиться к private член, объявленному в классе "ExprNode"
-  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(11,18):
-   см. объявление "ExprNode::type"
-  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(9,7):
-   см. объявление "ExprNode"
-  
-D:\GITHUB\KiNPO\eremeev_kinpo\eremeev_kinpo.cpp(276,46): error C2248: ExprNode::type: невозможно обратиться к private член, объявленному в классе "ExprNode"
-  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(11,18):
-   см. объявление "ExprNode::type"
-  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(9,7):
-   см. объявление "ExprNode"
-  
-D:\GITHUB\KiNPO\eremeev_kinpo\eremeev_kinpo.cpp(276,88): error C2248: ExprNode::value: невозможно обратиться к private член, объявленному в классе "ExprNode"
-  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(12,17):
-   см. объявление "ExprNode::value"
-  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(9,7):
-   см. объявление "ExprNode"
-  
-D:\GITHUB\KiNPO\eremeev_kinpo\eremeev_kinpo.cpp(276,134): error C2248: ExprNode::type: невозможно обратиться к private член, объявленному в классе "ExprNode"
-  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(11,18):
-   см. объявление "ExprNode::type"
-  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(9,7):
-   см. объявление "ExprNode"
-  
   error.cpp
   exprNode.cpp
   exprNode.h
   Создание кода...
+eremeev_kinpo\Debug\exprNode.obj : warning LNK4042: объект указан более одного раза; лишние не учитываются
+  eremeev_kinpo.vcxproj -> D:\GITHUB\KiNPO\eremeev_kinpo\Debug\eremeev_kinpo.exe

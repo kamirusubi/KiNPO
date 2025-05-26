@@ -32,24 +32,24 @@ bool compareExprTrees(const ExprNode* expected, const ExprNode* actual, const st
         return false;
     }
 
-    if (expected->type != actual->type) {
-        error += s2ws(ExprNode::stringToSymbol.at(expected->type)) + L"; actual: " + s2ws(ExprNode::stringToSymbol.at(actual->type)); // Преобразование здесь
+    if (expected->getType() != actual->getType()) {
+        error += s2ws(ExprNode::stringToSymbol.at(expected->getType())) + L"; actual: " + s2ws(ExprNode::stringToSymbol.at(actual->getType())); // Преобразование здесь
         errors->insert(error);
         return false;
     }
 
-    if (expected->type == ExprNodeType::Operand && expected->value != actual->value) {
-        error += s2ws(expected->value) + L"; actual: " + s2ws(actual->value); // Преобразование здесь
+    if (expected->getType() == ExprNodeType::Operand && expected->getValue() != actual->getValue()) {
+        error += s2ws(expected->getValue()) + L"; actual: " + s2ws(actual->getValue()); // Преобразование здесь
         errors->insert(error);
         return false;
     }
 
-    if (expected->firstOperand != nullptr || actual->firstOperand != nullptr) {
-        flag = compareExprTrees(expected->firstOperand, actual->firstOperand, path + s2ws(ExprNode::stringToSymbol.at(expected->type)) + L" -> ", errors) && flag;
+    if (expected->getFirstOperand() != nullptr || actual->getFirstOperand() != nullptr) {
+        flag = compareExprTrees(expected->getFirstOperand(), actual->getFirstOperand(), path + s2ws(ExprNode::stringToSymbol.at(expected->getType())) + L" -> ", errors) && flag;
     }
 
-    if (expected->secondOperand != nullptr || actual->secondOperand != nullptr) {
-        flag = compareExprTrees(expected->secondOperand, actual->secondOperand, path + s2ws(ExprNode::stringToSymbol.at(expected->type)) + L" -> ", errors) && flag;
+    if (expected->getSecondOperand() != nullptr || actual->getSecondOperand() != nullptr) {
+        flag = compareExprTrees(expected->getSecondOperand(), actual->getSecondOperand(), path + s2ws(ExprNode::stringToSymbol.at(expected->getType())) + L" -> ", errors) && flag;
     }
 
     return flag;

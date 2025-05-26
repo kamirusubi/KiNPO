@@ -54,7 +54,7 @@ namespace TestFunctions
 		TEST_METHOD(Test3_CurrentIsIntermediate) { // Текущий узел - промежуточный
 			std::set<Error> errors = std::set<Error>();
 			ExprNode* tree = stringToExprTree("5 x <", &errors);
-			tree->secondOperand->addUnaryOperatorBefore(ExprNodeType::Not);
+			tree->getSecondOperand()->addUnaryOperatorBefore(ExprNodeType::Not);
 
 			ExprNode* expTree = stringToExprTree("5 x ! <", &errors);
 

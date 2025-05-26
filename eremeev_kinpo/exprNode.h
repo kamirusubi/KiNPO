@@ -69,7 +69,7 @@ public:
     * \Возвращает тип узла
     * \return – значение поля type
     */
-    ExprNodeType getType();
+    ExprNodeType getType() const;
 
     /*!
     * \Изменяет тип узла

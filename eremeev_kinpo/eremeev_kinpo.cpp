@@ -74,14 +74,14 @@ ExprNode* stringToExprTree(std::string rpnString, std::set <Error>* errors) {
 
         // Если token – операнд
         if (isOperand(token)) {
-            newNode->value = token; // Присвоить полю value newNode значение token
-            newNode->type = ExprNodeType::Operand; // Присвоить полю type newNode значение Operand
+            newNode->setValue(token); // Присвоить полю value newNode значение token
+            newNode->setType(ExprNodeType::Operand); // Присвоить полю type newNode значение Operand
         }
         // Если token – символ из словаря symbolToString
         else if (ExprNode::symbolToString.count(token)) {
-            newNode->type = ExprNode::symbolToString.at(token); // Присвоить значению type newNode словесную запись оператора из словаря symbolToString
+            newNode->setType(ExprNode::symbolToString.at(token)); // Присвоить значению type newNode словесную запись оператора из словаря symbolToString
 
-            int operandCountNeeded = ExprNode::operandCount.at(newNode->type); // Узнать необходимое количество операндов
+            int operandCountNeeded = ExprNode::operandCount.at(newNode->getType()); // Узнать необходимое количество операндов
 
             // Если в стеке нет нужного количества операндов
             if (stack.size() < operandCountNeeded) {
@@ -91,10 +91,10 @@ ExprNode* stringToExprTree(std::string rpnString, std::set <Error>* errors) {
             if (errors->empty()) {
                 // Если оператор бинарный
                 if (operandCountNeeded == 2) {
-                    newNode->secondOperand = stack.top(); // Присвоить второму операнду newNode значение верхнего узла из стека
+                    newNode->setSecondOperand(stack.top()); // Присвоить второму операнду newNode значение верхнего узла из стека
                     stack.pop(); // Удалить из стека верхний узел
                 }
-                newNode->firstOperand = stack.top(); // Присвоить первому операнду newNode значение верхнего узла из стека
+                newNode->setFirstOperand(stack.top()); // Присвоить первому операнду newNode значение верхнего узла из стека
                 stack.pop(); // Удалить из стека верхний узел
             }
         }
@@ -210,15 +210,15 @@ bool checkRootOperator(ExprNodeType op) {
 
 void transformInequalityToLessOperator(ExprNode* node) {
     // Если корневая операция отличается от “Less”
-    if (node->type != ExprNodeType::Less) {
-        ExprNodeType originalOperator = node->type; // Запомнить корневую операцию
+    if (node->getType() != ExprNodeType::Less) {
+        ExprNodeType originalOperator = node->getType(); // Запомнить корневую операцию
 
-        node->type = ExprNodeType::Less; // Заменить корневую операцию на “Less”
+        node->setType(ExprNodeType::Less); // Заменить корневую операцию на “Less”
 
         switch (originalOperator) {
         case ExprNodeType::Greater:
             // Поменять операнды местами
-            std::swap(node->firstOperand, node->secondOperand);
+            node->swapOperands();
             break;
         case ExprNodeType::GreaterEqual:
             // Добавить новую операцию “Not” перед корневой
@@ -226,12 +226,11 @@ void transformInequalityToLessOperator(ExprNode* node) {
             break;
         case ExprNodeType::LessEqual:
             // Поменять операнды местами
-            std::swap(node->firstOperand, node->secondOperand);
+            node->swapOperands();
             // Добавить операцию “Not” перед корневой
             node->addUnaryOperatorBefore(ExprNodeType::Not);
             break;
         default:
-            // Не требуется никаких изменений для других операторов
             break;
         }
     }
@@ -268,12 +267,12 @@ int main(int argc, char* argv[]) {
         if (exprTree != nullptr && errors.empty()) {
 
             //Добавить ошибку, если корневая операция недопустима
-            if (!checkRootOperator(exprTree->type)) {
+            if (!checkRootOperator(exprTree->getType())) {
 
                 Error error(ErrorType::invalidRootOperator, "", 0);
 
                 //Добавить в сообщение об ошибке значение узла, если узел - операнд, иначе - тип узла
-                error.strWithError = exprTree->type == ExprNodeType::Operand ? exprTree->value : ExprNode::stringToSymbol.at(exprTree->type);
+                error.strWithError = exprTree->getType() == ExprNodeType::Operand ? exprTree->getValue() : ExprNode::stringToSymbol.at(exprTree->getType());
                 errors.insert(error);
             }
         }

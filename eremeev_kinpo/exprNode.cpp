@@ -73,7 +73,7 @@ std::string ExprNode::getRpnOfTree() const {
 
 
 
-ExprNodeType ExprNode::getType() {
+ExprNodeType ExprNode::getType() const {
     return this->type;
 }
 
