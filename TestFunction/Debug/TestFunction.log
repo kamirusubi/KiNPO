@@ -1,7 +1,147 @@
 ﻿  pch.cpp
   compareErrors.cpp
   compareTrees.cpp
+D:\GITHUB\KiNPO\TestFunction\compareTrees.cpp(35,17): error C2248: ExprNode::type: невозможно обратиться к private член, объявленному в классе "ExprNode"
+  (компиляция исходного файла "/compareTrees.cpp")
+  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(11,18):
+   см. объявление "ExprNode::type"
+  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(9,7):
+   см. объявление "ExprNode"
+  
+D:\GITHUB\KiNPO\TestFunction\compareTrees.cpp(35,33): error C2248: ExprNode::type: невозможно обратиться к private член, объявленному в классе "ExprNode"
+  (компиляция исходного файла "/compareTrees.cpp")
+  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(11,18):
+   см. объявление "ExprNode::type"
+  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(9,7):
+   см. объявление "ExprNode"
+  
+D:\GITHUB\KiNPO\TestFunction\compareTrees.cpp(36,59): error C2248: ExprNode::type: невозможно обратиться к private член, объявленному в классе "ExprNode"
+  (компиляция исходного файла "/compareTrees.cpp")
+  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(11,18):
+   см. объявление "ExprNode::type"
+  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(9,7):
+   см. объявление "ExprNode"
+  
+D:\GITHUB\KiNPO\TestFunction\compareTrees.cpp(36,125): error C2248: ExprNode::type: невозможно обратиться к private член, объявленному в классе "ExprNode"
+  (компиляция исходного файла "/compareTrees.cpp")
+  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(11,18):
+   см. объявление "ExprNode::type"
+  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(9,7):
+   см. объявление "ExprNode"
+  
+D:\GITHUB\KiNPO\TestFunction\compareTrees.cpp(41,17): error C2248: ExprNode::type: невозможно обратиться к private член, объявленному в классе "ExprNode"
+  (компиляция исходного файла "/compareTrees.cpp")
+  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(11,18):
+   см. объявление "ExprNode::type"
+  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(9,7):
+   см. объявление "ExprNode"
+  
+D:\GITHUB\KiNPO\TestFunction\compareTrees.cpp(41,60): error C2248: ExprNode::value: невозможно обратиться к private член, объявленному в классе "ExprNode"
+  (компиляция исходного файла "/compareTrees.cpp")
+  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(12,17):
+   см. объявление "ExprNode::value"
+  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(9,7):
+   см. объявление "ExprNode"
+  
+D:\GITHUB\KiNPO\TestFunction\compareTrees.cpp(41,77): error C2248: ExprNode::value: невозможно обратиться к private член, объявленному в классе "ExprNode"
+  (компиляция исходного файла "/compareTrees.cpp")
+  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(12,17):
+   см. объявление "ExprNode::value"
+  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(9,7):
+   см. объявление "ExprNode"
+  
+D:\GITHUB\KiNPO\TestFunction\compareTrees.cpp(42,31): error C2248: ExprNode::value: невозможно обратиться к private член, объявленному в классе "ExprNode"
+  (компиляция исходного файла "/compareTrees.cpp")
+  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(12,17):
+   см. объявление "ExprNode::value"
+  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(9,7):
+   см. объявление "ExprNode"
+  
+D:\GITHUB\KiNPO\TestFunction\compareTrees.cpp(42,69): error C2248: ExprNode::value: невозможно обратиться к private член, объявленному в классе "ExprNode"
+  (компиляция исходного файла "/compareTrees.cpp")
+  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(12,17):
+   см. объявление "ExprNode::value"
+  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(9,7):
+   см. объявление "ExprNode"
+  
+D:\GITHUB\KiNPO\TestFunction\compareTrees.cpp(47,17): error C2248: ExprNode::firstOperand: невозможно обратиться к private член, объявленному в классе "ExprNode"
+  (компиляция исходного файла "/compareTrees.cpp")
+  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(13,15):
+   см. объявление "ExprNode::firstOperand"
+  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(9,7):
+   см. объявление "ExprNode"
+  
+D:\GITHUB\KiNPO\TestFunction\compareTrees.cpp(47,52): error C2248: ExprNode::firstOperand: невозможно обратиться к private член, объявленному в классе "ExprNode"
+  (компиляция исходного файла "/compareTrees.cpp")
+  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(13,15):
+   см. объявление "ExprNode::firstOperand"
+  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(9,7):
+   см. объявление "ExprNode"
+  
+D:\GITHUB\KiNPO\TestFunction\compareTrees.cpp(48,41): error C2248: ExprNode::firstOperand: невозможно обратиться к private член, объявленному в классе "ExprNode"
+  (компиляция исходного файла "/compareTrees.cpp")
+  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(13,15):
+   см. объявление "ExprNode::firstOperand"
+  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(9,7):
+   см. объявление "ExprNode"
+  
+D:\GITHUB\KiNPO\TestFunction\compareTrees.cpp(48,63): error C2248: ExprNode::firstOperand: невозможно обратиться к private член, объявленному в классе "ExprNode"
+  (компиляция исходного файла "/compareTrees.cpp")
+  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(13,15):
+   см. объявление "ExprNode::firstOperand"
+  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(9,7):
+   см. объявление "ExprNode"
+  
+D:\GITHUB\KiNPO\TestFunction\compareTrees.cpp(48,127): error C2248: ExprNode::type: невозможно обратиться к private член, объявленному в классе "ExprNode"
+  (компиляция исходного файла "/compareTrees.cpp")
+  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(11,18):
+   см. объявление "ExprNode::type"
+  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(9,7):
+   см. объявление "ExprNode"
+  
+D:\GITHUB\KiNPO\TestFunction\compareTrees.cpp(51,17): error C2248: ExprNode::secondOperand: невозможно обратиться к private член, объявленному в классе "ExprNode"
+  (компиляция исходного файла "/compareTrees.cpp")
+  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(14,15):
+   см. объявление "ExprNode::secondOperand"
+  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(9,7):
+   см. объявление "ExprNode"
+  
+D:\GITHUB\KiNPO\TestFunction\compareTrees.cpp(51,53): error C2248: ExprNode::secondOperand: невозможно обратиться к private член, объявленному в классе "ExprNode"
+  (компиляция исходного файла "/compareTrees.cpp")
+  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(14,15):
+   см. объявление "ExprNode::secondOperand"
+  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(9,7):
+   см. объявление "ExprNode"
+  
+D:\GITHUB\KiNPO\TestFunction\compareTrees.cpp(52,41): error C2248: ExprNode::secondOperand: невозможно обратиться к private член, объявленному в классе "ExprNode"
+  (компиляция исходного файла "/compareTrees.cpp")
+  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(14,15):
+   см. объявление "ExprNode::secondOperand"
+  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(9,7):
+   см. объявление "ExprNode"
+  
+D:\GITHUB\KiNPO\TestFunction\compareTrees.cpp(52,64): error C2248: ExprNode::secondOperand: невозможно обратиться к private член, объявленному в классе "ExprNode"
+  (компиляция исходного файла "/compareTrees.cpp")
+  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(14,15):
+   см. объявление "ExprNode::secondOperand"
+  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(9,7):
+   см. объявление "ExprNode"
+  
+D:\GITHUB\KiNPO\TestFunction\compareTrees.cpp(52,129): error C2248: ExprNode::type: невозможно обратиться к private член, объявленному в классе "ExprNode"
+  (компиляция исходного файла "/compareTrees.cpp")
+  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(11,18):
+   см. объявление "ExprNode::type"
+  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(9,7):
+   см. объявление "ExprNode"
+  
   TestAddUnaryOperatorBefore.cpp
+D:\GITHUB\KiNPO\TestFunction\TestAddUnaryOperatorBefore.cpp(57,8): error C2248: ExprNode::secondOperand: невозможно обратиться к private член, объявленному в классе "ExprNode"
+  (компиляция исходного файла "/TestAddUnaryOperatorBefore.cpp")
+  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(14,15):
+   см. объявление "ExprNode::secondOperand"
+  D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(9,7):
+   см. объявление "ExprNode"
+  
   TestCheckRootOperation.cpp
   TestGetRpnOfExprTree.cpp
   TestIsOperand.cpp
@@ -9,5 +149,3 @@
   TestSwapOperands.cpp
   TestTransformInequalityToLessOperator.cpp
   Создание кода...
-     Создается библиотека D:\GITHUB\KiNPO\eremeev_kinpo\Debug\TestFunction.lib и объект D:\GITHUB\KiNPO\eremeev_kinpo\Debug\TestFunction.exp
-  TestFunction.vcxproj -> D:\GITHUB\KiNPO\eremeev_kinpo\Debug\TestFunction.dll

@@ -72,6 +72,47 @@ std::string ExprNode::getRpnOfTree() const {
 }
 
 
+
+ExprNodeType ExprNode::getType() {
+    return this->type;
+}
+
+
+void ExprNode::setType(ExprNodeType newType) {
+    this->type = newType;
+}
+
+std::string ExprNode::getValue() const {
+    return this->value;
+}
+
+
+void ExprNode::setValue(const std::string& newValue) {
+    this->value = newValue;
+}
+
+
+ExprNode* ExprNode::getFirstOperand() const {
+    return this->firstOperand;
+}
+
+
+void ExprNode::setFirstOperand(ExprNode* newFirstOperand) {
+    this->firstOperand = newFirstOperand;
+}
+
+
+ExprNode* ExprNode::getSecondOperand() const {
+    return this->secondOperand;
+}
+
+
+void ExprNode::setSecondOperand(ExprNode* newSecondOperand) {
+    this->secondOperand = newSecondOperand;
+}
+
+
+
 // Инициализация статических членов класса
 const std::map<std::string, ExprNodeType> ExprNode::symbolToString = {
     {"+", ExprNodeType::Plus},
