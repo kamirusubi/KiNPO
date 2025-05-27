@@ -3,18 +3,6 @@
   "WorkspaceRootPath": "D:\\GITHUB\\KiNPO\\eremeev_kinpo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{90D02595-3FEC-4580-A1B3-C50741F3529F}|eremeev_kinpo.vcxproj|D:\\GITHUB\\KiNPO\\eremeev_kinpo\\error.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{90D02595-3FEC-4580-A1B3-C50741F3529F}|eremeev_kinpo.vcxproj|solutionrelative:error.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{90D02595-3FEC-4580-A1B3-C50741F3529F}|eremeev_kinpo.vcxproj|D:\\GITHUB\\KiNPO\\eremeev_kinpo\\error.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{90D02595-3FEC-4580-A1B3-C50741F3529F}|eremeev_kinpo.vcxproj|solutionrelative:error.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{90D02595-3FEC-4580-A1B3-C50741F3529F}|eremeev_kinpo.vcxproj|D:\\GITHUB\\KiNPO\\eremeev_kinpo\\eremeev_kinpo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{90D02595-3FEC-4580-A1B3-C50741F3529F}|eremeev_kinpo.vcxproj|solutionrelative:eremeev_kinpo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{90D02595-3FEC-4580-A1B3-C50741F3529F}|eremeev_kinpo.vcxproj|D:\\GITHUB\\KiNPO\\eremeev_kinpo\\exprNode.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{90D02595-3FEC-4580-A1B3-C50741F3529F}|eremeev_kinpo.vcxproj|solutionrelative:exprNode.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
@@ -35,51 +23,12 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "error.cpp",
-              "DocumentMoniker": "D:\\GITHUB\\KiNPO\\eremeev_kinpo\\error.cpp",
-              "RelativeDocumentMoniker": "error.cpp",
-              "ToolTip": "D:\\GITHUB\\KiNPO\\eremeev_kinpo\\error.cpp",
-              "RelativeToolTip": "error.cpp",
-              "ViewState": "AQIAABUAAAAAAAAAAAAAADgAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-27T11:47:03.872Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "error.h",
-              "DocumentMoniker": "D:\\GITHUB\\KiNPO\\eremeev_kinpo\\error.h",
-              "RelativeDocumentMoniker": "error.h",
-              "ToolTip": "D:\\GITHUB\\KiNPO\\eremeev_kinpo\\error.h",
-              "RelativeToolTip": "error.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-27T11:46:24.793Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "eremeev_kinpo.cpp",
-              "DocumentMoniker": "D:\\GITHUB\\KiNPO\\eremeev_kinpo\\eremeev_kinpo.cpp",
-              "RelativeDocumentMoniker": "eremeev_kinpo.cpp",
-              "ToolTip": "D:\\GITHUB\\KiNPO\\eremeev_kinpo\\eremeev_kinpo.cpp",
-              "RelativeToolTip": "eremeev_kinpo.cpp",
-              "ViewState": "AQIAAN8AAAAAAAAAAAD4vzwBAAAzAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-26T14:45:57.902Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "exprNode.h",
               "DocumentMoniker": "D:\\GITHUB\\KiNPO\\eremeev_kinpo\\exprNode.h",
               "RelativeDocumentMoniker": "exprNode.h",
               "ToolTip": "D:\\GITHUB\\KiNPO\\eremeev_kinpo\\exprNode.h",
               "RelativeToolTip": "exprNode.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEcAAAAgAAAA",
+              "ViewState": "AQIAACoAAAAAAAAAAAAAAC0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-05-22T15:45:08.108Z",
               "EditorCaption": ""

@@ -55,29 +55,12 @@ bool Error::operator<(const Error& other) const {
         return true;
     }
 
-    if (!errorOutputFilePath.empty() && !other.errorOutputFilePath.empty())
-    {
-        if (errorOutputFilePath != other.errorOutputFilePath)
-        {
-            return errorOutputFilePath < other.errorOutputFilePath;
-        }
-    }
-    else if (!errorOutputFilePath.empty() && other.errorOutputFilePath.empty())
-    {
-        return false;
-    }
-    else if (errorOutputFilePath.empty() && !other.errorOutputFilePath.empty())
-    {
-        return true;
-    }
-
     return false;
 }
 
 bool Error::operator==(const Error& other) const {
     return type == other.type &&
         errorInputFilePath == other.errorInputFilePath &&
-        errorOutputFilePath == other.errorOutputFilePath &&
         strWithError == other.strWithError &&
         position == other.position;
 
