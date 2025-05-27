@@ -107,7 +107,7 @@ ExprNode* stringToExprTree(std::string rpnString, std::set <Error>* errors) {
         }
     }
 
-    if (stack.size() > 1) { // Если в стэке больше одного элемента
+    if (stack.size() > 1 && errors->empty()) { // Если в стэке больше одного элемента и нет ошибок
         //сохранить верхушку стека
         ExprNode* tree = stack.top();
         stack.pop();
