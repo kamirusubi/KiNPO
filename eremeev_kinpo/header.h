@@ -34,7 +34,7 @@ bool checkRootOperator(ExprNodeType _operator);
 
 /*!
 * \Преобразует узел дерева разбора выражения к операции «меньше»
-* \param[in/out] obj – указатель на узел, который должен быть преобразован
+* \param[in/out] node – указатель на узел, который должен быть преобразован
 */
 void transformInequalityToLessOperator(ExprNode* node);
 
