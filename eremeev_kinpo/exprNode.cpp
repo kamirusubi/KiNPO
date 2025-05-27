@@ -9,7 +9,8 @@ void ExprNode::swapOperands() {
     this->secondOperand = tmp;
 }
 
-void ExprNode::addUnaryOperatorBefore(ExprNodeType op) {
+
+void ExprNode::addUnaryOperatorBefore(ExprNodeType _operator) {
     // —оздаем указатель на новый узел newNode
     ExprNode* newNode = this->copyNode(); //  опируем текущий узел
 
@@ -20,23 +21,31 @@ void ExprNode::addUnaryOperatorBefore(ExprNodeType op) {
     secondOperand = nullptr; // »ли = NULL; (но nullptr лучше дл€ C++)
 
     // »змен€ем тип операции на operator
-    type = op;
-    value = ""; // ќчищаем value, если узел теперь оператор
+    type = _operator;
+    // ќчистить значение узла
+    value = ""; 
 }
 
-ExprNode* ExprNode::copyNode() const {
-    ExprNode* newNode = new ExprNode(); // —оздаем новый узел в куче
 
-    newNode->type = type; // ѕрисваиваем тип операции
+ExprNode* ExprNode::copyNode() const {
+    //—оздать указатель на новый узел
+    ExprNode* newNode = new ExprNode();
+
+    // ѕрисвоить тип операции текущего узла в поле type
+    newNode->type = type; 
 
     // ≈сли текущий узел - операнд
     if (type == ExprNodeType::Operand) {
-        newNode->value = value; // ѕрисваиваем значение операнда 
+
+        // ѕрисвоить значение операнда в поле value узла
+        newNode->value = value; 
     }
     //»наче если текущий узел имеет первый операнд
     else if (firstOperand) {
+
         //ѕрисвоить в первый операнд newNode значение первого операнда текущего узла
         newNode->firstOperand = firstOperand;
+
         //≈сли текущий узел имеет второй операнд
         if (secondOperand) {
             //ѕрисвоить в второй операнд newNode значение второго операнда текущегоузла
@@ -44,27 +53,29 @@ ExprNode* ExprNode::copyNode() const {
         }
     }
 
-    return newNode; // ¬озвращаем указатель на скопированный узел
+    // ¬озвращаем указатель на скопированный узел
+    return newNode; 
 }
+
 
 std::string ExprNode::getRpnOfTree() const {
     std::string result = ""; // —трока дл€ хранени€ обратной польской записи
 
     // ≈сли текущий узел - операнд
     if (type == ExprNodeType::Operand) {
-        // «аписываем значение пол€ value
+        // «аписать в строку значение пол€ value
         result += value; 
     }
     // »наче если текущий узел имеет первый операнд
     else if (firstOperand) {
-            // «аписываем обратную польскую запись первого операнда
+            // «аписать в строку обратную польскую запись первого операнда
             result += firstOperand->getRpnOfTree() + " ";
         // ≈сли текущий узел имеет второй операнд
         if (secondOperand) {
-            // «аписываем обратную польскую запись второго операнда
+            // «аписать в строку обратную польскую запись второго операнда
             result += secondOperand->getRpnOfTree() + " ";
         }
-        // ƒобавл€ем к строке математическую запись оператора из словар€ stringToSymbol
+        // ƒобавить к строке математическую запись оператора из словар€ stringToSymbol
         result += stringToSymbol.at(type);
     }
     // ¬озвращаем строку с обратной польской записью

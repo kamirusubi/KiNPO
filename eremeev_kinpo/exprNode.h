@@ -64,7 +64,7 @@ public:
     * \ƒобавл€ет унарную операцию перед текущей
     * \param[in] operator - операци€, котора€ будет добавлена
     */
-    void addUnaryOperatorBefore(ExprNodeType op);
+    void addUnaryOperatorBefore(ExprNodeType _operator);
 
     /*!
     * \ опирует текущий узел

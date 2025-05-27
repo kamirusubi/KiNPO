@@ -115,7 +115,6 @@ ExprNode* stringToExprTree(std::string rpnString, std::set <Error>* errors) {
         //для всех неиспользованных операндов
         while (stack.size() > 0)
         {
-
             ExprNode* redundantOperand = stack.top();
             stack.pop();
 
@@ -130,7 +129,7 @@ ExprNode* stringToExprTree(std::string rpnString, std::set <Error>* errors) {
         return root;
     }
     else {
-        // Обработка ошибок: очистка стека и освобождение памяти
+        // Освободить память, выделенную под стэк
         while (!stack.empty()) {
             delete stack.top();
             stack.pop();
@@ -141,20 +140,16 @@ ExprNode* stringToExprTree(std::string rpnString, std::set <Error>* errors) {
 
 
 bool isOperand(std::string str) {
-    bool isOperandFlag = true;
-
-    if (str.empty()) {
-        isOperandFlag = false; // Пустая строка не может быть операндом
-    }
 
     //Если длина str больше 1 и первый символ str - «0» 
-    if (str.length() > 1 && str[0] == '0' && isOperandFlag) {
+    if (str.length() > 1 && str[0] == '0') {
         //Если второй символ str - «X» или «x»
         if (str[1] == 'X' || str[1] == 'x') {
-            // Шестнадцатеричное число
+            // Для каждого символа числа
             for (int i = 2; i < str.length(); ++i) {
-                if (!isxdigit(str[i])) {
-                    return false; // Недопустимый символ в шестнадцатеричном числе
+                // Если символ недопустим в шестнадцатеричном числе
+                if (!isxdigit(str[i])) { 
+                    return false; // Вернуть false
                 }
             }
         }
@@ -168,34 +163,38 @@ bool isOperand(std::string str) {
             }
         }
         else {
-            return false;  // После '0' должен идти 'x', 'X' или цифра
+            return false;
         }
     }
     // Если первый символ - цифра
-    else if (isdigit(str[0]) && isOperandFlag) {
-        // Проверяем, что остальные символы тоже цифры
+    else if (isdigit(str[0])) {
+        // Проверить, что остальные символы тоже цифры
         for (int i = 1; i < str.length(); ++i) {
+            // Если есть нецифровой символ
             if (!isdigit(str[i])) {
-                return false; // Есть нецифровой символ
+                return false; 
             }
         }
     }
     // Если начинается с буквы или "_"
     else if (isalpha(str[0]) || str[0] == '_') {
+        //Для остальных символов
         for (size_t i = 1; i < str.length(); ++i) {
+            //Если симвлол - не цифра и не буква
             if (!isalnum(str[i]) && str[i] != '_') {
                 return false; // Недопустимый символ
             }
         }
     }
     else {
-        return false; // Недопустимый первый символ
+        //Иначе первый символ недопустим для операнда
+        return false; 
     }
-    return isOperandFlag;
+    return true;
 }
 
 
-bool checkRootOperator(ExprNodeType op) {
+bool checkRootOperator(ExprNodeType _operator) {
     // Контейнер допустимых корневых операторов
     std::set<ExprNodeType> validRootOperators = {
         ExprNodeType::Less,
@@ -204,7 +203,7 @@ bool checkRootOperator(ExprNodeType op) {
         ExprNodeType::LessEqual
     };
     //Вернуть допустимость корневого оператора
-    return validRootOperators.count(op) > 0;
+    return validRootOperators.count(_operator) > 0;
 }
 
 
@@ -238,10 +237,10 @@ void transformInequalityToLessOperator(ExprNode* node) {
 
 
 int main(int argc, char* argv[]) {
-    //Если получено больше трех параметров завершаем программу
+    //Если получено меньше трех параметров завершаем программу
     if (argc < 3) {
         std::cerr << "Usage: program <input_file> <output_file>" << std::endl;
-        return 1; 
+        return 0; 
     }
 
     //Считать из параметров командной строки путь к входному файлу
@@ -315,7 +314,7 @@ int main(int argc, char* argv[]) {
     else if (!outputFile.is_open()) {
         //Вывести в консоль ошибку о неудаче создания выходного файла
         std::cerr << "По пути \"" << outputFilePath << "\" не удалось создать файл для выходных данных. Возможно указанного расположения не существует или нет прав на запись." << std::endl;
-        return 1;
+        return 0;
     }
 
     outputFile.close();

@@ -30,7 +30,7 @@ bool isOperand(std::string str);
 * \param[out] errors – указатель на контейнер с ошибками
 * \return - true, если операция допустима; false, если строка операция не допустима
 */
-bool checkRootOperator(ExprNodeType op);
+bool checkRootOperator(ExprNodeType _operator);
 
 /*!
 * \Преобразует узел дерева разбора выражения к операции «меньше»
