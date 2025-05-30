@@ -5,20 +5,29 @@ enum ErrorType { inFileNotExist, emptyFile, moreThenOneLineInFile, invalidRootOp
 
 class Error {
 public:
-    ErrorType type; //тип ошибки
-    std::string errorInputFilePath; //поле для хранения пути, откуда не удалось прочитать файл
-    std::string strWithError; // строка, содержащая ошибку
-    int position; // позиция ошибки
+    /// @brief Тип ошибки
+    ErrorType type;
+    /// @brief Поле для хранения пути, откуда не удалось прочитать файл
+    std::string errorInputFilePath; 
+    /// @brief Строка, содержащая ошибку
+    std::string strWithError; 
+    /// @brief Позиция ошибки
+    int position; 
 
-    //Конструктор для входных параметров с типом ошибки и ее описанием
+    /*!
+    * Конструктор для входных параметров с типом ошибки и ее описанием
+    * \param[in] _type - тип ошибки
+    * \param[in] _strWithError - строка, содержащая ошибку
+    * \param[in] _position - позиция ошибки
+    */
     Error(ErrorType _type, std::string _strWithError, int _position) :
         type(_type), strWithError(_strWithError), position(_position) {}
 
     bool operator<(const Error& other) const;
     bool operator==(const Error& other) const;
+
     /*!
-    * \Возвращает описание ошибки
-    * \this – ошибка
+    * Возвращает описание ошибки
     * \return – строка с описанием ошибки
     */
     std::string generateErrorMessage() const;

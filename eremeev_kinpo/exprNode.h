@@ -8,35 +8,39 @@ enum class ExprNodeType { Plus, Minus, Division, Multiplication, DivRemainder, U
 
 class ExprNode {
 private:
-    ExprNodeType type; //тип узла выражения
-    std::string value = ""; // значение узла, если узел - операнд
-    ExprNode* firstOperand = nullptr; // первый операнд
-    ExprNode* secondOperand = nullptr; // второй операнд
+    /// @brief Тип узла выражения
+    ExprNodeType type;
+    /// @brief Значение узла, если узел - операнд
+    std::string value = "";
+    /// @brief Указатель на первый операнд
+    ExprNode* firstOperand = nullptr; 
+    /// @brief Указатель на второй операнд
+    ExprNode* secondOperand = nullptr; 
 
 public:
-    //статический словарь для получения словесной записи оператора по его символу
+    /// @brief Статический словарь для получения словесной записи оператора по его символу
     static const std::map<std::string, ExprNodeType> symbolToString;
-    //статический словарь для получения символа оператора по его словесной записи
+    /// @brief Статический словарь для получения символа оператора по его словесной записи
     static const std::map<ExprNodeType, std::string> stringToSymbol;
-    //статический словарь для получения количества операндов
+    /// @brief Статический словарь для получения количества операндов
     static const std::map<ExprNodeType, int> operandCount;
-    //статический словарь с символами
+    /// @brief Статический словарь с символами
     static const std::set<std::string> operatorsSymbols;
 
     /*!
-    * \Конструктор по умолчанию
+    * Конструктор по умолчанию
     */
     ExprNode(){}
 
     /*!
-    * \Конструктор для узла - операнда
+    * Конструктор для узла - операнда
     * \param[in] _value - значение узла
     */
     ExprNode(std::string _value) :
         type(ExprNodeType::Operand), value(_value){}
 
     /*!
-    * \Конструктор для узла унарной операции
+    * Конструктор для узла унарной операции
     * \param[in] _type - тип узла
     * \param[in] _firstOperand - указатель на операнд
     */
@@ -44,7 +48,7 @@ public:
         type(_type), firstOperand(_firstOperand) {}
 
     /*!
-    * \Конструктор для узла бинарной операции
+    * Конструктор для узла бинарной операции
     * \param[in] _type - тип узла
     * \param[in] _firstOperand - указатель на первый операнд
     * \param[in] _secondOperand - указатель на второй операнд
@@ -55,74 +59,72 @@ public:
 
 
     /*!
-    * \Меняет местами операнды узла дерева разбора выражения
-    * \this – узел, операнды которого поменяются местами
+    * Меняет местами операнды узла дерева разбора выражения
     */
     void swapOperands();
 
     /*!
-    * \Добавляет унарную операцию перед текущей
+    * Добавляет унарную операцию перед текущей
     * \param[in] operator - операция, которая будет добавлена
     */
     void addUnaryOperatorBefore(ExprNodeType _operator);
 
     /*!
-    * \Копирует текущий узел
-    * \this – узел, который будет скопирован
+    * Копирует текущий узел
     * \return – указатель на копию узла
     */
     ExprNode* copyNode() const;
 
     /*!
-    * \Создает строку с обратной польской
+    * Создает строку с обратной польской
     * \return – строка с обратной польской записью
     */
     std::string getRpnOfTree() const;
 
     /*!
-    * \Возвращает тип узла
+    * Возвращает тип узла
     * \return – значение поля type
     */
     ExprNodeType getType() const;
 
     /*!
-    * \Изменяет тип узла
+    * Изменяет тип узла
     * \param[in] newType - новый тип поля type
     */
     void setType(ExprNodeType newType);
 
     /*!
-    * \Возвращает значение узла
+    * Возвращает значение узла
     * \return – значение поля value
     */
     std::string getValue() const;
 
     /*!
-    * \Изменяет значение узла
+    * Изменяет значение узла
     * \param[in] newValue - строка с новым содержимым поля value
     */
     void setValue(const std::string& newValue);
 
     /*!
-    * \Возвращает ссылку на первый операнд узла
+    * Возвращает ссылку на первый операнд узла
     * \return – ссылка на первый операнд узла
     */
     ExprNode* getFirstOperand() const;
 
     /*!
-    * \Изменяет значение первого операнда узла
+    * Изменяет значение первого операнда узла
     * \param[in] newFirstOperand - ссылка на новый первый операнд
     */
     void setFirstOperand(ExprNode* newFirstOperand);
 
     /*!
-    * \Возвращает ссылку на второй операнд узла
+    * Возвращает ссылку на второй операнд узла
     * \return – ссылка на второй операнд узла
     */
     ExprNode* getSecondOperand() const;
 
     /*!
-    * \Изменяет значение второго операнда узла
+    * Изменяет значение второго операнда узла
     * \param[in] newSecondOperand - ссылка на новый второй операнд
     */
     void setSecondOperand(ExprNode* newSecondOperand);
