@@ -1,0 +1,327 @@
+\doxysection{Expr\+Node Class Reference}
+\hypertarget{class_expr_node}{}\label{class_expr_node}\index{ExprNode@{ExprNode}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_expr_node_a440d1cb893f7815b71dff7b4ec35089a}{Expr\+Node}} ()
+\item 
+\mbox{\hyperlink{class_expr_node_a729f0a0a75a643786d50a19e145a5ca2}{Expr\+Node}} (std\+::string \+\_\+value)
+\item 
+\mbox{\hyperlink{class_expr_node_a05349d98f9dba99ef79626e4c3c261c6}{Expr\+Node}} (Expr\+Node\+Type \+\_\+type, \mbox{\hyperlink{class_expr_node}{Expr\+Node}} \texorpdfstring{$\ast$}{*}\+\_\+first\+Operand)
+\item 
+\mbox{\hyperlink{class_expr_node_ae67e3b8c8200fcbb16ff2885e60c283f}{Expr\+Node}} (Expr\+Node\+Type \+\_\+type, \mbox{\hyperlink{class_expr_node}{Expr\+Node}} \texorpdfstring{$\ast$}{*}\+\_\+first\+Operand, \mbox{\hyperlink{class_expr_node}{Expr\+Node}} \texorpdfstring{$\ast$}{*}\+\_\+second\+Operand)
+\item 
+void \mbox{\hyperlink{class_expr_node_ada813e299fe6e2a85f35ea919fd1112b}{swap\+Operands}} ()
+\item 
+void \mbox{\hyperlink{class_expr_node_af72a0e59f0c2fe1c43b3c1311f3c39f2}{add\+Unary\+Operator\+Before}} (Expr\+Node\+Type \+\_\+operator)
+\item 
+\mbox{\hyperlink{class_expr_node}{Expr\+Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_expr_node_a0d2c1ecf929de7015f87f4de88519138}{copy\+Node}} () const
+\item 
+std\+::string \mbox{\hyperlink{class_expr_node_a12fb9950c1bf8c8f402637e8fac1eeb4}{get\+Rpn\+Of\+Tree}} () const
+\item 
+Expr\+Node\+Type \mbox{\hyperlink{class_expr_node_a6c62bdaca177fdfdeb1779777a48c0ac}{get\+Type}} () const
+\item 
+void \mbox{\hyperlink{class_expr_node_a5cf582d669f919aa2051f903cbe3f2b2}{set\+Type}} (Expr\+Node\+Type new\+Type)
+\item 
+std\+::string \mbox{\hyperlink{class_expr_node_ad49f49f8f77af74d5339770791230289}{get\+Value}} () const
+\item 
+void \mbox{\hyperlink{class_expr_node_a711a00fccac1f7fbaed275ec207d32fd}{set\+Value}} (const std\+::string \&new\+Value)
+\item 
+\mbox{\hyperlink{class_expr_node}{Expr\+Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_expr_node_a48d90bfc27ab6df2206f949ee037cfe0}{get\+First\+Operand}} () const
+\item 
+void \mbox{\hyperlink{class_expr_node_a47c767035596bbbceb4d82577dbda9ed}{set\+First\+Operand}} (\mbox{\hyperlink{class_expr_node}{Expr\+Node}} \texorpdfstring{$\ast$}{*}new\+First\+Operand)
+\item 
+\mbox{\hyperlink{class_expr_node}{Expr\+Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_expr_node_a0b5817be18b56c3da9d6eaa3dfc1a675}{get\+Second\+Operand}} () const
+\item 
+void \mbox{\hyperlink{class_expr_node_ac3138b3d0380db6599ed84c72faaaf00}{set\+Second\+Operand}} (\mbox{\hyperlink{class_expr_node}{Expr\+Node}} \texorpdfstring{$\ast$}{*}new\+Second\+Operand)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const std\+::map$<$ std\+::string, Expr\+Node\+Type $>$ \mbox{\hyperlink{class_expr_node_a190c5f0f1da6b83dd745f05c75fcf596}{symbol\+To\+String}}
+\begin{DoxyCompactList}\small\item\em Статический словарь для получения словесной записи оператора по его символу \end{DoxyCompactList}\item 
+static const std\+::map$<$ Expr\+Node\+Type, std\+::string $>$ \mbox{\hyperlink{class_expr_node_a3617f8673fa584b7c44fe86be0588764}{string\+To\+Symbol}}
+\begin{DoxyCompactList}\small\item\em Статический словарь для получения символа оператора по его словесной записи \end{DoxyCompactList}\item 
+static const std\+::map$<$ Expr\+Node\+Type, int $>$ \mbox{\hyperlink{class_expr_node_a54bf1461356a1a4e49a77ab3b3ebae23}{operand\+Count}}
+\begin{DoxyCompactList}\small\item\em Статический словарь для получения количества операндов \end{DoxyCompactList}\item 
+static const std\+::set$<$ std\+::string $>$ \mbox{\hyperlink{class_expr_node_a3024e47cd4e9963f2cc163d31434262d}{operators\+Symbols}}
+\begin{DoxyCompactList}\small\item\em Статический словарь с символами \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{class_expr_node_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_expr_node_a440d1cb893f7815b71dff7b4ec35089a}\index{ExprNode@{ExprNode}!ExprNode@{ExprNode}}
+\index{ExprNode@{ExprNode}!ExprNode@{ExprNode}}
+\doxysubsubsection{\texorpdfstring{ExprNode()}{ExprNode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \label{class_expr_node_a440d1cb893f7815b71dff7b4ec35089a} 
+Expr\+Node\+::\+Expr\+Node (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Конструктор по умолчанию \Hypertarget{class_expr_node_a729f0a0a75a643786d50a19e145a5ca2}\index{ExprNode@{ExprNode}!ExprNode@{ExprNode}}
+\index{ExprNode@{ExprNode}!ExprNode@{ExprNode}}
+\doxysubsubsection{\texorpdfstring{ExprNode()}{ExprNode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \label{class_expr_node_a729f0a0a75a643786d50a19e145a5ca2} 
+Expr\+Node\+::\+Expr\+Node (\begin{DoxyParamCaption}\item[{std\+::string}]{\+\_\+value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Конструктор для узла -\/ операнда 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{in}}  & {\em \+\_\+value} & -\/ значение узла \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_expr_node_a05349d98f9dba99ef79626e4c3c261c6}\index{ExprNode@{ExprNode}!ExprNode@{ExprNode}}
+\index{ExprNode@{ExprNode}!ExprNode@{ExprNode}}
+\doxysubsubsection{\texorpdfstring{ExprNode()}{ExprNode()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \label{class_expr_node_a05349d98f9dba99ef79626e4c3c261c6} 
+Expr\+Node\+::\+Expr\+Node (\begin{DoxyParamCaption}\item[{Expr\+Node\+Type}]{\+\_\+type}{, }\item[{\mbox{\hyperlink{class_expr_node}{Expr\+Node}} \texorpdfstring{$\ast$}{*}}]{\+\_\+first\+Operand}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Конструктор для узла унарной операции 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{in}}  & {\em \+\_\+type} & -\/ тип узла \\
+\hline
+\mbox{\texttt{in}}  & {\em \+\_\+first\+Operand} & -\/ указатель на операнд \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_expr_node_ae67e3b8c8200fcbb16ff2885e60c283f}\index{ExprNode@{ExprNode}!ExprNode@{ExprNode}}
+\index{ExprNode@{ExprNode}!ExprNode@{ExprNode}}
+\doxysubsubsection{\texorpdfstring{ExprNode()}{ExprNode()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \label{class_expr_node_ae67e3b8c8200fcbb16ff2885e60c283f} 
+Expr\+Node\+::\+Expr\+Node (\begin{DoxyParamCaption}\item[{Expr\+Node\+Type}]{\+\_\+type}{, }\item[{\mbox{\hyperlink{class_expr_node}{Expr\+Node}} \texorpdfstring{$\ast$}{*}}]{\+\_\+first\+Operand}{, }\item[{\mbox{\hyperlink{class_expr_node}{Expr\+Node}} \texorpdfstring{$\ast$}{*}}]{\+\_\+second\+Operand}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Конструктор для узла бинарной операции 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{in}}  & {\em \+\_\+type} & -\/ тип узла \\
+\hline
+\mbox{\texttt{in}}  & {\em \+\_\+first\+Operand} & -\/ указатель на первый операнд \\
+\hline
+\mbox{\texttt{in}}  & {\em \+\_\+second\+Operand} & -\/ указатель на второй операнд \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_expr_node_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_expr_node_af72a0e59f0c2fe1c43b3c1311f3c39f2}\index{ExprNode@{ExprNode}!addUnaryOperatorBefore@{addUnaryOperatorBefore}}
+\index{addUnaryOperatorBefore@{addUnaryOperatorBefore}!ExprNode@{ExprNode}}
+\doxysubsubsection{\texorpdfstring{addUnaryOperatorBefore()}{addUnaryOperatorBefore()}}
+{\footnotesize\ttfamily \label{class_expr_node_af72a0e59f0c2fe1c43b3c1311f3c39f2} 
+void Expr\+Node\+::add\+Unary\+Operator\+Before (\begin{DoxyParamCaption}\item[{Expr\+Node\+Type}]{\+\_\+operator}{}\end{DoxyParamCaption})}
+
+Добавляет унарную операцию перед текущей 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{in}}  & {\em operator} & -\/ операция, которая будет добавлена \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_expr_node_a0d2c1ecf929de7015f87f4de88519138}\index{ExprNode@{ExprNode}!copyNode@{copyNode}}
+\index{copyNode@{copyNode}!ExprNode@{ExprNode}}
+\doxysubsubsection{\texorpdfstring{copyNode()}{copyNode()}}
+{\footnotesize\ttfamily \label{class_expr_node_a0d2c1ecf929de7015f87f4de88519138} 
+\mbox{\hyperlink{class_expr_node}{Expr\+Node}} \texorpdfstring{$\ast$}{*} Expr\+Node\+::copy\+Node (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Копирует текущий узел \begin{DoxyReturn}{Returns}
+– указатель на копию узла 
+\end{DoxyReturn}
+\Hypertarget{class_expr_node_a48d90bfc27ab6df2206f949ee037cfe0}\index{ExprNode@{ExprNode}!getFirstOperand@{getFirstOperand}}
+\index{getFirstOperand@{getFirstOperand}!ExprNode@{ExprNode}}
+\doxysubsubsection{\texorpdfstring{getFirstOperand()}{getFirstOperand()}}
+{\footnotesize\ttfamily \label{class_expr_node_a48d90bfc27ab6df2206f949ee037cfe0} 
+\mbox{\hyperlink{class_expr_node}{Expr\+Node}} \texorpdfstring{$\ast$}{*} Expr\+Node\+::get\+First\+Operand (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Возвращает ссылку на первый операнд узла \begin{DoxyReturn}{Returns}
+– ссылка на первый операнд узла 
+\end{DoxyReturn}
+\Hypertarget{class_expr_node_a12fb9950c1bf8c8f402637e8fac1eeb4}\index{ExprNode@{ExprNode}!getRpnOfTree@{getRpnOfTree}}
+\index{getRpnOfTree@{getRpnOfTree}!ExprNode@{ExprNode}}
+\doxysubsubsection{\texorpdfstring{getRpnOfTree()}{getRpnOfTree()}}
+{\footnotesize\ttfamily \label{class_expr_node_a12fb9950c1bf8c8f402637e8fac1eeb4} 
+std\+::string Expr\+Node\+::get\+Rpn\+Of\+Tree (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Создает строку с обратной польской \begin{DoxyReturn}{Returns}
+– строка с обратной польской записью 
+\end{DoxyReturn}
+\Hypertarget{class_expr_node_a0b5817be18b56c3da9d6eaa3dfc1a675}\index{ExprNode@{ExprNode}!getSecondOperand@{getSecondOperand}}
+\index{getSecondOperand@{getSecondOperand}!ExprNode@{ExprNode}}
+\doxysubsubsection{\texorpdfstring{getSecondOperand()}{getSecondOperand()}}
+{\footnotesize\ttfamily \label{class_expr_node_a0b5817be18b56c3da9d6eaa3dfc1a675} 
+\mbox{\hyperlink{class_expr_node}{Expr\+Node}} \texorpdfstring{$\ast$}{*} Expr\+Node\+::get\+Second\+Operand (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Возвращает ссылку на второй операнд узла \begin{DoxyReturn}{Returns}
+– ссылка на второй операнд узла 
+\end{DoxyReturn}
+\Hypertarget{class_expr_node_a6c62bdaca177fdfdeb1779777a48c0ac}\index{ExprNode@{ExprNode}!getType@{getType}}
+\index{getType@{getType}!ExprNode@{ExprNode}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily \label{class_expr_node_a6c62bdaca177fdfdeb1779777a48c0ac} 
+Expr\+Node\+Type Expr\+Node\+::get\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Возвращает тип узла \begin{DoxyReturn}{Returns}
+– значение поля type 
+\end{DoxyReturn}
+\Hypertarget{class_expr_node_ad49f49f8f77af74d5339770791230289}\index{ExprNode@{ExprNode}!getValue@{getValue}}
+\index{getValue@{getValue}!ExprNode@{ExprNode}}
+\doxysubsubsection{\texorpdfstring{getValue()}{getValue()}}
+{\footnotesize\ttfamily \label{class_expr_node_ad49f49f8f77af74d5339770791230289} 
+std\+::string Expr\+Node\+::get\+Value (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Возвращает значение узла \begin{DoxyReturn}{Returns}
+– значение поля value 
+\end{DoxyReturn}
+\Hypertarget{class_expr_node_a47c767035596bbbceb4d82577dbda9ed}\index{ExprNode@{ExprNode}!setFirstOperand@{setFirstOperand}}
+\index{setFirstOperand@{setFirstOperand}!ExprNode@{ExprNode}}
+\doxysubsubsection{\texorpdfstring{setFirstOperand()}{setFirstOperand()}}
+{\footnotesize\ttfamily \label{class_expr_node_a47c767035596bbbceb4d82577dbda9ed} 
+void Expr\+Node\+::set\+First\+Operand (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_expr_node}{Expr\+Node}} \texorpdfstring{$\ast$}{*}}]{new\+First\+Operand}{}\end{DoxyParamCaption})}
+
+Изменяет значение первого операнда узла 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{in}}  & {\em new\+First\+Operand} & -\/ ссылка на новый первый операнд \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_expr_node_ac3138b3d0380db6599ed84c72faaaf00}\index{ExprNode@{ExprNode}!setSecondOperand@{setSecondOperand}}
+\index{setSecondOperand@{setSecondOperand}!ExprNode@{ExprNode}}
+\doxysubsubsection{\texorpdfstring{setSecondOperand()}{setSecondOperand()}}
+{\footnotesize\ttfamily \label{class_expr_node_ac3138b3d0380db6599ed84c72faaaf00} 
+void Expr\+Node\+::set\+Second\+Operand (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_expr_node}{Expr\+Node}} \texorpdfstring{$\ast$}{*}}]{new\+Second\+Operand}{}\end{DoxyParamCaption})}
+
+Изменяет значение второго операнда узла 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{in}}  & {\em new\+Second\+Operand} & -\/ ссылка на новый второй операнд \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_expr_node_a5cf582d669f919aa2051f903cbe3f2b2}\index{ExprNode@{ExprNode}!setType@{setType}}
+\index{setType@{setType}!ExprNode@{ExprNode}}
+\doxysubsubsection{\texorpdfstring{setType()}{setType()}}
+{\footnotesize\ttfamily \label{class_expr_node_a5cf582d669f919aa2051f903cbe3f2b2} 
+void Expr\+Node\+::set\+Type (\begin{DoxyParamCaption}\item[{Expr\+Node\+Type}]{new\+Type}{}\end{DoxyParamCaption})}
+
+Изменяет тип узла 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{in}}  & {\em new\+Type} & -\/ новый тип поля type \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_expr_node_a711a00fccac1f7fbaed275ec207d32fd}\index{ExprNode@{ExprNode}!setValue@{setValue}}
+\index{setValue@{setValue}!ExprNode@{ExprNode}}
+\doxysubsubsection{\texorpdfstring{setValue()}{setValue()}}
+{\footnotesize\ttfamily \label{class_expr_node_a711a00fccac1f7fbaed275ec207d32fd} 
+void Expr\+Node\+::set\+Value (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{new\+Value}{}\end{DoxyParamCaption})}
+
+Изменяет значение узла 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{in}}  & {\em new\+Value} & -\/ строка с новым содержимым поля value \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_expr_node_ada813e299fe6e2a85f35ea919fd1112b}\index{ExprNode@{ExprNode}!swapOperands@{swapOperands}}
+\index{swapOperands@{swapOperands}!ExprNode@{ExprNode}}
+\doxysubsubsection{\texorpdfstring{swapOperands()}{swapOperands()}}
+{\footnotesize\ttfamily \label{class_expr_node_ada813e299fe6e2a85f35ea919fd1112b} 
+﻿ void Expr\+Node\+::swap\+Operands (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Меняет местами операнды узла дерева разбора выражения 
+
+\label{doc-variable-members}
+\Hypertarget{class_expr_node_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_expr_node_a54bf1461356a1a4e49a77ab3b3ebae23}\index{ExprNode@{ExprNode}!operandCount@{operandCount}}
+\index{operandCount@{operandCount}!ExprNode@{ExprNode}}
+\doxysubsubsection{\texorpdfstring{operandCount}{operandCount}}
+{\footnotesize\ttfamily \label{class_expr_node_a54bf1461356a1a4e49a77ab3b3ebae23} 
+const std\+::map$<$ Expr\+Node\+Type, int $>$ Expr\+Node\+::operand\+Count\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \{ExprNodeType::Plus,\ 2\},}
+\DoxyCodeLine{\ \ \ \ \{ExprNodeType::Minus,\ 2\},}
+\DoxyCodeLine{\ \ \ \ \{ExprNodeType::Division,\ 2\},}
+\DoxyCodeLine{\ \ \ \ \{ExprNodeType::Multiplication,\ 2\},}
+\DoxyCodeLine{\ \ \ \ \{ExprNodeType::DivRemainder,\ 2\},}
+\DoxyCodeLine{\ \ \ \ \{ExprNodeType::UnaryMinus,\ 1\},}
+\DoxyCodeLine{\ \ \ \ \{ExprNodeType::Not,\ 1\},}
+\DoxyCodeLine{\ \ \ \ \{ExprNodeType::GreaterEqual,\ 2\},}
+\DoxyCodeLine{\ \ \ \ \{ExprNodeType::LessEqual,\ 2\},}
+\DoxyCodeLine{\ \ \ \ \{ExprNodeType::Greater,\ 2\},}
+\DoxyCodeLine{\ \ \ \ \{ExprNodeType::Less,\ 2\}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Статический словарь для получения количества операндов 
+
+\Hypertarget{class_expr_node_a3024e47cd4e9963f2cc163d31434262d}\index{ExprNode@{ExprNode}!operatorsSymbols@{operatorsSymbols}}
+\index{operatorsSymbols@{operatorsSymbols}!ExprNode@{ExprNode}}
+\doxysubsubsection{\texorpdfstring{operatorsSymbols}{operatorsSymbols}}
+{\footnotesize\ttfamily \label{class_expr_node_a3024e47cd4e9963f2cc163d31434262d} 
+const std\+::set$<$ std\+::string $>$ Expr\+Node\+::operators\+Symbols\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}+"{}},\ \textcolor{stringliteral}{"{}-\/"{}},\ \textcolor{stringliteral}{"{}/"{}},\ \textcolor{stringliteral}{"{}*"{}},\ \textcolor{stringliteral}{"{}\%"{}},\ \textcolor{stringliteral}{"{}\string~"{}},\ \textcolor{stringliteral}{"{}!"{}},\ \textcolor{stringliteral}{"{}>="{}},\ \textcolor{stringliteral}{"{}<="{}},\ \textcolor{stringliteral}{"{}>"{}},\ \textcolor{stringliteral}{"{}<"{}}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Статический словарь с символами 
+
+\Hypertarget{class_expr_node_a3617f8673fa584b7c44fe86be0588764}\index{ExprNode@{ExprNode}!stringToSymbol@{stringToSymbol}}
+\index{stringToSymbol@{stringToSymbol}!ExprNode@{ExprNode}}
+\doxysubsubsection{\texorpdfstring{stringToSymbol}{stringToSymbol}}
+{\footnotesize\ttfamily \label{class_expr_node_a3617f8673fa584b7c44fe86be0588764} 
+const std\+::map$<$ Expr\+Node\+Type, std\+::string $>$ Expr\+Node\+::string\+To\+Symbol\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \{ExprNodeType::Plus,\ \textcolor{stringliteral}{"{}+"{}}\},}
+\DoxyCodeLine{\ \ \ \ \{ExprNodeType::Minus,\ \textcolor{stringliteral}{"{}-\/"{}}\},}
+\DoxyCodeLine{\ \ \ \ \{ExprNodeType::Division,\ \textcolor{stringliteral}{"{}/"{}}\},}
+\DoxyCodeLine{\ \ \ \ \{ExprNodeType::Multiplication,\ \textcolor{stringliteral}{"{}*"{}}\},}
+\DoxyCodeLine{\ \ \ \ \{ExprNodeType::DivRemainder,\ \textcolor{stringliteral}{"{}\%"{}}\},}
+\DoxyCodeLine{\ \ \ \ \{ExprNodeType::UnaryMinus,\ \textcolor{stringliteral}{"{}\string~"{}}\},}
+\DoxyCodeLine{\ \ \ \ \{ExprNodeType::Not,\ \textcolor{stringliteral}{"{}!"{}}\},}
+\DoxyCodeLine{\ \ \ \ \{ExprNodeType::GreaterEqual,\ \textcolor{stringliteral}{"{}>="{}}\},}
+\DoxyCodeLine{\ \ \ \ \{ExprNodeType::LessEqual,\ \textcolor{stringliteral}{"{}<="{}}\},}
+\DoxyCodeLine{\ \ \ \ \{ExprNodeType::Greater,\ \textcolor{stringliteral}{"{}>"{}}\},}
+\DoxyCodeLine{\ \ \ \ \{ExprNodeType::Less,\ \textcolor{stringliteral}{"{}<"{}}\}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Статический словарь для получения символа оператора по его словесной записи 
+
+\Hypertarget{class_expr_node_a190c5f0f1da6b83dd745f05c75fcf596}\index{ExprNode@{ExprNode}!symbolToString@{symbolToString}}
+\index{symbolToString@{symbolToString}!ExprNode@{ExprNode}}
+\doxysubsubsection{\texorpdfstring{symbolToString}{symbolToString}}
+{\footnotesize\ttfamily \label{class_expr_node_a190c5f0f1da6b83dd745f05c75fcf596} 
+const std\+::map$<$ std\+::string, Expr\+Node\+Type $>$ Expr\+Node\+::symbol\+To\+String\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}+"{}},\ ExprNodeType::Plus\},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}-\/"{}},\ ExprNodeType::Minus\},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}/"{}},\ ExprNodeType::Division\},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}*"{}},\ ExprNodeType::Multiplication\},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}\%"{}},\ ExprNodeType::DivRemainder\},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}\string~"{}},\ ExprNodeType::UnaryMinus\},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}!"{}},\ ExprNodeType::Not\},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}>="{}},\ ExprNodeType::GreaterEqual\},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}<="{}},\ ExprNodeType::LessEqual\},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}>"{}},\ ExprNodeType::Greater\},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}<"{}},\ ExprNodeType::Less\}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Статический словарь для получения словесной записи оператора по его символу 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+eremeev\+\_\+kinpo/\mbox{\hyperlink{expr_node_8h}{expr\+Node.\+h}}\item 
+eremeev\+\_\+kinpo/expr\+Node.\+cpp\end{DoxyCompactItemize}

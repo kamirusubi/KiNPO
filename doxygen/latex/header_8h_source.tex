@@ -1,0 +1,27 @@
+\doxysection{header.\+h}
+\hypertarget{header_8h_source}{}\label{header_8h_source}\index{eremeev\_kinpo/header.h@{eremeev\_kinpo/header.h}}
+\mbox{\hyperlink{header_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ ﻿}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{expr_node_8h}{exprNode.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{error_8h}{error.h}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <set>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <stack>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00022\ \mbox{\hyperlink{class_expr_node}{ExprNode}}*\ \mbox{\hyperlink{header_8h_a2f60a768559130925ccc3b2655aa721d}{stringToExprTree}}(std::string\ rpnString,\ std::set\ <Error>*\ errors);}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00029\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{header_8h_a6021b396de0a30b3021c727b17beb204}{isOperand}}(std::string\ str);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00037\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{header_8h_a1eeb0f18d4d1ef70c757e3a1acea9727}{checkRootOperator}}(ExprNodeType\ \_operator);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00043\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{header_8h_ae96d0a123ae191b292f2c7b79da77a88}{transformInequalityToLessOperator}}(\mbox{\hyperlink{class_expr_node}{ExprNode}}*\ node);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00051\ std::string*\ \mbox{\hyperlink{header_8h_ae42749401ac986c5f9d5d6513eee19c6}{readFileToString}}(\textcolor{keyword}{const}\ std::string\ filePath,\ std::set\ <Error>*\ errors);}
+
+\end{DoxyCode}

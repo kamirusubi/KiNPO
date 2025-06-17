@@ -1,0 +1,65 @@
+\doxysection{expr\+Node.\+h}
+\hypertarget{expr_node_8h_source}{}\label{expr_node_8h_source}\index{eremeev\_kinpo/exprNode.h@{eremeev\_kinpo/exprNode.h}}
+\mbox{\hyperlink{expr_node_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ ﻿}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <set>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{enum\ class}\ ExprNodeType\ \{\ Plus,\ Minus,\ Division,\ Multiplication,\ DivRemainder,\ UnaryMinus,\ Not,\ GreaterEqual,\ LessEqual,\ Greater,\ Less,\ Operand\ \};}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_expr_node_a440d1cb893f7815b71dff7b4ec35089a}{ExprNode}}\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00015\ \ \ \ \ ExprNodeType\ type;}
+\DoxyCodeLine{00017\ \ \ \ \ std::string\ value\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{class_expr_node_a440d1cb893f7815b71dff7b4ec35089a}{ExprNode}}*\ firstOperand\ =\ \textcolor{keyword}{nullptr};\ }
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_expr_node_a440d1cb893f7815b71dff7b4ec35089a}{ExprNode}}*\ secondOperand\ =\ \textcolor{keyword}{nullptr};\ }
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ std::map<std::string,\ ExprNodeType>\ \mbox{\hyperlink{class_expr_node_a190c5f0f1da6b83dd745f05c75fcf596}{symbolToString}};}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ std::map<ExprNodeType,\ std::string>\ \mbox{\hyperlink{class_expr_node_a3617f8673fa584b7c44fe86be0588764}{stringToSymbol}};}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ std::map<ExprNodeType,\ int>\ \mbox{\hyperlink{class_expr_node_a54bf1461356a1a4e49a77ab3b3ebae23}{operandCount}};}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ std::set<std::string>\ \mbox{\hyperlink{class_expr_node_a3024e47cd4e9963f2cc163d31434262d}{operatorsSymbols}};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{class_expr_node_a440d1cb893f7815b71dff7b4ec35089a}{ExprNode}}()\{\}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{class_expr_node_a729f0a0a75a643786d50a19e145a5ca2}{ExprNode}}(std::string\ \_value)\ :}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ type(ExprNodeType::Operand),\ value(\_value)\{\}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{class_expr_node_a05349d98f9dba99ef79626e4c3c261c6}{ExprNode}}(ExprNodeType\ \_type,\ \mbox{\hyperlink{class_expr_node_a440d1cb893f7815b71dff7b4ec35089a}{ExprNode}}*\ \_firstOperand)\ :}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ type(\_type),\ firstOperand(\_firstOperand)\ \{\}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{class_expr_node_ae67e3b8c8200fcbb16ff2885e60c283f}{ExprNode}}(ExprNodeType\ \_type,\ \mbox{\hyperlink{class_expr_node_a440d1cb893f7815b71dff7b4ec35089a}{ExprNode}}*\ \_firstOperand,\ \mbox{\hyperlink{class_expr_node_a440d1cb893f7815b71dff7b4ec35089a}{ExprNode}}*\ \_secondOperand)\ :}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ type(\_type),\ firstOperand(\_firstOperand),\ secondOperand(\_secondOperand)\ \{\}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_expr_node_ada813e299fe6e2a85f35ea919fd1112b}{swapOperands}}();}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_expr_node_af72a0e59f0c2fe1c43b3c1311f3c39f2}{addUnaryOperatorBefore}}(ExprNodeType\ \_operator);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{class_expr_node}{ExprNode}}*\ \mbox{\hyperlink{class_expr_node_a0d2c1ecf929de7015f87f4de88519138}{copyNode}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00085\ \ \ \ \ std::string\ \mbox{\hyperlink{class_expr_node_a12fb9950c1bf8c8f402637e8fac1eeb4}{getRpnOfTree}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00091\ \ \ \ \ ExprNodeType\ \mbox{\hyperlink{class_expr_node_a6c62bdaca177fdfdeb1779777a48c0ac}{getType}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_expr_node_a5cf582d669f919aa2051f903cbe3f2b2}{setType}}(ExprNodeType\ newType);}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00103\ \ \ \ \ std::string\ \mbox{\hyperlink{class_expr_node_ad49f49f8f77af74d5339770791230289}{getValue}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_expr_node_a711a00fccac1f7fbaed275ec207d32fd}{setValue}}(\textcolor{keyword}{const}\ std::string\&\ newValue);}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00115\ \ \ \ \ \mbox{\hyperlink{class_expr_node}{ExprNode}}*\ \mbox{\hyperlink{class_expr_node_a48d90bfc27ab6df2206f949ee037cfe0}{getFirstOperand}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_expr_node_a47c767035596bbbceb4d82577dbda9ed}{setFirstOperand}}(\mbox{\hyperlink{class_expr_node}{ExprNode}}*\ newFirstOperand);}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00127\ \ \ \ \ \mbox{\hyperlink{class_expr_node}{ExprNode}}*\ \mbox{\hyperlink{class_expr_node_a0b5817be18b56c3da9d6eaa3dfc1a675}{getSecondOperand}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_expr_node_ac3138b3d0380db6599ed84c72faaaf00}{setSecondOperand}}(\mbox{\hyperlink{class_expr_node_a440d1cb893f7815b71dff7b4ec35089a}{ExprNode}}*\ newSecondOperand);}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \};}
+
+\end{DoxyCode}

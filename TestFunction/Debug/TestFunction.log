@@ -1,7 +1,4 @@
-﻿  pch.cpp
-  compareErrors.cpp
-  compareTrees.cpp
-  TestAddUnaryOperatorBefore.cpp
+﻿  TestAddUnaryOperatorBefore.cpp
   TestCheckRootOperation.cpp
   TestGetRpnOfExprTree.cpp
   TestIsOperand.cpp

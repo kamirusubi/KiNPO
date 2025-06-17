@@ -1,0 +1,111 @@
+\doxysection{eremeev\+\_\+kinpo/header.h File Reference}
+\hypertarget{header_8h}{}\label{header_8h}\index{eremeev\_kinpo/header.h@{eremeev\_kinpo/header.h}}
+
+
+Файл содержит описание функций программы  
+
+
+{\ttfamily \#include "{}expr\+Node.\+h"{}}\newline
+{\ttfamily \#include "{}error.\+h"{}}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$set$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$stack$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_expr_node}{Expr\+Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{header_8h_a2f60a768559130925ccc3b2655aa721d}{string\+To\+Expr\+Tree}} (std\+::string rpn\+String, std\+::set$<$ \mbox{\hyperlink{class_error}{Error}} $>$ \texorpdfstring{$\ast$}{*}errors)
+\item 
+bool \mbox{\hyperlink{header_8h_a6021b396de0a30b3021c727b17beb204}{is\+Operand}} (std\+::string str)
+\item 
+bool \mbox{\hyperlink{header_8h_a1eeb0f18d4d1ef70c757e3a1acea9727}{check\+Root\+Operator}} (Expr\+Node\+Type \+\_\+operator)
+\item 
+void \mbox{\hyperlink{header_8h_ae96d0a123ae191b292f2c7b79da77a88}{transform\+Inequality\+To\+Less\+Operator}} (\mbox{\hyperlink{class_expr_node}{Expr\+Node}} \texorpdfstring{$\ast$}{*}node)
+\item 
+std\+::string \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{header_8h_ae42749401ac986c5f9d5d6513eee19c6}{read\+File\+To\+String}} (const std\+::string file\+Path, std\+::set$<$ \mbox{\hyperlink{class_error}{Error}} $>$ \texorpdfstring{$\ast$}{*}errors)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Файл содержит описание функций программы 
+
+
+
+\label{doc-func-members}
+\Hypertarget{header_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{header_8h_a1eeb0f18d4d1ef70c757e3a1acea9727}\index{header.h@{header.h}!checkRootOperator@{checkRootOperator}}
+\index{checkRootOperator@{checkRootOperator}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{checkRootOperator()}{checkRootOperator()}}
+{\footnotesize\ttfamily \label{header_8h_a1eeb0f18d4d1ef70c757e3a1acea9727} 
+bool check\+Root\+Operator (\begin{DoxyParamCaption}\item[{Expr\+Node\+Type}]{\+\_\+operator}{}\end{DoxyParamCaption})}
+
+Проверяет, является ли корневая операция допустимой 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{in}}  & {\em operator} & – тип операции \\
+\hline
+\mbox{\texttt{out}}  & {\em errors} & – указатель на контейнер с ошибками \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/ true, если операция допустима; false, если строка операция не допустима 
+\end{DoxyReturn}
+\Hypertarget{header_8h_a6021b396de0a30b3021c727b17beb204}\index{header.h@{header.h}!isOperand@{isOperand}}
+\index{isOperand@{isOperand}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{isOperand()}{isOperand()}}
+{\footnotesize\ttfamily \label{header_8h_a6021b396de0a30b3021c727b17beb204} 
+bool is\+Operand (\begin{DoxyParamCaption}\item[{std\+::string}]{str}{}\end{DoxyParamCaption})}
+
+Проверяет, является ли строка операндом 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{in}}  & {\em str} & – строка, которая будет проверена \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/ true, если строка операндом; false, если строка не является операндом 
+\end{DoxyReturn}
+\Hypertarget{header_8h_ae42749401ac986c5f9d5d6513eee19c6}\index{header.h@{header.h}!readFileToString@{readFileToString}}
+\index{readFileToString@{readFileToString}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{readFileToString()}{readFileToString()}}
+{\footnotesize\ttfamily \label{header_8h_ae42749401ac986c5f9d5d6513eee19c6} 
+std\+::string \texorpdfstring{$\ast$}{*} read\+File\+To\+String (\begin{DoxyParamCaption}\item[{const std\+::string}]{file\+Path}{, }\item[{std\+::set$<$ \mbox{\hyperlink{class_error}{Error}} $>$ \texorpdfstring{$\ast$}{*}}]{errors}{}\end{DoxyParamCaption})}
+
+Возвращает строку, содержащую содердимое файла 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{in}}  & {\em filename} & – путь до файла, откуда будут прочитаны данные \\
+\hline
+\mbox{\texttt{out}}  & {\em errors} & – указатель на контейнер с ошибками \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/ строка с содержимым файла 
+\end{DoxyReturn}
+\Hypertarget{header_8h_a2f60a768559130925ccc3b2655aa721d}\index{header.h@{header.h}!stringToExprTree@{stringToExprTree}}
+\index{stringToExprTree@{stringToExprTree}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{stringToExprTree()}{stringToExprTree()}}
+{\footnotesize\ttfamily \label{header_8h_a2f60a768559130925ccc3b2655aa721d} 
+\mbox{\hyperlink{class_expr_node}{Expr\+Node}} \texorpdfstring{$\ast$}{*} string\+To\+Expr\+Tree (\begin{DoxyParamCaption}\item[{std\+::string}]{rpn\+String}{, }\item[{std\+::set$<$ \mbox{\hyperlink{class_error}{Error}} $>$ \texorpdfstring{$\ast$}{*}}]{errors}{}\end{DoxyParamCaption})}
+
+Создает дерево разбора выражения строки в обратной польской записи 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{in}}  & {\em rpn\+String} & – строка в обратной польской записи \\
+\hline
+\mbox{\texttt{out}}  & {\em errors} & – указатель контейнер с ошибками \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+– указатель на дерево разбора выражения 
+\end{DoxyReturn}
+\Hypertarget{header_8h_ae96d0a123ae191b292f2c7b79da77a88}\index{header.h@{header.h}!transformInequalityToLessOperator@{transformInequalityToLessOperator}}
+\index{transformInequalityToLessOperator@{transformInequalityToLessOperator}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{transformInequalityToLessOperator()}{transformInequalityToLessOperator()}}
+{\footnotesize\ttfamily \label{header_8h_ae96d0a123ae191b292f2c7b79da77a88} 
+void transform\+Inequality\+To\+Less\+Operator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_expr_node}{Expr\+Node}} \texorpdfstring{$\ast$}{*}}]{node}{}\end{DoxyParamCaption})}
+
+Преобразует узел дерева разбора выражения к операции «меньше» 
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}in/out\mbox{]}} & node – указатель на узел, который должен быть преобразован \\
+\hline
+\end{DoxyParams}

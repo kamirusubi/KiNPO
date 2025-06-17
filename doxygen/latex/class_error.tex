@@ -1,0 +1,70 @@
+\doxysection{Error Class Reference}
+\hypertarget{class_error}{}\label{class_error}\index{Error@{Error}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_error_af6966d50dfe88570bd0a5b89247533ff}{Error}} (Error\+Type \+\_\+type, std\+::string \+\_\+str\+With\+Error, int \+\_\+position)
+\item 
+\Hypertarget{class_error_a1efaaf52964e1b603f4f97cdc24d822c}\label{class_error_a1efaaf52964e1b603f4f97cdc24d822c} 
+bool {\bfseries operator$<$} (const \mbox{\hyperlink{class_error}{Error}} \&other) const
+\item 
+\Hypertarget{class_error_a363c3533442e5197214d343effd98e10}\label{class_error_a363c3533442e5197214d343effd98e10} 
+bool {\bfseries operator==} (const \mbox{\hyperlink{class_error}{Error}} \&other) const
+\item 
+std\+::string \mbox{\hyperlink{class_error_a6338f309379fc4403012247f7b18eec1}{generate\+Error\+Message}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_error_a4d9ef9fdc894088985e42ccda181ece7}\label{class_error_a4d9ef9fdc894088985e42ccda181ece7} 
+Error\+Type {\bfseries type}
+\begin{DoxyCompactList}\small\item\em Тип ошибки \end{DoxyCompactList}\item 
+\Hypertarget{class_error_a695c58adb8801ad4e92ed1dc67417f6f}\label{class_error_a695c58adb8801ad4e92ed1dc67417f6f} 
+std\+::string {\bfseries error\+Input\+File\+Path}
+\begin{DoxyCompactList}\small\item\em Поле для хранения пути, откуда не удалось прочитать файл \end{DoxyCompactList}\item 
+\Hypertarget{class_error_a062ffedb35673f2190d0e56e4f4243ec}\label{class_error_a062ffedb35673f2190d0e56e4f4243ec} 
+std\+::string {\bfseries str\+With\+Error}
+\begin{DoxyCompactList}\small\item\em Строка, содержащая ошибку \end{DoxyCompactList}\item 
+\Hypertarget{class_error_a360b44d67f9fbdb2d51352d150b2a759}\label{class_error_a360b44d67f9fbdb2d51352d150b2a759} 
+int {\bfseries position}
+\begin{DoxyCompactList}\small\item\em Позиция ошибки \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{class_error_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_error_af6966d50dfe88570bd0a5b89247533ff}\index{Error@{Error}!Error@{Error}}
+\index{Error@{Error}!Error@{Error}}
+\doxysubsubsection{\texorpdfstring{Error()}{Error()}}
+{\footnotesize\ttfamily \label{class_error_af6966d50dfe88570bd0a5b89247533ff} 
+Error\+::\+Error (\begin{DoxyParamCaption}\item[{Error\+Type}]{\+\_\+type}{, }\item[{std\+::string}]{\+\_\+str\+With\+Error}{, }\item[{int}]{\+\_\+position}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Конструктор для входных параметров с типом ошибки и ее описанием 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{in}}  & {\em \+\_\+type} & -\/ тип ошибки \\
+\hline
+\mbox{\texttt{in}}  & {\em \+\_\+str\+With\+Error} & -\/ строка, содержащая ошибку \\
+\hline
+\mbox{\texttt{in}}  & {\em \+\_\+position} & -\/ позиция ошибки \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_error_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_error_a6338f309379fc4403012247f7b18eec1}\index{Error@{Error}!generateErrorMessage@{generateErrorMessage}}
+\index{generateErrorMessage@{generateErrorMessage}!Error@{Error}}
+\doxysubsubsection{\texorpdfstring{generateErrorMessage()}{generateErrorMessage()}}
+{\footnotesize\ttfamily \label{class_error_a6338f309379fc4403012247f7b18eec1} 
+﻿ std\+::string Error\+::generate\+Error\+Message (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Возвращает описание ошибки \begin{DoxyReturn}{Returns}
+– строка с описанием ошибки 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+eremeev\+\_\+kinpo/\mbox{\hyperlink{error_8h}{error.\+h}}\item 
+eremeev\+\_\+kinpo/error.\+cpp\end{DoxyCompactItemize}
