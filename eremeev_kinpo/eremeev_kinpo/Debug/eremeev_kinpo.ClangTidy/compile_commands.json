@@ -1,0 +1,22 @@
+[
+  {
+    "directory": "D:\\GITHUB\\KiNPO\\eremeev_kinpo",
+    "command": "\"C:\\WINDOWS\\system32\\CL.exe\" \/c \/nologo \/W3 \/WX- \/diagnostics:column \/Od \/Oy- \/D CODE_ANALYSIS \/D WIN32 \/D _DEBUG \/D _CONSOLE \/D _UNICODE \/D UNICODE \/EHsc \/RTC1 \/MDd \/GS \/fp:precise \/permissive- \/Fo\"eremeev_kinpo\\Debug\\\\\" \/Gd \/TP --target=i686-pc-windows-msvc;  \"D:\\GITHUB\\KiNPO\\eremeev_kinpo\\eremeev_kinpo.cpp\"",
+    "file": "D:\\GITHUB\\KiNPO\\eremeev_kinpo\\eremeev_kinpo.cpp"
+  },
+  {
+    "directory": "D:\\GITHUB\\KiNPO\\eremeev_kinpo",
+    "command": "\"C:\\WINDOWS\\system32\\CL.exe\" \/c \/nologo \/W3 \/WX- \/diagnostics:column \/Od \/Oy- \/D CODE_ANALYSIS \/D WIN32 \/D _DEBUG \/D _CONSOLE \/D _UNICODE \/D UNICODE \/EHsc \/RTC1 \/MDd \/GS \/fp:precise \/permissive- \/Fo\"eremeev_kinpo\\Debug\\\\\" \/Gd \/TP --target=i686-pc-windows-msvc;  \"D:\\GITHUB\\KiNPO\\eremeev_kinpo\\error.cpp\"",
+    "file": "D:\\GITHUB\\KiNPO\\eremeev_kinpo\\error.cpp"
+  },
+  {
+    "directory": "D:\\GITHUB\\KiNPO\\eremeev_kinpo",
+    "command": "\"C:\\WINDOWS\\system32\\CL.exe\" \/c \/nologo \/W3 \/WX- \/diagnostics:column \/Od \/Oy- \/D CODE_ANALYSIS \/D WIN32 \/D _DEBUG \/D _CONSOLE \/D _UNICODE \/D UNICODE \/EHsc \/RTC1 \/MDd \/GS \/fp:precise \/permissive- \/Fo\"eremeev_kinpo\\Debug\\\\\" \/Gd \/TP --target=i686-pc-windows-msvc;  \"D:\\GITHUB\\KiNPO\\eremeev_kinpo\\exprNode.h\"",
+    "file": "D:\\GITHUB\\KiNPO\\eremeev_kinpo\\exprNode.h"
+  },
+  {
+    "directory": "D:\\GITHUB\\KiNPO\\eremeev_kinpo",
+    "command": "\"C:\\WINDOWS\\system32\\CL.exe\" \/c \/nologo \/W3 \/WX- \/diagnostics:column \/Od \/Oy- \/D CODE_ANALYSIS \/D WIN32 \/D _DEBUG \/D _CONSOLE \/D _UNICODE \/D UNICODE \/EHsc \/RTC1 \/MDd \/GS \/fp:precise \/permissive- \/Fo\"eremeev_kinpo\\Debug\\\\\" \/Gd \/TP --target=i686-pc-windows-msvc;  \"D:\\GITHUB\\KiNPO\\eremeev_kinpo\\exprNode.cpp\"",
+    "file": "D:\\GITHUB\\KiNPO\\eremeev_kinpo\\exprNode.cpp"
+  }
+]

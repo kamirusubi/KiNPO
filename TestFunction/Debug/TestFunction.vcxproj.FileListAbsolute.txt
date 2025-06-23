@@ -1,0 +1,2 @@
+D:\GITHUB\KiNPO\eremeev_kinpo\Debug\TestFunction.dll.lastcodeanalysissucceeded
+D:\GITHUB\KiNPO\TestFunction\Debug\NativeCodeAnalysis.read.1.tlog

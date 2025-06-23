@@ -1,0 +1,15 @@
+﻿  pch.cpp
+  compareErrors.cpp
+  compareTrees.cpp
+  TestAddUnaryOperatorBefore.cpp
+  TestCheckRootOperation.cpp
+  TestGetRpnOfExprTree.cpp
+  TestIsOperand.cpp
+  TestStringToExprTree.cpp
+  TestSwapOperands.cpp
+  TestTransformInequalityToLessOperator.cpp
+  Выполнение Code Analysis для C/C++...
+  Создание кода...
+     Создается библиотека D:\GITHUB\KiNPO\eremeev_kinpo\Debug\TestFunction.lib и объект D:\GITHUB\KiNPO\eremeev_kinpo\Debug\TestFunction.exp
+  TestFunction.vcxproj -> D:\GITHUB\KiNPO\eremeev_kinpo\Debug\TestFunction.dll
+D:\GITHUB\KiNPO\eremeev_kinpo\exprNode.h(36): warning C26495: Переменная "ExprNode::type" не инициализирована. Всегда инициализируйте переменную-член (type.6).

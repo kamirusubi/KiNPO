@@ -1,0 +1,8 @@
+PLEASE submit a bug report to https://github.com/llvm/llvm-project/issues/ and include the crash backtrace.
+Stack dump:
+0.	Program arguments: "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\Llvm\\bin\\clang-tidy.exe" D:\\GITHUB\\KiNPO\\eremeev_kinpo\\eremeev_kinpo.cpp D:\\GITHUB\\KiNPO\\eremeev_kinpo\\error.cpp D:\\GITHUB\\KiNPO\\eremeev_kinpo\\exprNode.h D:\\GITHUB\\KiNPO\\eremeev_kinpo\\exprNode.cpp -p=eremeev_kinpo\\Debug\\eremeev_kinpo.ClangTidy --checks=--checks=clang-analyzer-*,modernize-*,performance-*
+Exception Code: 0xC0000005
+#0 0x015360c0 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\Llvm\bin\clang-tidy.exe 0x8760c0 (C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\Llvm\bin\clang-tidy.exe+0x8760c0)
+#1 0x015360c0 
+0x015360C0, C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\Llvm\bin\clang-tidy.exe(0x0000000000CC0000) + 0x8760C0 byte(s)
+0x771B2201, C:\WINDOWS\SYSTEM32\ntdll.dll(0x0000000077130000) + 0x82201 byte(s), wcstol() + 0x11 byte(s)

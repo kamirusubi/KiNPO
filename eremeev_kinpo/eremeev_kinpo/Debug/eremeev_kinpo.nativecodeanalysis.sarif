@@ -1,0 +1,92 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Переменная \"ExprNode::type\" не инициализирована. Всегда инициализируйте переменную-член (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/GITHUB/KiNPO/eremeev_kinpo/exprNode.h"
+                },
+                "region": {
+                  "startLine": 36,
+                  "startColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ExprNode::{ctor}",
+                  "decoratedName": "??0ExprNode@@QAE@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ExprNode::type"
+          }
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.39.33519.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///D:/GITHUB/KiNPO/eremeev_kinpo/exprNode.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "9575589a7c9a4f8d2b1eafeee8a9aa456e433b99e5f29cdeeb3360de447eed66"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/github/kinpo/eremeev_kinpo/eremeev_kinpo.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "13be3b5e9de52704d347203db29079051a57afd9e8527a4b21e0d7f41c442a57"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/github/kinpo/eremeev_kinpo/header.h"
+          },
+          "hashes": {
+            "sha-256": "ff71416544f9ce5373822b8c084eb95225cdbe3c0e0a449e6138598f1c0faa36"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/github/kinpo/eremeev_kinpo/error.h"
+          },
+          "hashes": {
+            "sha-256": "23cd77dc2072f753b54c6127c570d4465b252bc767f20b5349693b99219ab076"
+          }
+        }
+      ]
+    }
+  ]
+}
