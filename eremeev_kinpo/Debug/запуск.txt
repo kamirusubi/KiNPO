@@ -1,0 +1,1 @@
+D:\GITHUB\KiNPO\eremeev_kinpo\Debug\eremeev_kinpo.exe D:\GITHUB\KiNPO\eremeev_kinpo\Debug\input.txt D:\GITHUB\KiNPO\eremeev_kinpo\Debug\output.txt
