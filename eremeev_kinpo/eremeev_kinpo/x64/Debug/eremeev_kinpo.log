@@ -1,0 +1,7 @@
+﻿  eremeev_kinpo.cpp
+  error.cpp
+  exprNode.cpp
+  exprNode.h
+  Создание кода...
+eremeev_kinpo\x64\Debug\exprNode.obj : warning LNK4042: объект указан более одного раза; лишние не учитываются
+  eremeev_kinpo.vcxproj -> D:\GITHUB\KiNPO\eremeev_kinpo\x64\Debug\eremeev_kinpo.exe
